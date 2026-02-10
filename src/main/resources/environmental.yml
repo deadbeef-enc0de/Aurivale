@@ -1,0 +1,120 @@
+campfire:
+  ticks: 10
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: BURN
+    minimum:
+      flat: 1
+    maximum:
+      flat: 2
+contact:
+  ticks: 10
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: PHYSICAL
+    minimum:
+      flat: 1
+    maximum:
+      flat: 2
+cramming:
+  ticks: 5
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: GENERIC
+    minimum:
+      flat: 6
+    maximum:
+      flat: 6
+drowning:
+  ticks: 20
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: GENERIC
+    minimum:
+      flat: 2
+    maximum:
+      flat: 2
+dryout:
+  ticks: 20
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: GENERIC
+    minimum:
+      flat: 2
+    maximum:
+      flat: 2
+fire:
+  ticks: 10
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: BURN
+    minimum:
+      flat: 2
+    maximum:
+      flat: 4
+fire_tick:
+  ticks: 20
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: BURN
+    minimum:
+      flat: 1
+    maximum:
+      flat: 2
+freeze:
+  ticks: 10
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: FROST
+    minimum:
+      flat: 1
+    maximum:
+      flat: 2
+hot_floor:
+  ticks: 5
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: BURN
+    minimum:
+      flat: 2
+    maximum:
+      flat: 3
+lava:
+  ticks: 10
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: BURN
+    minimum:
+      flat: 6
+    maximum:
+      flat: 10
+lightning:
+  ticks: 20
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: SHOCK
+    minimum:
+      flat: 7
+    maximum:
+      flat: 13
+suffocation:
+  ticks: 10
+  damage:
+    template: DamageRangeTemplate
+    base: true
+    damagetype: GENERIC
+    minimum:
+      flat: 1
+    maximum:
+      flat: 2

@@ -1,0 +1,950 @@
+# general pack variables
+distance: # how far followers are allowed to wander from leader
+  maximum: 8.0 # distance that starts movement back to leader
+  minimum: 4.0 # distance that stops movement back to leader
+pack_size: # minimum and maximum pack size
+  minimum: 3
+  maximum: 5
+spawn:
+  local_pack_search: 10 # minimum distance between entity packs of the same type
+  count: 20 # maximum packs allowed in search area
+  search: # search distances for other packs
+    horizontal: 128
+    vertical: 32
+  distance: # maximum distance allowed away from a player
+    horizontal: 80
+    vertical: 20
+
+# allowed monster types
+monsters:
+  # hostile mobs
+  - zombie
+  - zombie_villager
+  - husk
+  - drowned
+  - skeleton
+  - stray
+  - bogged
+  - wither_skeleton
+  - spider
+  - creeper
+  - zombified_piglin
+  - hoglin
+  - zoglin
+
+# pack modifier groups and counts
+pack_quality:
+  normal:
+    weight: 90
+    groups: 0
+    modifiers: 0
+  magic:
+    weight: 9
+    groups: 1
+    modifiers: 2
+    color:
+      red: 0
+      green: 0
+      blue: 0xFF
+    qualitymods:
+      increased_health:
+        template: AttributeTemplate
+        attribute: MAX_HEALTH
+        operator: MULTIPLIER
+        flat: 35
+  rare:
+    weight: 1
+    groups: 2
+    modifiers: 4
+    color:
+      red: 0xFF
+      green: 0xFF
+      blue: 0
+    qualitymods:
+      increased_health:
+        template: AttributeTemplate
+        attribute: MAX_HEALTH
+        operator: MULTIPLIER
+        flat: 100
+
+# for each modifier a drop luck of the same rank will be added
+modifier_luck_drop:
+  type: LuckConfig
+  lucktype: DROP_LUCK
+  ranks:
+    1:
+      monster: true
+      flat: 5
+    2:
+      monster: true
+      flat: 10
+    3:
+      monster: true
+      flat: 20
+
+# modifier groups
+modifier_groups:
+  # attack/damage groups
+  generic_damage:
+    weight: 50
+    modifiers:
+      - damage_all_scaler
+      - critical_chance_flat
+      - critical_chance_scaler
+      - critical_damage_flat
+      - critical_damage_scaler
+      - luck_double_damage
+      - luck_damage_lucky
+  physical_damage:
+    weight: 200
+    modifiers:
+      - damage_range_physical
+      - damage_physical_scaler
+      - damage_all_scaler
+      - damage_as_extra_burn
+      - damage_as_extra_frost
+      - damage_as_extra_shock
+      - damage_as_extra_elemental
+      - damage_as_extra_havoc
+      - leech_physical_damage
+      - leech_all_damage
+  burn_damage:
+    weight: 400
+    modifiers:
+      - damage_range_burn
+      - damage_burn_scaler
+      - damage_elemental_scaler
+      - damage_all_scaler
+      - damage_as_extra_burn
+      - leech_elemental_damage
+      - leech_all_damage
+  frost_damage:
+    weight: 400
+    modifiers:
+      - damage_range_frost
+      - damage_frost_scaler
+      - damage_elemental_scaler
+      - damage_all_scaler
+      - damage_as_extra_frost
+      - leech_elemental_damage
+      - leech_all_damage
+  shock_damage:
+    weight: 400
+    modifiers:
+      - damage_range_shock
+      - damage_shock_scaler
+      - damage_elemental_scaler
+      - damage_all_scaler
+      - damage_as_extra_shock
+      - leech_elemental_damage
+      - leech_all_damage
+  havoc_damage:
+    weight: 100
+    modifiers:
+      - damage_range_havoc
+      - damage_havoc_scaler
+      - damage_all_scaler
+      - damage_as_extra_havoc
+      - leech_all_damage
+
+  # defense groups
+  generic_defense:
+    weight: 50
+    modifiers:
+      - defense_all_flat
+      - defense_all_scaler
+      - reduction_physical
+      - reduction_elemental
+      - reduction_havoc
+      - reflect_damage_physical
+      - reflect_damage_elemental
+      - reflect_damage_all
+  physical_defense:
+    weight: 200
+    modifiers:
+      - defense_physical_flat
+      - defense_all_flat
+      - defense_physical_scaler
+      - defense_all_scaler
+      - reduction_physical
+      - reflect_damage_physical
+  burn_defense:
+    weight: 400
+    modifiers:
+      - defense_burn_flat
+      - defense_all_flat
+      - defense_elemental_scaler
+      - defense_all_scaler
+      - reduction_burn
+      - reduction_elemental
+      - reflect_damage_elemental
+  frost_defense:
+    weight: 400
+    modifiers:
+      - defense_frost_flat
+      - defense_all_flat
+      - defense_elemental_scaler
+      - defense_all_scaler
+      - reduction_frost
+      - reduction_elemental
+      - reflect_damage_elemental
+  shock_defense:
+    weight: 400
+    modifiers:
+      - defense_shock_flat
+      - defense_all_flat
+      - defense_elemental_scaler
+      - defense_all_scaler
+      - reduction_shock
+      - reduction_elemental
+      - reflect_damage_elemental
+  havoc_defense:
+    weight: 100
+    modifiers:
+      - defense_havoc_flat
+      - defense_all_flat
+      - defense_all_scaler
+      - reduction_havoc
+      - reflect_damage_all
+
+  # other groups
+  status_permanent:
+  status_infliction:
+  spell_triggers:
+
+# modifiers
+modifiers:
+  # flat damage range
+  damage_range_physical:
+    type: DamageRangeConfig
+    damagetype: PHYSICAL
+    ranks:
+      1:
+        weight: 200
+        minimum:
+          flat: 2
+        maximum:
+          flat: 4
+      2:
+        weight: 100
+        minimum:
+          flat: 4
+        maximum:
+          flat: 6
+      3:
+        weight: 50
+        minimum:
+          flat: 6
+        maximum:
+          flat: 8
+
+  damage_range_burn:
+    type: DamageRangeConfig
+    damagetype: BURN
+    ranks:
+      1:
+        weight: 200
+        minimum:
+          flat: 3
+        maximum:
+          flat: 6
+      2:
+        weight: 100
+        minimum:
+          flat: 5
+        maximum:
+          flat: 8
+      3:
+        weight: 50
+        minimum:
+          flat: 7
+        maximum:
+          flat: 10
+
+  damage_range_frost:
+    type: DamageRangeConfig
+    damagetype: FROST
+    ranks:
+      1:
+        weight: 200
+        minimum:
+          flat: 4
+        maximum:
+          flat: 5
+      2:
+        weight: 100
+        minimum:
+          flat: 6
+        maximum:
+          flat: 7
+      3:
+        weight: 50
+        minimum:
+          flat: 8
+        maximum:
+          flat: 9
+
+  damage_range_shock:
+    type: DamageRangeConfig
+    damagetype: SHOCK
+    ranks:
+      1:
+        weight: 200
+        minimum:
+          flat: 1
+        maximum:
+          flat: 8
+      2:
+        weight: 100
+        minimum:
+          flat: 2
+        maximum:
+          flat: 11
+      3:
+        weight: 50
+        minimum:
+          flat: 3
+        maximum:
+          flat: 14
+
+  damage_range_havoc:
+    type: DamageRangeConfig
+    damagetype: HAVOC
+    ranks:
+      1:
+        weight: 200
+        minimum:
+          flat: 1
+        maximum:
+          flat: 3
+      2:
+        weight: 100
+        minimum:
+          flat: 3
+        maximum:
+          flat: 5
+      3:
+        weight: 50
+        minimum:
+          flat: 5
+        maximum:
+          flat: 7
+
+  # scaler damage
+  damage_physical_scaler:
+    type: DamageConfig
+    damagetype: PHYSICAL
+    operator: SCALER
+    ranks:
+      1:
+        weight: 100
+        flat: 25
+      2:
+        weight: 50
+        flat: 35
+      3:
+        weight: 25
+        flat: 40
+
+  damage_burn_scaler:
+    type: DamageConfig
+    damagetype: BURN
+    operator: SCALER
+    ranks:
+      1:
+        weight: 100
+        flat: 40
+      2:
+        weight: 50
+        flat: 50
+      3:
+        weight: 25
+        flat: 55
+
+  damage_frost_scaler:
+    type: DamageConfig
+    damagetype: FROST
+    operator: SCALER
+    ranks:
+      1:
+        weight: 100
+        flat: 40
+      2:
+        weight: 50
+        flat: 50
+      3:
+        weight: 25
+        flat: 55
+
+  damage_shock_scaler:
+    type: DamageConfig
+    damagetype: SHOCK
+    operator: SCALER
+    ranks:
+      1:
+        weight: 100
+        flat: 40
+      2:
+        weight: 50
+        flat: 50
+      3:
+        weight: 25
+        flat: 55
+
+  damage_elemental_scaler:
+    type: DamageConfig
+    damagetype: ELEMENTAL
+    operator: SCALER
+    ranks:
+      1:
+        weight: 80
+        flat: 15
+      2:
+        weight: 40
+        flat: 25
+      3:
+        weight: 20
+        flat: 30
+
+  damage_havoc_scaler:
+    type: DamageConfig
+    damagetype: HAVOC
+    operator: SCALER
+    ranks:
+      1:
+        weight: 80
+        flat: 30
+      2:
+        weight: 40
+        flat: 40
+      3:
+        weight: 20
+        flat: 45
+
+  damage_all_scaler:
+    type: DamageConfig
+    damagetype: ALL
+    operator: SCALER
+    ranks:
+      1:
+        weight: 50
+        flat: 10
+      2:
+        weight: 25
+        flat: 20
+      3:
+        weight: 10
+        flat: 25
+
+  # extra damage
+  damage_as_extra_burn:
+    type: DamageConversionConfig
+    conversion: EXTRA_DAMAGE
+    fromtype: ALL
+    totype: BURN
+    ranks:
+      1:
+        weight: 100
+        flat: 10
+      2:
+        weight: 50
+        flat: 15
+      3:
+        weight: 25
+        flat: 20
+
+  damage_as_extra_frost:
+    type: DamageConversionConfig
+    conversion: EXTRA_DAMAGE
+    fromtype: ALL
+    totype: FROST
+    ranks:
+      1:
+        weight: 100
+        flat: 10
+      2:
+        weight: 50
+        flat: 15
+      3:
+        weight: 25
+        flat: 20
+
+  damage_as_extra_shock:
+    type: DamageConversionConfig
+    conversion: EXTRA_DAMAGE
+    fromtype: ALL
+    totype: SHOCK
+    ranks:
+      1:
+        weight: 100
+        flat: 10
+      2:
+        weight: 50
+        flat: 15
+      3:
+        weight: 25
+        flat: 20
+
+  damage_as_extra_elemental:
+    type: DamageConversionConfig
+    conversion: EXTRA_DAMAGE
+    fromtype: ALL
+    totype: ELEMENTAL
+    ranks:
+      1:
+        weight: 100
+        flat: 5
+      2:
+        weight: 50
+        flat: 7
+      3:
+        weight: 25
+        flat: 10
+
+  damage_as_extra_havoc:
+    type: DamageConversionConfig
+    conversion: EXTRA_DAMAGE
+    fromtype: ALL
+    totype: HAVOC
+    ranks:
+      1:
+        weight: 100
+        flat: 5
+      2:
+        weight: 50
+        flat: 10
+      3:
+        weight: 25
+        flat: 15
+
+  # critical attacks
+  critical_chance_flat:
+    type: CriticalConfig
+    criticaltype: CRITICAL_CHANCE
+    operator: FLAT
+    ranks:
+      1:
+        weight: 100
+        flat: 3.5
+      2:
+        weight: 50
+        flat: 5.5
+      3:
+        weight: 25
+        flat: 7.5
+
+  critical_chance_scaler:
+    type: CriticalConfig
+    criticaltype: CRITICAL_CHANCE
+    operator: SCALER
+    ranks:
+      1:
+        weight: 200
+        flat: 100
+      2:
+        weight: 100
+        flat: 150
+      3:
+        weight: 50
+        flat: 200
+
+  critical_damage_flat:
+    type: CriticalConfig
+    criticaltype: CRITICAL_DAMAGE
+    operator: FLAT
+    ranks:
+      1:
+        weight: 200
+        flat: 50
+      2:
+        weight: 100
+        flat: 75
+      3:
+        weight: 50
+        flat: 100
+
+  critical_damage_scaler:
+    type: CriticalConfig
+    criticaltype: CRITICAL_DAMAGE
+    operator: SCALER
+    ranks:
+      1:
+        weight: 100
+        flat: 10
+      2:
+        weight: 50
+        flat: 20
+      3:
+        weight: 25
+        flat: 25
+
+  # life leech
+  leech_physical_damage:
+    type: LeechConfig
+    damagetype: PHYSICAL
+    ranks:
+      1:
+        weight: 50
+        flat: 15
+      2:
+        weight: 25
+        flat: 25
+      3:
+        weight: 10
+        flat: 33
+
+  leech_elemental_damage:
+    type: LeechConfig
+    damagetype: ELEMENTAL
+    ranks:
+      1:
+        weight: 50
+        flat: 15
+      2:
+        weight: 25
+        flat: 25
+      3:
+        weight: 10
+        flat: 33
+
+  leech_all_damage:
+    type: LeechConfig
+    damagetype: ALL
+    ranks:
+      1:
+        weight: 25
+        flat: 10
+      2:
+        weight: 10
+        flat: 20
+      3:
+        weight: 5
+        flat: 25
+
+  # flat defense
+  defense_physical_flat:
+    type: DefenseConfig
+    damagetype: PHYSICAL
+    operator: FLAT
+    ranks:
+      1:
+        weight: 200
+        flat: 20
+      2:
+        weight: 100
+        flat: 35
+      3:
+        weight: 50
+        flat: 50
+
+  defense_burn_flat:
+    type: DefenseConfig
+    damagetype: BURN
+    operator: FLAT
+    ranks:
+      1:
+        weight: 200
+        flat: 35
+      2:
+        weight: 100
+        flat: 55
+      3:
+        weight: 50
+        flat: 70
+
+  defense_frost_flat:
+    type: DefenseConfig
+    damagetype: FROST
+    operator: FLAT
+    ranks:
+      1:
+        weight: 200
+        flat: 35
+      2:
+        weight: 100
+        flat: 55
+      3:
+        weight: 50
+        flat: 70
+
+  defense_shock_flat:
+    type: DefenseConfig
+    damagetype: SHOCK
+    operator: FLAT
+    ranks:
+      1:
+        weight: 200
+        flat: 35
+      2:
+        weight: 100
+        flat: 55
+      3:
+        weight: 50
+        flat: 70
+
+  defense_elemental_flat:
+    type: DefenseConfig
+    damagetype: ELEMENTAL
+    operator: FLAT
+    ranks:
+      1:
+        weight: 100
+        flat: 20
+      2:
+        weight: 50
+        flat: 35
+      3:
+        weight: 25
+        flat: 50
+
+  defense_havoc_flat:
+    type: DefenseConfig
+    damagetype: HAVOC
+    operator: FLAT
+    ranks:
+      1:
+        weight: 200
+        flat: 35
+      2:
+        weight: 100
+        flat: 55
+      3:
+        weight: 50
+        flat: 70
+
+  defense_all_flat:
+    type: DefenseConfig
+    damagetype: ALL
+    operator: FLAT
+    ranks:
+      1:
+        weight: 50
+        flat: 15
+      2:
+        weight: 25
+        flat: 30
+      3:
+        weight: 10
+        flat: 40
+
+  # scaler defense
+  defense_physical_scaler:
+    type: DefenseConfig
+    damagetype: PHYSICAL
+    operator: SCALER
+    ranks:
+      1:
+        weight: 100
+        flat: 25
+      2:
+        weight: 50
+        flat: 40
+      3:
+        weight: 25
+        flat: 50
+
+  defense_elemental_scaler:
+    type: DefenseConfig
+    damagetype: ELEMENTAL
+    operator: SCALER
+    ranks:
+      1:
+        weight: 100
+        flat: 25
+      2:
+        weight: 50
+        flat: 40
+      3:
+        weight: 25
+        flat: 50
+
+  defense_all_scaler:
+    type: DefenseConfig
+    damagetype: ALL
+    operator: SCALER
+    ranks:
+      1:
+        weight: 50
+        flat: 15
+      2:
+        weight: 25
+        flat: 25
+      3:
+        weight: 10
+        flat: 30
+
+  # maximum damage
+  reduction_physical:
+    type: DamageTakenConfig
+    damagetype: PHYSICAL
+    operator: SCALER
+    ranks:
+      1:
+        weight: 200
+        flat: -5
+      2:
+        weight: 50
+        flat: -7
+      3:
+        weight: 10
+        flat: -10
+
+  reduction_burn:
+    type: DamageTakenConfig
+    damagetype: BURN
+    operator: SCALER
+    ranks:
+      1:
+        weight: 200
+        flat: -5
+      2:
+        weight: 100
+        flat: -7
+      3:
+        weight: 50
+        flat: -10
+
+  reduction_frost:
+    type: DamageTakenConfig
+    damagetype: FROST
+    operator: SCALER
+    ranks:
+      1:
+        weight: 200
+        flat: -5
+      2:
+        weight: 100
+        flat: -7
+      3:
+        weight: 50
+        flat: -10
+
+  reduction_shock:
+    type: DamageTakenConfig
+    damagetype: SHOCK
+    operator: SCALER
+    ranks:
+      1:
+        weight: 200
+        flat: -5
+      2:
+        weight: 100
+        flat: -7
+      3:
+        weight: 50
+        flat: -10
+
+  reduction_elemental:
+    type: DamageTakenConfig
+    damagetype: ELEMENTAL
+    operator: SCALER
+    ranks:
+      1:
+        weight: 200
+        flat: -2
+      2:
+        weight: 50
+        flat: -3
+      3:
+        weight: 10
+        flat: -5
+
+  reduction_havoc:
+    type: DamageTakenConfig
+    damagetype: HAVOC
+    operator: SCALER
+    ranks:
+      1:
+        weight: 200
+        flat: -2
+      2:
+        weight: 100
+        flat: -3
+      3:
+        weight: 50
+        flat: -5
+
+  # permanent status
+  status_permanent_fire_immunity:
+  status_permanent_regeneration:
+  status_permanent_strength:
+  status_permanent_infested:
+  status_permanent_oozing:
+  status_permanent_weaving:
+
+  # status inflictions
+  status_inflict_blindness:
+  status_inflict_darkness:
+  status_inflict_mining_fatigue:
+  status_inflict_poison:
+  status_inflict_slow:
+  status_inflict_weakness:
+  status_inflict_wither:
+
+  # status aura
+
+  # spell triggers
+
+  # misc
+  luck_double_damage:
+    type: LuckConfig
+    lucktype: DOUBLE_DAMAGE
+    ranks:
+      1:
+        weight: 50
+        flat: 5.0
+      2:
+        weight: 25
+        flat: 7.5
+      3:
+        weight: 10
+        flat: 10.0
+
+  luck_damage_lucky:
+    type: LuckConfig
+    lucktype: LUCKY_DAMAGE
+    ranks:
+      3:
+        weight: 10
+
+  reflect_damage_physical:
+    type: ReflectDamageConfig
+    damagetype: PHYSICAL
+    ranks:
+      1:
+        weight: 50
+        flat: 15
+      2:
+        weight: 25
+        flat: 30
+      3:
+        weight: 10
+        flat: 40
+
+  reflect_damage_elemental:
+    type: ReflectDamageConfig
+    damagetype: ELEMENTAL
+    ranks:
+      1:
+        weight: 50
+        flat: 15
+      2:
+        weight: 25
+        flat: 30
+      3:
+        weight: 10
+        flat: 40
+
+  reflect_damage_all:
+    type: ReflectDamageConfig
+    damagetype: ALL
+    ranks:
+      1:
+        weight: 25
+        flat: 10
+      2:
+        weight: 10
+        flat: 15
+      3:
+        weight: 5
+        flat: 25

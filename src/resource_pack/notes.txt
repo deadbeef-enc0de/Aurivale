@@ -1,0 +1,8 @@
+It is best to look at the vanilla resource pack that is in the minecraft jar under assets to see what it looks like as well
+
+Informaton about changing the texture of armor models
+https://www.reddit.com/r/mcresourcepack/comments/1hbmbv4/1214_custom_armor_model_help/
+tldr: minecraft/equipment has the json files for
+
+Can't change the model but I can at least change the texture, so there's that
+Not sure if it can be changed based on customModelData

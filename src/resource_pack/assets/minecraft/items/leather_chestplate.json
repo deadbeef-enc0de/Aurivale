@@ -1,0 +1,27 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "entries": [
+      { "threshold" : 20001, "model": { "type": "model", "model": "rpg:unique/mage_vestments", "tints": [ { "type": "dye", "default":  -6265536 } ] } }
+    ],
+    "fallback": {
+      "type": "select",
+      "property": "trim_material",
+      "cases": [
+        { "when": "quartz","model": { "type": "model", "model": "minecraft:item/leather_chestplate_quartz_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "iron","model": { "type": "model", "model": "minecraft:item/leather_chestplate_iron_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "netherite","model": { "type": "model", "model": "minecraft:item/leather_chestplate_netherite_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "redstone","model": { "type": "model", "model": "minecraft:item/leather_chestplate_redstone_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "copper","model": { "type": "model", "model": "minecraft:item/leather_chestplate_copper_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "gold","model": { "type": "model", "model": "minecraft:item/leather_chestplate_gold_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "emerald","model": { "type": "model", "model": "minecraft:item/leather_chestplate_emerald_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "diamond","model": { "type": "model", "model": "minecraft:item/leather_chestplate_diamond_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "lapis","model": { "type": "model", "model": "minecraft:item/leather_chestplate_lapis_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "amethyst","model": { "type": "model", "model": "minecraft:item/leather_chestplate_amethyst_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] },
+        { "when": "resin","model": { "type": "model", "model": "minecraft:item/leather_chestplate_resin_trim" }, "tints": [ { "type": "dye", "default":  -6265536 } ] }
+      ],
+      "fallback": { "type": "model", "model": "minecraft:item/leather_chestplate", "tints": [ { "type": "dye", "default":  -6265536 } ] }
+    }
+  }
+}

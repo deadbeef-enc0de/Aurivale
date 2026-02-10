@@ -1,0 +1,3 @@
+# gamerule overrides that apply to all worlds, even if dynamically created
+keepInventory: true
+locatorBar: false

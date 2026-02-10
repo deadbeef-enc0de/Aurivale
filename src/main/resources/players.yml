@@ -1,0 +1,8 @@
+# max distance chat will travel on the server in chunks
+max_chat_range: 1200
+# speed in ticks/chunk chat moves
+chat_chunk_tick: 1
+# default is 18000 seconds or 5 hours
+aggro_protection: 18000
+# default is 1200 seconds or 20 minutes
+respawn_aggro_protection: 1200

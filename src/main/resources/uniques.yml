@@ -1,0 +1,931 @@
+############## SHIELDS ##############
+# Shields
+perfect_reflection:
+  displayname: Perfect Reflection
+  modeldata: 20001
+  craftable: shield
+  modifiers:
+    no_base_modifiers:
+      template: CleanBaseTemplate
+    physical_reflection:
+      template: ReflectDamageTemplate
+      damagetype: PHYSICAL
+      flat: 100
+    elemental_reflection:
+      template: ReflectDamageTemplate
+      damagetype: ELEMENTAL
+      flat: 100
+
+############### HELMETS ###############
+# Leather Helmets
+skullcap:
+  displayname: Skullcap
+  modeldata: 20001
+  craftable: leather_helmet
+  modifiers:
+    elemental_resistances:
+      template: DefenseTemplate
+      damagetype: ELEMENTAL
+      operator: FLAT
+      precision: 1
+      flat: 20
+      steps: 11
+    drop_luck:
+      template: LuckTemplate
+      lucktype: DROP_LUCK
+      precision: 1
+      flat: 40
+      steps: 11
+    movement_speed:
+      template: AttributeTemplate
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: 5
+
+helm_of_the_stalker:
+  displayname: Helm of the Stalker
+  modeldata: 20002
+  craftable: leather_helmet
+  modifiers:
+    invisibility:
+      template: StatusTemplate
+      effecttype: INVISIBILITY
+      statustype: PERMANENT
+      level:
+        flat: 1
+    night_vision:
+      template: StatusTemplate
+      effecttype: NIGHT_VISION
+      statustype: PERMANENT
+      level:
+        flat: 1
+    movement_speed_increase:
+      template: AttributeTemplate
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      precision: 1
+      flat: 5
+      steps: 6
+      
+# Golden Helmets
+gamblers_luck:
+  displayname: Gambler's Luck
+  modeldata: 20001
+  craftable: golden_helmet
+  modifiers:
+    max_health_flat:
+      template: AttributeTemplate
+      attribute: MAX_HEALTH
+      operator: FLAT
+      precision: 1
+      flat: 0
+      steps: 11
+    burn_resistance:
+      template: DefenseTemplate
+      damagetype: BURN
+      operator: FLAT
+      precision: 1
+      flat: -50
+      steps: 101
+    frost_resistance:
+      template: DefenseTemplate
+      damagetype: FROST
+      operator: FLAT
+      precision: 1
+      flat: -50
+      steps: 101
+    shock_resistance:
+      template: DefenseTemplate
+      damagetype: SHOCK
+      operator: FLAT
+      precision: 1
+      flat: -50
+      steps: 101
+    drop_luck:
+      template: LuckTemplate
+      lucktype: DROP_LUCK
+      precision: 1
+      flat: -50
+      steps: 101
+
+# Chainmail Helmets
+
+# Copper Helmets
+
+# Iron Helmets
+
+# Diamond Helmets
+
+# Netherite Helmets
+
+############## CHESTPLATES ##############
+# Leather Chestplates
+skin_of_the_chameleon:
+  displayname: Skin of the Chameleon
+  modeldata: 20001
+  craftable: leather_chestplate
+  modifiers:
+    armor_flat:
+      template: DefenseTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 2
+      steps: 6
+    movement_speed_increase:
+      template: AttributeTemplate
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      precision: 1
+      flat: 5
+      steps: 6
+    elemental_resistance:
+      template: DefenseTemplate
+      damagetype: ELEMENTAL
+      operator: FLAT
+      precision: 1
+      flat: 25
+      steps: 11
+    status_invisibility:
+      template: StatusTemplate
+      effecttype: INVISIBILITY
+      statustype: PERMANENT
+      level:
+        flat: 1
+
+# Golden Chestplates
+
+# Chainmail Chestplates
+rogues_tunic:
+  displayname: Rogue's Tunic
+  modeldata: 20001
+  craftable: chainmail_chestplate
+  modifiers:
+    less_sneaking_speed:
+      template: AttributeTemplate
+      attribute: SNEAKING_SPEED
+      operator: MULTIPLIER
+      flat: -100
+    invisible_sneaking:
+      template: TriggerTemplate
+      triggertype: SNEAKING
+      modifier:
+        template: StatusTemplate
+        effecttype: INVISIBILITY
+        statustype: PERMANENT
+        level:
+          flat: 1
+    faster_sprinting:
+      template: TriggerTemplate
+      triggertype: SPRINTING
+      modifier:
+        template: AttributeTemplate
+        attribute: MOVEMENT_SPEED
+        operator: MULTIPLIER
+        flat: 25
+
+# Copper Chestplates
+
+# Iron Chestplates
+immovable_armor:
+  displayname: Immovable Armor
+  modeldata: 20001
+  craftable: iron_chestplate
+  modifiers:
+    physical_damage_reduction:
+      template: DamageTakenTemplate
+      damagetype: PHYSICAL
+      operator: SCALER
+      flat: -5
+    increased_armor:
+      template: DefenseTemplate
+      damagetype: PHYSICAL
+      operator: SCALER
+      flat: 100
+    decreased_physical_taken:
+      template: DamageTakenTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: -5
+      steps: 3
+    decreased_elemental_resistance:
+      template: DefenseTemplate
+      damagetype: ELEMENTAL
+      operator: FLAT
+      flat: -25
+    decreased_movement_speed:
+      template: AttributeTemplate
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      precision: 1
+      flat: -15
+      steps: 6
+
+# Diamond Chestplates
+
+# Netherite Chestplates
+
+############## LEGGINGS ##############
+# Leather Leggings
+
+# Golden Leggings
+
+# Chainmail Leggines
+
+# Copper Leggings
+
+# Iron Leggings
+
+# Diamond Leggings
+
+# Netherite Leggings
+
+############## BOOTS ##############
+# Leather Boots
+swiftfoot_boots:
+  displayname: Swiftfoot Boots
+  modeldata: 20001
+  craftable: leather_boots
+  modifiers:
+    movement_speed:
+      template: AttributeTemplate
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      precision: 1
+      flat: 40
+      steps: 11
+
+freedom_of_movement:
+  displayname: Freedom of Movement
+  modeldata: 20002
+  craftable: leather_boots
+  modifiers:
+    movement_speed:
+      template: AttributeTemplate
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: 10
+    movement_efficiency:
+      template: AttributeTemplate
+      attribute: MOVEMENT_EFFICIENCY
+      operator: SCALER
+      precision: 1
+      flat: 80
+      steps: 21
+
+# Golden Boots
+
+# Chainmail Boots
+
+# Copper Boots
+
+# Iron Boots
+
+# Diamond Boots
+
+# Netherite Boots
+
+############## ROBES ##############
+# Apprentice Robes
+mage_vestments:
+  displayname: Mage Vestments
+  modeldata: 20001
+  craftable: apprentice_robes
+  modifiers:
+    max_mana_flat:
+      template: ManaTemplate
+      manatype: MAX_MANA
+      operator: FLAT
+      flat: 30
+    mana_regen_scaler:
+      template: ManaTemplate
+      manatype: MANA_REGEN
+      operator: SCALER
+      flat: 100
+    spell_cooldown_scaler:
+      template: CooldownTemplate
+      operator: SCALER
+      flat: 50
+
+############## WANDS ##############
+wand_of_fire_and_ice:
+  displayname: Wand of Fire and Ice
+  modeldata: 20001
+  craftable: wand
+  modifiers:
+    cast_molten_terrain:
+      template: SpellTemplate
+      base: true
+      activation: CAST
+      spelltype: MOLTEN_TERRAIN
+      precision: 1
+      flat: 1
+      steps: 3
+    cast_ice_prison:
+      template: SpellTemplate
+      base: true
+      activation: CAST
+      spelltype: ICE_PRISON
+      precision: 1
+      flat: 1
+      steps: 3
+    mana_regen_scaler:
+      template: ManaTemplate
+      manatype: MANA_REGEN
+      operator: SCALER
+      flat: 100
+
+tribeam:
+  displayname: Tri-Beam
+  modeldata: 20002
+  craftable: wand
+  modifiers:
+    cast_burn_bolt:
+      template: SpellTemplate
+      base: true
+      activation: CAST
+      spelltype: BURN_BOLT
+      precision: 1
+      flat: 1
+      steps: 4
+    cast_frost_bolt:
+      template: SpellTemplate
+      base: true
+      activation: CAST
+      spelltype: FROST_BOLT
+      precision: 1
+      flat: 1
+      steps: 4
+    cast_shock_bolt:
+      template: SpellTemplate
+      base: true
+      activation: CAST
+      spelltype: SHOCK_BOLT
+      precision: 1
+      flat: 1
+      steps: 4
+    mana_max_flat:
+      template: ManaTemplate
+      manatype: MAX_MANA
+      operator: FLAT
+      flat: 15
+
+############## SWORDS ##############
+# Wooden Swords
+
+# Golden Swords
+
+# Stone Swords
+
+# Copper Swords
+
+# Iron Swords
+sword_of_the_ancients:
+  displayname: Sword of the Ancients
+  modeldata: 20001
+  craftable: iron_sword
+  modifiers:
+    havoc_damage:
+      template: DamageRangeTemplate
+      damagetype: HAVOC
+      minimum:
+        precision: 1
+        flat: 5
+        steps: 6
+      maximum:
+        precision: 1
+        flat: 15
+        steps: 6
+    physical_to_havoc_conversion:
+      template: DamageConversionTemplate
+      conversion: DAMAGE
+      fromtype: PHYSICAL
+      totype: HAVOC
+      flat: 35
+    deal_no_physical_damage:
+      template: DamageTemplate
+      damagetype: PHYSICAL
+      operator: MULTIPLIER
+      flat: -100
+    physical_damage_reduction:
+      template: DamageTakenTemplate
+      damagetype: PHYSICAL
+      operator: SCALER
+      flat: -10
+
+anathame:
+  displayname: Anathame
+  modeldata: 20002
+  craftable: iron_sword
+  modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 4
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 7
+    physical_to_havoc:
+      template: DamageConversionTemplate
+      conversion: DAMAGE
+      fromtype: PHYSICAL
+      totype: HAVOC
+      precision: 1
+      flat: 50
+      steps: 51
+    physical_as_extra_havoc:
+      template: DamageConversionTemplate
+      conversion: EXTRA_DAMAGE
+      fromtype: PHYSICAL
+      totype: HAVOC
+      precision: 1
+      flat: 15
+      steps: 6
+    wither_infliction:
+      template: StatusTemplate
+      effecttype: WITHER
+      statustype: TEMPORARY
+      level:
+        flat: 2
+      ticks:
+        flat: 40
+
+# Diamond Swords
+anaris:
+  displayname: Anaris
+  modeldata: 20001
+  craftable: diamond_sword
+  modifiers:
+    physical_to_magic:
+      template: DamageConversionTemplate
+      conversion: DAMAGE
+      fromtype: PHYSICAL
+      totype: MAGIC
+      flat: 100
+    magic_leech:
+      template: LeechTemplate
+      damagetype: MAGIC
+      flat: 25
+    hit_ground_slam:
+      template: SpellTemplate
+      activation: ON_MELEE_HIT
+      spelltype: GROUND_SLAM
+      flat: 1
+    area_of_effect:
+      template: AreaTemplate
+      operator: SCALER
+      flat: 100
+
+# Netherite Swords
+sword_of_the_wither_king:
+  displayname: Sword of the Wither King
+  modeldata: 20001
+  craftable: netherite_sword
+  modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 10
+        steps: 11
+      maximum:
+        precision: 1
+        flat: 30
+        steps: 11
+    physical_life_leech:
+      template: LeechTemplate
+      damagetype: PHYSICAL
+      flat: 50
+    wither_infliction:
+      template: StatusTemplate
+      effecttype: WITHER
+      statustype: TEMPORARY
+      level:
+        flat: 3
+      ticks:
+        precision: 10
+        flat: 100
+        steps: 11
+    wither_affliction:
+      template: StatusTemplate
+      effecttype: WITHER
+      statustype: PERMANENT
+      level:
+        flat: 1
+
+############## BATTLEAXES ##############
+# Wooden Battleaxes
+
+# Golden Battleaxes
+shield_breaker:
+  displayname: Shield Breaker
+  modeldata: 20001
+  craftable: golden_battleaxe
+  modifiers:
+    critical_chance_increase:
+      template: CriticalTemplate
+      criticaltype: CRITICAL_CHANCE
+      operator: SCALER
+      precision: 1
+      flat: 800
+      steps: 201
+    attack_speed_decrease:
+      template: AttributeTemplate
+      attribute: ATTACK_SPEED
+      operator: SCALER
+      precision: 1
+      flat: -50
+      steps: 11
+    physical_to_magic_conversion:
+      template: DamageConversionTemplate
+      conversion: DAMAGE
+      fromtype: PHYSICAL
+      totype: MAGIC
+      flat: 100
+    unbreaking:
+      template: EnchantmentTemplate
+      enchantment: unbreaking
+      flat: 3
+
+# Stone Battleaxes
+the_stone_hammer:
+  displayname: The Stone Hammer
+  modeldata: 20001
+  craftable: stone_battleaxe
+  modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 2
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 5
+        steps: 3
+    inflict_slow:
+      template: StatusTemplate
+      effecttype: SLOW
+      statustype: TEMPORARY
+      level:
+        flat: 2
+      ticks:
+        precision: 1
+        flat: 40
+        steps: 21
+    inflict_mining_fatigue:
+      template: StatusTemplate
+      effecttype: MINING_FATIGUE
+      statustype: TEMPORARY
+      level:
+        flat: 2
+      ticks:
+        precision: 1
+        flat: 40
+        steps: 21
+    attack_speed:
+      template: AttributeTemplate
+      attribute: ATTACK_SPEED
+      operator: SCALER
+      flat: -25
+
+# Copper Battleaxes
+
+# Iron Battleaxes
+
+# Diamond Battleaxes
+
+# Netherite Battleaxes
+mjolner:
+  displayname: Mjölner
+  modeldata: 20001
+  craftable: netherite_battleaxe
+  modifiers:
+    physical_to_shock_conversion:
+      template: DamageConversionTemplate
+      conversion: DAMAGE
+      fromtype: PHYSICAL
+      totype: SHOCK
+      flat: 100
+    lightning_damage:
+      template: DamageRangeTemplate
+      damagetype: SHOCK
+      minimum:
+        flat: 1
+      maximum:
+        precision: 1
+        flat: 35
+        steps: 11
+    call_lightning:
+      template: SpellTemplate
+      activation: ON_MELEE_HIT
+      spelltype: CALL_LIGHTNING
+      flat: 2
+
+############## BOWS ##############
+# Bows
+assassination_bow:
+  displayname: Assassination Bow
+  modeldata: 20001
+  craftable: bow
+  modifiers:
+    critical_chance:
+      template: CriticalTemplate
+      criticaltype: CRITICAL_CHANCE
+      operator: SCALER
+      flat: 300
+    critical_damage:
+      template: CriticalTemplate
+      criticaltype: CRITICAL_DAMAGE
+      operator: FLAT
+      flat: 150
+    non_critical_damage:
+      template: DamageCancelTemplate
+      canceltype: NON_CRIT
+      flat: 100
+    glowing_infliction:
+      template: StatusTemplate
+      effecttype: GLOWING
+      statustype: TEMPORARY
+      level:
+        flat: 1
+      ticks:
+        flat: 2400
+
+laser_shot:
+  displayname: Laser Shot
+  modeldata: 20002
+  craftable: bow
+  modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 2
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 5
+        steps: 2
+    straight_shot:
+      template: EnchantmentTemplate
+      enchantment: straight_shot
+      flat: 1
+    arrow_speed:
+      template: ProjectileSpeedTemplate
+      operator: MULTIPLIER
+      projectile: ARROW
+      flat: 25
+
+# Crossbows
+arrow_rider:
+  displayname: Arrow Rider
+  modeldata: 20001
+  craftable: crossbow
+  modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 3
+        steps: 4
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 7
+    arrow_speed:
+      template: ProjectileSpeedTemplate
+      operator: SCALER
+      projectile: ARROW
+      flat: -15
+    quick_charge:
+      template: EnchantmentTemplate
+      enchantment: quick_charge
+      flat: 4
+    projectile_rider_enchant:
+      template: EnchantmentTemplate
+      enchantment: projectile_rider
+      flat: 1
+
+sniper:
+  displayname: Sniper
+  modeldata: 20002
+  craftable: crossbow
+  modifiers:
+    critical_chance:
+      template: CriticalTemplate
+      criticaltype: CRITICAL_CHANCE
+      operator: SCALER
+      precision: 1
+      flat: 400
+      steps: 101
+    damage_while_sneaking:
+      template: TriggerTemplate
+      triggertype: SNEAKING
+      modifier:
+        template: DamageTemplate
+        damagetype: ALL
+        operator: SCALER
+        precision: 1
+        flat: 90
+        steps: 11
+    glowing_after_shot:
+      template: TriggerTemplate
+      triggertype: BOW_SHOT
+      effect: true
+      modifier:
+        template: StatusTemplate
+        effecttype: GLOWING
+        statustype: TEMPORARY
+        level:
+          flat: 1
+        ticks:
+          flat: 100
+
+############## PICKAXES ##############
+# Wooden Pickaxes
+trash_cleaner:
+  displayname: Trash Cleaner
+  modeldata: 20001
+  craftable: wooden_pickaxe
+  modifiers:
+    enchantment_unbreaking:
+      template: EnchantmentTemplate
+      enchantment: unbreaking
+      flat: 10
+    enchantment_efficiency:
+      template: EnchantmentTemplate
+      enchantment: efficiency
+      flat: 5
+    enchantment_effect_area:
+      template: EnchantmentTemplate
+      enchantment: effect_area
+      flat: 3
+
+# Golden Pickaxes
+
+# Stone Pickaxes
+
+# Copper Pickaxes
+
+# Iron Pickaxes
+
+# Diamond Pickaxes
+heavy_pickaxe:
+  displayname: Heavy Pickaxe
+  modeldata: 20001
+  craftable: diamond_pickaxe
+  modifiers:
+    efficiency_enchant:
+      template: EnchantmentTemplate
+      enchantment: efficiency
+      flat: 7
+    slow_afflication:
+      template: StatusTemplate
+      effecttype: SLOW
+      statustype: PERMANENT
+      level:
+        flat: 3
+
+# Netherite Pickaxes
+instant_furnace:
+  displayname: Instant Furnace
+  modeldata: 20001
+  craftable: netherite_pickaxe
+  modifiers:
+    smelting_enchant:
+      template: EnchantmentTemplate
+      enchantment: smelting
+      flat: 3
+    fire_immunity:
+      template: StatusTemplate
+      effecttype: FIRE_IMMUNITY
+      statustype: PERMANENT
+      level:
+        flat: 1
+
+############## SHOVELS ##############
+# Wooden Shovels
+
+# Golden Shovels
+
+# Stone Shovels
+
+# Copper Shovels
+
+# Iron Shovels
+
+# Diamond Shovels
+
+# Netherite Shovels
+
+############## AXES ##############
+# Wooden Axes
+
+# Golden Axes
+
+# Stone Axes
+
+# Copper Axes
+
+# Iron Axes
+the_lumberjack:
+  displayname: The Lumberjack
+  modeldata: 20001
+  craftable: iron_axe
+  modifiers:
+    efficiency_enchant:
+      template: EnchantmentTemplate
+      enchantment: efficiency
+      flat: 1
+    unbreaking_enchant:
+      template: EnchantmentTemplate
+      enchantment: unbreaking
+      flat: 4
+    tree_Feller_enchant:
+      template: EnchantmentTemplate
+      enchantment: tree_feller
+      flat: 1
+
+# Diamond Axes
+
+# Netherite Axes
+
+############## HOES ##############
+# Wooden Hoes
+
+# Golden Hoes
+
+# Stone Hoes
+
+# Copper Hoes
+
+# Iron Hoes
+
+# Diamond Hoes
+
+# Netherite Hoes
+pleasant_gardening:
+  displayname: Pleasant Gardening
+  modeldata: 20001
+  craftable: netherite_hoe
+  modifiers:
+    effect_area_enchant:
+      template: EnchantmentTemplate
+      enchantment: effect_area
+      flat: 3
+
+subversion:
+  displayname: Subversion
+  modeldata: 20002
+  craftable: netherite_hoe
+  modifiers: 
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 10
+        steps: 4
+      maximum:
+        precision: 1
+        flat: 15
+        steps: 6
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      precision: 0.05
+      flat: 4.5
+      steps: 21
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      precision: 0.005
+      flat: 0.595
+      steps: 13
+    physical_as_extra_havoc:
+      template: DamageConversionTemplate
+      conversion: EXTRA_DAMAGE
+      fromtype: PHYSICAL
+      totype: HAVOC
+      precision: 1
+      flat: 15
+      steps: 6
+    unbreaking:
+      template: EnchantmentTemplate
+      enchantment: unbreaking
+      flat: 10

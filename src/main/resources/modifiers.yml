@@ -1,0 +1,3607 @@
+##### WEAPON DAMAGE
+damage_range_physical:
+  type: DamageRangeConfig
+  name: +X - Y Physical Damage
+  slot: PREFIX
+  tags:
+    - attack
+    - physical
+  damagetype: PHYSICAL
+  ranks:
+    1:
+      weight: 100
+      minimum:
+        flat: 1
+      maximum:
+        precision: 1
+        flat: 2
+        steps: 2
+    2:
+      weight: 80
+      minimum:
+        flat: 2
+      maximum:
+        precision: 1
+        flat: 3
+        steps: 2
+    3:
+      weight: 25
+      minimum:
+        flat: 3
+      maximum:
+        precision: 1
+        flat: 4
+        steps: 3
+    4:
+      weight: 10
+      minimum:
+        precision: 1
+        flat: 4
+        steps: 2
+      maximum:
+        flat: 6
+damage_range_burn:
+  type: DamageRangeConfig
+  name: +X - Y Burn Damage
+  slot: PREFIX
+  tags:
+    - attack
+    - burn
+  damagetype: BURN
+  ranks:
+    1:
+      weight: 100
+      minimum:
+        precision: 1
+        flat: 2
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 7
+        steps: 2
+    2:
+      weight: 80
+      minimum:
+        precision: 1
+        flat: 4
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 2
+    3:
+      weight: 25
+      minimum:
+        precision: 1
+        flat: 7
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 3
+    4:
+      weight: 10
+      minimum:
+        precision: 1
+        flat: 9
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 13
+        steps: 2
+damage_range_frost:
+  type: DamageRangeConfig
+  name: +X - Y Frost Damage
+  slot: PREFIX
+  tags:
+    - attack
+    - frost
+  damagetype: FROST
+  ranks:
+    1:
+      weight: 100
+      minimum:
+        precision: 1
+        flat: 3
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 6
+        steps: 2
+    2:
+      weight: 80
+      minimum:
+        precision: 1
+        flat: 5
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 2
+    3:
+      weight: 25
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 2
+    4:
+      weight: 10
+      minimum:
+        precision: 1
+        flat: 10
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 12
+        steps: 2
+damage_range_shock:
+  type: DamageRangeConfig
+  name: +X - Y Shock Damage
+  slot: PREFIX
+  tags:
+    - attack
+    - shock
+  damagetype: SHOCK
+  ranks:
+    1:
+      weight: 100
+      minimum:
+        flat: 1
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 3
+    2:
+      weight: 80
+      minimum:
+        flat: 3
+      maximum:
+        precision: 1
+        flat: 10
+        steps: 3
+    3:
+      weight: 25
+      minimum:
+        flat: 5
+      maximum:
+        precision: 1
+        flat: 14
+        steps: 3
+    4:
+      weight: 10
+      minimum:
+        flat: 7
+      maximum:
+        precision: 1
+        flat: 15
+        steps: 3
+damage_range_havoc:
+  type: DamageRangeConfig
+  name: +X - Y Havoc Damage
+  slot: PREFIX
+  tags:
+    - attack
+    - havoc
+  damagetype: HAVOC
+  ranks:
+    1:
+      weight: 50
+      minimum:
+        precision: 1
+        flat: 1
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 6
+        steps: 2
+    2:
+      weight: 40
+      minimum:
+        precision: 1
+        flat: 3
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 2
+    3:
+      weight: 25
+      minimum:
+        precision: 1
+        flat: 6
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 10
+        steps: 3
+    4:
+      weight: 10
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 12
+        steps: 2
+damage_scaler_physical:
+  type: DamageConfig
+  name: +X% Increased Physical Damage
+  slot: PREFIX
+  tags:
+    - attack
+    - physical
+  damagetype: PHYSICAL
+  operator: SCALER
+  ranks:
+    1:
+      weight: 50
+      precision: 1
+      flat: 11
+      steps: 5
+    2:
+      weight: 40
+      precision: 1
+      flat: 16
+      steps: 5
+    3:
+      weight: 10
+      precision: 1
+      flat: 21
+      steps: 5
+    4:
+      weight: 5
+      precision: 1
+      flat: 26
+      steps: 5
+
+##### WEAPON INFLICTIONS
+status_temporary_weapon_fatigue:
+  type: StatusConfig
+  name: Inflict Mining Fatigue (Weapon)
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    2:
+      weight: 60
+      effecttype: MINING_FATIGUE
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 100
+        steps: 9
+    3:
+      weight: 30
+      effecttype: MINING_FATIGUE
+      level:
+        flat: 2
+      ticks:
+        precision: 5
+        flat: 100
+        steps: 9
+    4:
+      weight: 15
+      effecttype: MINING_FATIGUE
+      level:
+        flat: 3
+      ticks:
+        precision: 5
+        flat: 100
+        steps: 9
+status_temporary_weapon_glowing:
+  type: StatusConfig
+  name: Inflict Glowing (Weapon)
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 100
+      effecttype: GLOWING
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 40
+        steps: 9
+    2:
+      weight: 80
+      effecttype: GLOWING
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 100
+        steps: 9
+    3:
+      weight: 40
+      effecttype: GLOWING
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 160
+        steps: 9
+status_temporary_weapon_poison:
+  type: StatusConfig
+  name: Inflict Poison (Weapon)
+  slot: PREFIX
+  tags:
+    - status
+    - attack
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 80
+      effecttype: POISON
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 160
+        steps: 9
+    2:
+      weight: 50
+      effecttype: POISON
+      level:
+        flat: 2
+      ticks:
+        precision: 5
+        flat: 120
+        steps: 9
+    3:
+      weight: 25
+      effecttype: POISON
+      level:
+        flat: 3
+      ticks:
+        precision: 5
+        flat: 80
+        steps: 9
+status_temporary_weapon_slowness:
+  type: StatusConfig
+  name: Inflict Slow (Weapon)
+  slot: PREFIX
+  tags:
+    - status
+    - speed
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 40
+      effecttype: SLOW
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 120
+        steps: 9
+    2:
+      weight: 40
+      effecttype: SLOW
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 160
+        steps: 9
+    3:
+      weight: 30
+      effecttype: SLOW
+      level:
+        flat: 2
+      ticks:
+        precision: 5
+        flat: 120
+        steps: 9
+    4:
+      weight: 10
+      effecttype: SLOW
+      level:
+        flat: 3
+      ticks:
+        precision: 5
+        flat: 120
+        steps: 9
+status_temporary_weapon_vision:
+  type: StatusConfig
+  name: Inflict Vision (Weapon)
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 40
+      effecttype: DARKNESS
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 100
+        steps: 9
+    2:
+      weight: 20
+      effecttype: DARKNESS
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 160
+        steps: 9
+    3:
+      weight: 10
+      effecttype: BLINDNESS
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 100
+        steps: 9
+status_temporary_weapon_weakness:
+  type: StatusConfig
+  name: Inflict Weakness (Weapon)
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 40
+      effecttype: WEAKNESS
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 100
+        steps: 9
+    2:
+      weight: 20
+      effecttype: WEAKNESS
+      level:
+        flat: 2
+      ticks:
+        precision: 5
+        flat: 60
+        steps: 9
+    3:
+      weight: 10
+      effecttype: WEAKNESS
+      level:
+        flat: 3
+      ticks:
+        precision: 5
+        flat: 40
+        steps: 9
+status_temporary_weapon_wither:
+  type: StatusConfig
+  name: Inflict Wither (Weapon)
+  slot: PREFIX
+  tags:
+    - status
+    - attack
+  statustype: TEMPORARY
+  ranks:
+    2:
+      weight: 20
+      effecttype: WITHER
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 160
+        steps: 9
+    3:
+      weight: 10
+      effecttype: WITHER
+      level:
+        flat: 2
+      ticks:
+        precision: 5
+        flat: 120
+        steps: 9
+    4:
+      weight: 5
+      effecttype: WITHER
+      level:
+        flat: 3
+      ticks:
+        precision: 5
+        flat: 80
+        steps: 9
+
+##### OFFHAND DAMAGE
+damage_range_physical_offhand:
+  type: DamageRangeConfig
+  name: +X - Y Physical Damage (Offhand)
+  slot: SUFFIX
+  tags:
+    - attack
+    - physical
+  damagetype: PHYSICAL
+  ranks:
+    1:
+      weight: 100
+      minimum:
+        flat: 1
+      maximum:
+        precision: 1
+        flat: 2
+        steps: 2
+    3:
+      weight: 80
+      minimum:
+        flat: 2
+      maximum:
+        precision: 1
+        flat: 3
+        steps: 2
+damage_range_burn_offhand:
+  type: DamageRangeConfig
+  name: +X - Y Burn Damage (Offhand)
+  slot: SUFFIX
+  tags:
+    - attack
+    - burn
+  damagetype: BURN
+  ranks:
+    1:
+      weight: 100
+      minimum:
+        precision: 1
+        flat: 2
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 7
+        steps: 2
+    3:
+      weight: 80
+      minimum:
+        precision: 1
+        flat: 4
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 10
+damage_range_frost_offhand:
+  type: DamageRangeConfig
+  name: +X - Y Frost Damage (Offhand)
+  slot: SUFFIX
+  tags:
+    - attack
+    - frost
+  damagetype: FROST
+  ranks:
+    1:
+      weight: 100
+      minimum:
+        precision: 1
+        flat: 3
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 6
+        steps: 2
+    3:
+      weight: 80
+      minimum:
+        precision: 1
+        flat: 5
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 2
+damage_range_shock_offhand:
+  type: DamageRangeConfig
+  name: +X - Y Shock Damage (Offhand)
+  slot: SUFFIX
+  tags:
+    - attack
+    - shock
+  damagetype: SHOCK
+  ranks:
+    1:
+      weight: 100
+      minimum:
+        flat: 1
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 3
+    3:
+      weight: 80
+      minimum:
+        flat: 3
+      maximum:
+        precision: 1
+        flat: 10
+        steps: 3
+damage_range_havoc_offhand:
+  type: DamageRangeConfig
+  name: +X - Y Havoc Damage (Offhand)
+  slot: SUFFIX
+  tags:
+    - attack
+    - havoc
+  damagetype: HAVOC
+  ranks:
+    1:
+      weight: 50
+      minimum:
+        precision: 1
+        flat: 1
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 6
+        steps: 2
+    3:
+      weight: 40
+      minimum:
+        precision: 1
+        flat: 3
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 2
+damage_scaler_physical_offhand:
+  type: DamageConfig
+  name: +X% Increased Physical Damage (Offhand)
+  slot: SUFFIX
+  tags:
+    - attack
+    - physical
+  damagetype: PHYSICAL
+  operator: SCALER
+  ranks:
+    1:
+      weight: 50
+      precision: 1
+      flat: 11
+      steps: 5
+    3:
+      weight: 40
+      precision: 1
+      flat: 16
+      steps: 5
+
+##### ARMOR DEFENSE
+defense_flat_physical:
+  type: DefenseConfig
+  name: X Physical Defense
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: PHYSICAL
+  operator: FLAT
+  ranks:
+    1:
+      weight: 250
+      precision: 1
+      flat: 1
+      steps: 3
+    2:
+      weight: 150
+      precision: 1
+      flat: 2
+      steps: 3
+    3:
+      weight: 50
+      precision: 1
+      flat: 4
+      steps: 2
+    4:
+      weight: 20
+      precision: 1
+      flat: 7
+      steps: 2
+defense_flat_burn:
+  type: DefenseConfig
+  name: X Burn Defense
+  slot: SUFFIX
+  tags:
+    - defense
+    - burn
+  damagetype: BURN
+  operator: FLAT
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 5
+      steps: 8
+    2:
+      weight: 90
+      precision: 1
+      flat: 13
+      steps: 13
+    3:
+      weight: 70
+      precision: 1
+      flat: 26
+      steps: 9
+    4:
+      weight: 40
+      precision: 1
+      flat: 35
+      steps: 6
+defense_flat_frost:
+  type: DefenseConfig
+  name: X Frost Defense
+  slot: SUFFIX
+  tags:
+    - defense
+    - frost
+  damagetype: FROST
+  operator: FLAT
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 5
+      steps: 8
+    2:
+      weight: 90
+      precision: 1
+      flat: 13
+      steps: 13
+    3:
+      weight: 70
+      precision: 1
+      flat: 26
+      steps: 9
+    4:
+      weight: 40
+      precision: 1
+      flat: 35
+      steps: 6
+defense_flat_shock:
+  type: DefenseConfig
+  name: X Shock Defense
+  slot: SUFFIX
+  tags:
+    - defense
+    - shock
+  damagetype: SHOCK
+  operator: FLAT
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 5
+      steps: 8
+    2:
+      weight: 90
+      precision: 1
+      flat: 13
+      steps: 13
+    3:
+      weight: 70
+      precision: 1
+      flat: 26
+      steps: 9
+    4:
+      weight: 40
+      precision: 1
+      flat: 35
+      steps: 6
+defense_flat_elemental:
+  type: DefenseConfig
+  name: X Elemental Defense
+  slot: SUFFIX
+  tags:
+    - defense
+    - burn
+    - frost
+    - shock
+  damagetype: ELEMENTAL
+  operator: FLAT
+  ranks:
+    1:
+      weight: 80
+      precision: 1
+      flat: 1
+      steps: 4
+    2:
+      weight: 60
+      precision: 1
+      flat: 5
+      steps: 4
+    3:
+      weight: 20
+      precision: 1
+      flat: 9
+      steps: 3
+    4:
+      weight: 5
+      precision: 1
+      flat: 12
+      steps: 2
+defense_flat_havoc:
+  type: DefenseConfig
+  name: X Havoc Defense
+  slot: SUFFIX
+  tags:
+    - defense
+    - havoc
+  damagetype: HAVOC
+  operator: FLAT
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 5
+      steps: 8
+    2:
+      weight: 90
+      precision: 1
+      flat: 13
+      steps: 13
+    3:
+      weight: 70
+      precision: 1
+      flat: 26
+      steps: 9
+    4:
+      weight: 40
+      precision: 1
+      flat: 35
+      steps: 6
+defense_scaler_physical:
+  type: DefenseConfig
+  name: X% Increased Physical Defense
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: PHYSICAL
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 3
+      steps: 3
+    2:
+      weight: 50
+      precision: 1
+      flat: 6
+      steps: 3
+    4:
+      weight: 10
+      precision: 1
+      flat: 9
+      steps: 2
+defense_scaler_elemental:
+  type: DefenseConfig
+  name: X% Increased Elemental Defense
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: ELEMENTAL
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 3
+      steps: 3
+    2:
+      weight: 50
+      precision: 1
+      flat: 6
+      steps: 3
+    4:
+      weight: 10
+      precision: 1
+      flat: 9
+      steps: 2
+damage_reduction_physical:
+  type: DamageTakenConfig
+  name: X% Increased Physical Reduction
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: PHYSICAL
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: -3
+      steps: 3
+    2:
+      weight: 70
+      precision: 1
+      flat: -5
+      steps: 2
+    3:
+      weight: 30
+      flat: -6
+
+##### SHIELD DEFENSE
+block_damage_scalar:
+  type: BlockDamageConfig
+  name: X% Increased Blocked Damage
+  slot: PREFIX
+  tags:
+    - defense
+  operator: SCALER
+  ranks:
+    1:
+      weight: 75
+      precision: 1
+      flat: 11
+      steps: 15
+    2:
+      weight: 50
+      precision: 1
+      flat: 26
+      steps: 10
+    3:
+      weight: 30
+      precision: 1
+      flat: 36
+      steps: 10
+    4:
+      weight: 15
+      precision: 1
+      flat: 46
+      steps: 5
+damage_reduction_burn:
+  type: DamageTakenConfig
+  name: X% Increased Burn Reduction
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: BURN
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: -5
+      steps: 4
+    2:
+      weight: 70
+      precision: 1
+      flat: -8
+      steps: 3
+    3:
+      weight: 30
+      precision: 1
+      flat: -10
+      steps: 2
+damage_reduction_frost:
+  type: DamageTakenConfig
+  name: X% Increased Frost Reduction
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: FROST
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: -5
+      steps: 4
+    2:
+      weight: 70
+      precision: 1
+      flat: -8
+      steps: 3
+    3:
+      weight: 30
+      precision: 1
+      flat: -10
+      steps: 2
+damage_reduction_shock:
+  type: DamageTakenConfig
+  name: X% Increased Shock Reduction
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: SHOCK
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: -5
+      steps: 4
+    2:
+      weight: 70
+      precision: 1
+      flat: -8
+      steps: 3
+    3:
+      weight: 30
+      precision: 1
+      flat: -10
+      steps: 2
+damage_reduction_elemental:
+  type: DamageTakenConfig
+  name: X% Increased Elemental Reduction
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: SHOCK
+  operator: SCALER
+  ranks:
+    2:
+      weight: 50
+      precision: 1
+      flat: -2
+      steps: 2
+    4:
+      weight: 10
+      flat: -3
+damage_reduction_havoc:
+  type: DamageTakenConfig
+  name: X% Increased Havoc Reduction
+  slot: PREFIX
+  tags:
+    - defense
+    - physical
+  damagetype: HAVOC
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: -3
+      steps: 3
+    2:
+      weight: 70
+      precision: 1
+      flat: -5
+      steps: 2
+    3:
+      weight: 30
+      flat: -6
+
+##### POTION INFLICTIONS
+status_temporary_potion_fatigue:
+  type: StatusConfig
+  name: Inflict Mining Fatigue (Potion)
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    2:
+      weight: 60
+      effecttype: MINING_FATIGUE
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 200
+        steps: 21
+    3:
+      weight: 30
+      effecttype: MINING_FATIGUE
+      level:
+        flat: 2
+      ticks:
+        precision: 10
+        flat: 200
+        steps: 21
+    4:
+      weight: 15
+      effecttype: MINING_FATIGUE
+      level:
+        flat: 3
+      ticks:
+        precision: 10
+        flat: 200
+        steps: 21
+status_temporary_potion_glowing:
+  type: StatusConfig
+  name: Inflict Glowing (Potion)
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 100
+      effecttype: GLOWING
+      level:
+        flat: 1
+      ticks:
+        precision: 20
+        flat: 420
+        steps: 15
+    2:
+      weight: 80
+      effecttype: GLOWING
+      level:
+        flat: 1
+      ticks:
+        precision: 20
+        flat: 720
+        steps: 15
+    3:
+      weight: 40
+      effecttype: GLOWING
+      level:
+        flat: 1
+      ticks:
+        precision: 20
+        flat: 1020
+        steps: 10
+status_temporary_potion_poison:
+  type: StatusConfig
+  name: Inflict Poison (Potion)
+  slot: PREFIX
+  tags:
+    - status
+    - attack
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 60
+      effecttype: POISON
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 320
+        steps: 9
+    2:
+      weight: 40
+      effecttype: POISON
+      level:
+        flat: 2
+      ticks:
+        precision: 10
+        flat: 240
+        steps: 9
+    3:
+      weight: 15
+      effecttype: POISON
+      level:
+        flat: 3
+      ticks:
+        precision: 10
+        flat: 160
+        steps: 9
+status_temporary_potion_slowness:
+  type: StatusConfig
+  name: Inflict Slow (Potion)
+  slot: PREFIX
+  tags:
+    - status
+    - speed
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 80
+      effecttype: SLOW
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 360
+        steps: 13
+    2:
+      weight: 40
+      effecttype: SLOW
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 480
+        steps: 13
+    3:
+      weight: 30
+      effecttype: SLOW
+      level:
+        flat: 2
+      ticks:
+        precision: 10
+        flat: 360
+        steps: 13
+    4:
+      weight: 10
+      effecttype: SLOW
+      level:
+        flat: 3
+      ticks:
+        precision: 10
+        flat: 360
+        steps: 13
+status_temporary_potion_vision:
+  type: StatusConfig
+  name: Inflict Vision (Potion)
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 40
+      effecttype: DARKNESS
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 200
+        steps: 9
+    2:
+      weight: 20
+      effecttype: DARKNESS
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 320
+        steps: 9
+    3:
+      weight: 10
+      effecttype: BLINDNESS
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 140
+        steps: 13
+status_temporary_potion_weakness:
+  type: StatusConfig
+  name: Inflict Weakness (Potion)
+  slot: SUFFIX
+  tags:
+    - status
+    - attack
+  statustype: TEMPORARY
+  ranks:
+    2:
+      weight: 50
+      effecttype: WEAKNESS
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 220
+        steps: 9
+    3:
+      weight: 35
+      effecttype: WEAKNESS
+      level:
+        flat: 2
+      ticks:
+        precision: 10
+        flat: 140
+        steps: 9
+status_temporary_potion_wither:
+  type: StatusConfig
+  name: Inflict Wither (Potion)
+  slot: PREFIX
+  tags:
+    - status
+    - attack
+  statustype: TEMPORARY
+  ranks:
+    2:
+      weight: 20
+      effecttype: WITHER
+      level:
+        flat: 1
+      ticks:
+        precision: 5
+        flat: 240
+        steps: 13
+    3:
+      weight: 10
+      effecttype: WITHER
+      level:
+        flat: 2
+      ticks:
+        precision: 5
+        flat: 180
+        steps: 13
+    4:
+      weight: 5
+      effecttype: WITHER
+      level:
+        flat: 3
+      ticks:
+        precision: 5
+        flat: 120
+        steps: 13
+
+
+attribute_increased_movement_speed:
+  type: AttributeConfig
+  name: X% Increased Movement Speed
+  slot: PREFIX
+  tags:
+    - attribute
+    - speed
+  attribute: MOVEMENT_SPEED
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      flat: 15
+    2:
+      weight: 50
+      flat: 25
+    3:
+      weight: 20
+      flat: 35
+attribute_flat_health:
+  type: AttributeConfig
+  name: X to Health
+  slot: PREFIX
+  tags:
+    - attribute
+  attribute: MAX_HEALTH
+  operator: FLAT
+  ranks:
+    1:
+      weight: 250
+      precision: 1
+      flat: 1
+      steps: 4
+    2:
+      weight: 150
+      precision: 1
+      flat: 5
+      steps: 3
+    3:
+      weight: 50
+      precision: 1
+      flat: 9
+      steps: 2
+attribute_flat_step_height:
+  type: AttributeConfig
+  name: X to Step Height
+  slot: SUFFIX
+  tags:
+    - attribute
+  attribute: STEP_HEIGHT
+  operator: FLAT
+  ranks:
+    1:
+      weight: 100
+      flat: 0.4
+    2:
+      weight: 50
+      flat: 1.4
+attribute_increased_block_interaction:
+  type: AttributeConfig
+  name: X% Increased Block Reach
+  slot: PREFIX
+  tags:
+    - attribute
+  attribute: BLOCK_RANGE
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 10
+      steps: 11
+    2:
+      weight: 50
+      precision: 1
+      flat: 21
+      steps: 10
+    3:
+      weight: 20
+      precision: 1
+      flat: 31
+      steps: 5
+attribute_increased_entity_interaction:
+  type: AttributeConfig
+  name: X% Increased Entity Reach
+  slot: SUFFIX
+  tags:
+    - attribute
+    - attack
+  attribute: ENTITY_RANGE
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 10
+      steps: 11
+    2:
+      weight: 50
+      precision: 1
+      flat: 21
+      steps: 10
+    3:
+      weight: 20
+      precision: 1
+      flat: 31
+      steps: 5
+attribute_increased_break_speed:
+  type: AttributeConfig
+  name: X% Increased Break Speed
+  slot: PREFIX
+  tags:
+    - attribute
+    - speed
+  attribute: BREAK_SPEED
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 10
+      steps: 6
+    2:
+      weight: 50
+      precision: 1
+      flat: 16
+      steps: 5
+    3:
+      weight: 20
+      precision: 1
+      flat: 21
+      steps: 5
+attribute_flat_safe_fall_distance:
+  type: AttributeConfig
+  name: X Safe Fall Distance
+  slot: PREFIX
+  tags:
+    - attribute
+    - defense
+  attribute: SAFE_FALL_DISTANCE
+  operator: FLAT
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 1
+      steps: 2
+    2:
+      weight: 50
+      precision: 1
+      flat: 2
+      steps: 2
+    3:
+      weight: 20
+      flat: 3
+attribute_less_fall_damage_multiplier:
+  type: AttributeConfig
+  name: X Less Fall Damage
+  slot: PREFIX
+  tags:
+    - attribute
+    - defense
+  attribute: FALL_DAMAGE
+  operator: MULTIPLIER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: -30
+      steps: 11
+    2:
+      weight: 50
+      precision: 1
+      flat: -40
+      steps: 10
+    3:
+      weight: 20
+      precision: 1
+      flat: -50
+      steps: 10
+mana_max_flat:
+  type: ManaConfig
+  name: +X Max Mana
+  slot: PREFIX
+  tags:
+    - attribute
+  manatype: MAX_MANA
+  operator: FLAT
+  ranks:
+    1:
+      weight: 250
+      precision: 1
+      flat: 1
+      steps: 4
+    2:
+      weight: 150
+      precision: 1
+      flat: 5
+      steps: 3
+    3:
+      weight: 50
+      precision: 1
+      flat: 9
+      steps: 2
+mana_max_scaler:
+  type: ManaConfig
+  name: X% Increased Max Mana
+  slot: PREFIX
+  tags:
+    - attribute
+  manatype: MAX_MANA
+  operator: SCALER
+  ranks:
+    1:
+      weight: 250
+      precision: 1
+      flat: 11
+      steps: 10
+    2:
+      weight: 150
+      precision: 1
+      flat: 21
+      steps: 8
+    3:
+      weight: 50
+      precision: 1
+      flat: 29
+      steps: 4
+mana_regen_scaler:
+  type: ManaConfig
+  name: X% Increased Mana Regen
+  slot: SUFFIX
+  tags:
+    - attribute
+    - speed
+  manatype: MANA_REGEN
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 16
+      steps: 15
+    2:
+      weight: 60
+      precision: 1
+      flat: 31
+      steps: 10
+    3:
+      weight: 30
+      precision: 1
+      flat: 41
+      steps: 5
+projectile_speed_scaler:
+  type: ProjectileSpeedConfig
+  name: X% Increased Projectile Speed
+  slot: SUFFIX
+  tags:
+    - speed
+  operator: SCALER
+  projectile: PROJECTILE
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 11
+      steps: 10
+    2:
+      weight: 70
+      precision: 1
+      flat: 21
+      steps: 10
+    3:
+      weight: 30
+      precision: 1
+      flat: 31
+      steps: 5
+flat_skill_crafting:
+  type: SkillConfig
+  name: +X to Crafting
+  slot: PREFIX
+  tags:
+    - attribute
+  skill: CRAFTING
+  operator: FLAT
+  ranks:
+    1:
+      weight: 150
+      precision: 1
+      flat: 3
+      steps: 4
+    2:
+      weight: 100
+      precision: 1
+      flat: 7
+      steps: 3
+    3:
+      weight: 35
+      precision: 1
+      flat: 9
+      steps: 2
+flat_skill_enchanting:
+  type: SkillConfig
+  name: +X to Enchanting
+  slot: PREFIX
+  tags:
+    - attribute
+  skill: ENCHANTING
+  operator: FLAT
+  ranks:
+    1:
+      weight: 150
+      precision: 1
+      flat: 3
+      steps: 4
+    2:
+      weight: 100
+      precision: 1
+      flat: 7
+      steps: 3
+    3:
+      weight: 35
+      precision: 1
+      flat: 9
+      steps: 2
+flat_skill_brewing:
+  type: SkillConfig
+  name: +X to Brewing
+  slot: PREFIX
+  tags:
+    - attribute
+  skill: BREWING
+  operator: FLAT
+  ranks:
+    1:
+      weight: 150
+      precision: 1
+      flat: 3
+      steps: 4
+    2:
+      weight: 100
+      precision: 1
+      flat: 7
+      steps: 3
+    3:
+      weight: 35
+      precision: 1
+      flat: 9
+      steps: 2
+attack_luck_lucky_damage:
+  type: LuckConfig
+  name: Attack Damage is Lucky
+  slot: SUFFIX
+  tags:
+    - attribute
+    - attack
+  lucktype: LUCKY_DAMAGE
+  ranks:
+    1:
+      weight: 10
+flat_drop_luck_prefix:
+  type: LuckConfig
+  name: X Drop Luck (Prefix)
+  slot: PREFIX
+  tags:
+    - attribute
+  lucktype: DROP_LUCK
+  ranks:
+    1:
+      weight: 50
+      precision: 1
+      flat: 10
+      steps: 16
+    2:
+      weight: 20
+      precision: 1
+      flat: 25
+      steps: 11
+    3:
+      weight: 10
+      precision: 1
+      flat: 35
+      steps: 6
+flat_drop_luck_suffix:
+  type: LuckConfig
+  name: X Drop Luck (Suffix)
+  slot: SUFFIX
+  tags:
+    - attribute
+  lucktype: DROP_LUCK
+  ranks:
+    1:
+      weight: 50
+      precision: 1
+      flat: 10
+      steps: 16
+    2:
+      weight: 20
+      precision: 1
+      flat: 25
+      steps: 11
+    3:
+      weight: 10
+      precision: 1
+      flat: 35
+      steps: 6
+critical_chance_scaler:
+  type: CriticalConfig
+  name: X% Increased Critical Chance
+  slot: SUFFIX
+  tags:
+    - attack
+  criticaltype: CRITICAL_CHANCE
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 10
+      steps: 6
+    2:
+      weight: 80
+      precision: 1
+      flat: 20
+      steps: 6
+    3:
+      weight: 50
+      precision: 1
+      flat: 30
+      steps: 6
+critical_damage_scaler:
+  type: CriticalConfig
+  name: +X% Critical Damage
+  slot: SUFFIX
+  tags:
+    - attack
+  criticaltype: CRITICAL_DAMAGE
+  operator: FLAT
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 20
+      steps: 11
+    2:
+      weight: 70
+      precision: 1
+      flat: 35
+      steps: 16
+    3:
+      weight: 30
+      precision: 1
+      flat: 55
+      steps: 6
+reflected_damage_physical:
+  type: ReflectDamageConfig
+  name: Reflect X% Physical Damage
+  slot: PREFIX
+  tags:
+    - attack
+    - defense
+    - physical
+  damagetype: PHYSICAL
+  ranks:
+    1:
+      weight: 80
+      precision: 1
+      flat: 5
+      steps: 7
+    2:
+      weight: 30
+      precision: 1
+      flat: 12
+      steps: 5
+    3:
+      weight: 10
+      precision: 1
+      flat: 17
+      steps: 3
+reflected_damage_elemental:
+  type: ReflectDamageConfig
+  name: Reflect X% Elemental Damage
+  slot: PREFIX
+  tags:
+    - attack
+    - defense
+    - burn
+    - frost
+    - shock
+  damagetype: ELEMENTAL
+  ranks:
+    1:
+      weight: 80
+      precision: 1
+      flat: 10
+      steps: 13
+    2:
+      weight: 30
+      precision: 1
+      flat: 23
+      steps: 8
+    3:
+      weight: 10
+      precision: 1
+      flat: 31
+      steps: 5
+leech_life_physical:
+  type: LeechConfig
+  name: X% Physical Life Leech
+  slot: SUFFIX
+  tags:
+    - attribute
+    - attack
+    - physical
+  damagetype: PHYSICAL
+  ranks:
+    1:
+      weight: 120
+      precision: 1
+      flat: 6
+      steps: 7
+    2:
+      weight: 80
+      precision: 1
+      flat: 12
+      steps: 6
+    3:
+      weight: 40
+      precision: 1
+      flat: 18
+      steps: 3
+arrow_speed_scaler:
+  type: ProjectileSpeedConfig
+  name: X% Increased Arrow Speed
+  slot: SUFFIX
+  tags:
+    - attribute
+    - attack
+    - speed
+  operator: SCALER
+  projectile: ARROW
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 8
+      steps: 16
+    2:
+      weight: 70
+      precision: 1
+      flat: 24
+      steps: 10
+    3:
+      weight: 30
+      precision: 1
+      flat: 34
+      steps: 5
+attribute_increased_attack_speed:
+  type: AttributeConfig
+  name: X% Increased Attack Speed
+  slot: SUFFIX
+  tags:
+    - attribute
+    - attack
+    - speed
+  attribute: ATTACK_SPEED
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 5
+      steps: 7
+    2:
+      weight: 70
+      precision: 1
+      flat: 12
+      steps: 5
+    3:
+      weight: 30
+      precision: 1
+      flat: 17
+      steps: 4
+enchantment_aqua_affinity:
+  type: EnchantmentConfig
+  name: Aqua Affinity Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - speed
+  enchantment: aqua_affinity
+  ranks:
+    1:
+      weight: 150
+enchantment_infinity:
+  type: EnchantmentConfig
+  name: Infinity Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attack
+  enchantment: infinity
+  ranks:
+    1:
+      weight: 70
+enchantment_silk_touch:
+  type: EnchantmentConfig
+  name: Silk Touch Enchantment
+  slot: PREFIX
+  tags:
+    - enchantment
+    - effect
+  enchantment: silk_touch
+  ranks:
+    1:
+      weight: 150
+enchantment_multishot:
+  type: EnchantmentConfig
+  name: Multishot Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attack
+  enchantment: multishot
+  ranks:
+    1:
+      weight: 75
+enchantment_piercing:
+  type: EnchantmentConfig
+  name: Piercing Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attack
+  enchantment: piercing
+  ranks:
+    1:
+      weight: 100
+enchantment_knockback:
+  type: EnchantmentConfig
+  name: Knockback Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attack
+    - speed
+  enchantment: knockback
+  ranks:
+    1:
+      weight: 75
+      flat: 1
+    2:
+      weight: 25
+      flat: 2
+enchantment_punch:
+  type: EnchantmentConfig
+  name: Punch Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attack
+    - speed
+  enchantment: punch
+  ranks:
+    1:
+      weight: 75
+      flat: 1
+    2:
+      weight: 25
+      flat: 2
+enchantment_frost_walker:
+  type: EnchantmentConfig
+  name: Frost Walker Enchantment
+  slot: SUFFIX
+  enchantment: frost_walker
+  tags:
+    - enchantment
+    - frost
+  ranks:
+    1:
+      weight: 100
+      flat: 1
+    2:
+      weight: 40
+      flat: 2
+enchantment_fortune:
+  type: EnchantmentConfig
+  name: Fortune Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attribute
+  enchantment: fortune
+  ranks:
+    1:
+      weight: 50
+      flat: 1
+    2:
+      weight: 30
+      flat: 2
+    3:
+      weight: 10
+      flat: 3
+enchantment_soul_speed:
+  type: EnchantmentConfig
+  name: Soul Speed Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - speed
+  enchantment: soul_speed
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 20
+      flat: 3
+enchantment_quick_charge:
+  type: EnchantmentConfig
+  name: Quick Charge Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attack
+    - speed
+  enchantment: quick_charge
+  ranks:
+    1:
+      weight: 75
+      flat: 1
+    2:
+      weight: 50
+      flat: 2
+    3:
+      weight: 25
+      flat: 3
+enchantment_depth_strider:
+  type: EnchantmentConfig
+  name: Depth Strider Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - speed
+  enchantment: depth_strider
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 50
+      flat: 3
+enchantment_respiration:
+  type: EnchantmentConfig
+  name: Respiration Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attribute
+  enchantment: respiration
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 50
+      flat: 3
+enchantment_unbreaking:
+  type: EnchantmentConfig
+  name: Unbreaking Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+  enchantment: unbreaking
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 75
+      flat: 3
+    4:
+      weight: 50
+      flat: 4
+    5:
+      weight: 5
+      flat: 10
+enchantment_feather_falling:
+  type: EnchantmentConfig
+  name: Feather Falling Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - defense
+  enchantment: feather_falling
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 120
+      flat: 2
+    3:
+      weight: 70
+      flat: 3
+    4:
+      weight: 30
+      flat: 4
+enchantment_efficiency:
+  type: EnchantmentConfig
+  name: Efficiency Enchantment
+  slot: PREFIX
+  tags:
+    - enchantment
+    - speed
+  enchantment: efficiency
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 75
+      flat: 3
+    4:
+      weight: 50
+      flat: 4
+    5:
+      weight: 25
+      flat: 5
+enchantment_loyalty:
+  type: EnchantmentConfig
+  name: Loyalty Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - attribute
+    - attack
+  enchantment: loyalty
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 50
+      flat: 3
+enchantment_riptide:
+  type: EnchantmentConfig
+  name: Riptide Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - speed
+  enchantment: riptide
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 50
+      flat: 3
+enchantment_projectile_rider:
+  type: EnchantmentConfig
+  name: Projectile Rider Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+  enchantment: projectile_rider
+  ranks:
+    1:
+      weight: 50
+      flat: 1
+enchantment_effect_area:
+  type: EnchantmentConfig
+  name: Effect Area Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - effect
+  enchantment: effect_area
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 50
+      flat: 3
+enchantment_tree_feller:
+  type: EnchantmentConfig
+  name: Tree Feller Enchantment
+  slot: PREFIX
+  tags:
+    - enchantment
+  enchantment: tree_feller
+  ranks:
+    1:
+      weight: 100
+      flat: 1
+enchantment_smelting:
+  type: EnchantmentConfig
+  name: Smelting Enchantment
+  slot: SUFFIX
+  tags:
+    - enchantment
+    - burn
+  enchantment: smelting
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 75
+      flat: 3
+    4:
+      weight: 50
+      flat: 4
+    5:
+      weight: 25
+      flat: 5
+enchantment_item_bag:
+  type: EnchantmentConfig
+  name: Item Bag Enchantment
+  slot: PREFIX
+  tags:
+    - enchantment
+  enchantment: item_bag
+  ranks:
+    1:
+      weight: 25
+      flat: 1
+enchantment_splash_damage:
+  type: EnchantmentConfig
+  name: Splash Damage
+  slot: SUFFIX
+  tags:
+    - enchantment
+  enchantment: splash_damage
+  ranks:
+    1:
+      weight: 150
+      flat: 1
+    2:
+      weight: 100
+      flat: 2
+    3:
+      weight: 75
+      flat: 3
+    4:
+      weight: 50
+      flat: 4
+enchantment_enemy_explode_on_death:
+  type: EnchantmentConfig
+  name: Enemies Explode
+  slot: SUFFIX
+  tags:
+    - enchantment
+  enchantment: enemy_explode_on_death
+  ranks:
+    1:
+      weight: 50
+      flat: 1
+    2:
+      weight: 25
+      flat: 2
+    3:
+      weight: 10
+      flat: 3
+status_permanent_fire_immunity:
+  type: StatusConfig
+  name: Fire Immunity Status
+  slot: SUFFIX
+  tags:
+    - status
+    - burn
+  effecttype: FIRE_IMMUNITY
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 5
+      level:
+        flat: 1
+status_permanent_invisibility:
+  type: StatusConfig
+  name: Invisibility Status
+  slot: SUFFIX
+  tags:
+    - status
+  effecttype: INVISIBILITY
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 10
+      level:
+        flat: 1
+status_permanent_night_vision:
+  type: StatusConfig
+  name: Night Vision Status
+  slot: SUFFIX
+  tags:
+    - status
+  effecttype: NIGHT_VISION
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 50
+      level:
+        flat: 1
+status_permanent_slow_falling:
+  type: StatusConfig
+  name: Slow Falling Status
+  slot: SUFFIX
+  tags:
+    - status
+    - defense
+    - speed
+  effecttype: SLOW_FALLING
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 100
+      level:
+        flat: 1
+status_permanent_water_breathing:
+  type: StatusConfig
+  name: Water Breathing Status
+  slot: SUFFIX
+  tags:
+    - status
+  effecttype: WATER_BREATHING
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 50
+      level:
+        flat: 1
+status_permanent_haste:
+  type: StatusConfig
+  name: Haste Status
+  slot: SUFFIX
+  tags:
+    - status
+    - speed
+  effecttype: HASTE
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 30
+      level:
+        flat: 1
+    2:
+      weight: 10
+      level:
+        flat: 2
+status_permanent_jump:
+  type: StatusConfig
+  name: Jump Status
+  slot: SUFFIX
+  tags:
+    - status
+    - attribute
+  effecttype: JUMP
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 75
+      level:
+        flat: 1
+    2:
+      weight: 50
+      level:
+        flat: 2
+status_permanent_regeneration:
+  type: StatusConfig
+  name: Regeneration Status
+  slot: SUFFIX
+  tags:
+    - status
+    - attribute
+  effecttype: REGENERATION
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 20
+      level:
+        flat: 1
+    2:
+      weight: 10
+      level:
+        flat: 2
+status_permanent_speed:
+  type: StatusConfig
+  name: Speed Status
+  slot: SUFFIX
+  tags:
+    - status
+    - speed
+  effecttype: SPEED
+  statustype: PERMANENT
+  ranks:
+    1:
+      weight: 50
+      level:
+        flat: 1
+    2:
+      weight: 25
+      level:
+        flat: 2
+status_immunity_blindness:
+  type: StatusConfig
+  name: Blindness Status Immunity
+  slot: PREFIX
+  tags:
+    - status
+    - defense
+  effecttype: BLINDNESS
+  statustype: IMMUNITY
+  ranks:
+    1:
+      weight: 35
+status_immunity_glowing:
+  type: StatusConfig
+  name: Glowing Status Immunity
+  slot: PREFIX
+  tags:
+    - status
+    - defense
+  effecttype: GLOWING
+  statustype: IMMUNITY
+  ranks:
+    1:
+      weight: 60
+status_immunity_hunger:
+  type: StatusConfig
+  name: Hunger Status Immunity
+  slot: PREFIX
+  tags:
+    - status
+    - defense
+  effecttype: HUNGER
+  statustype: IMMUNITY
+  ranks:
+    1:
+      weight: 60
+status_immunity_poison:
+  type: StatusConfig
+  name: Poison Status Immunity
+  slot: PREFIX
+  tags:
+    - status
+    - defense
+  effecttype: POISON
+  statustype: IMMUNITY
+  ranks:
+    1:
+      weight: 60
+status_immunity_slowness:
+  type: StatusConfig
+  name: Slow Status Immunity
+  slot: PREFIX
+  tags:
+    - status
+    - defense
+    - speed
+  effecttype: SLOW
+  statustype: IMMUNITY
+  ranks:
+    1:
+      weight: 50
+status_immunity_wither:
+  type: StatusConfig
+  name: Wither Status Immunity
+  slot: PREFIX
+  tags:
+    - status
+    - defense
+  effecttype: WITHER
+  statustype: IMMUNITY
+  ranks:
+    1:
+      weight: 25
+status_temporary_potion_fire_immunity:
+  type: StatusConfig
+  name: Grant Fire Immunity
+  slot: SUFFIX
+  tags:
+    - status
+    - defense
+    - burn
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 70
+      effecttype: FIRE_IMMUNITY
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 2400
+        steps: 61
+    2:
+      weight: 40
+      effecttype: FIRE_IMMUNITY
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3000
+        steps: 81
+    3:
+      weight: 20
+      effecttype: FIRE_IMMUNITY
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3800
+        steps: 101
+status_temporary_potion_haste:
+  type: StatusConfig
+  name: Grant Haste
+  slot: SUFFIX
+  tags:
+    - status
+    - speed
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 40
+      effecttype: HASTE
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3000
+        steps: 61
+    2:
+      weight: 30
+      effecttype: HASTE
+      level:
+        flat: 2
+      ticks:
+        precision: 10
+        flat: 2400
+        steps: 61
+    3:
+      weight: 10
+      effecttype: HASTE
+      level:
+        flat: 3
+      ticks:
+        precision: 10
+        flat: 1600
+        steps: 41
+status_temporary_potion_invisibility:
+  type: StatusConfig
+  name: Grant Invisibility
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 40
+      effecttype: INVISIBILITY
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 2400
+        steps: 61
+    2:
+      weight: 30
+      effecttype: INVISIBILITY
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3000
+        steps: 61
+    3:
+      weight: 10
+      effecttype: INVISIBILITY
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3600
+        steps: 61
+status_temporary_potion_jump_boost:
+  type: StatusConfig
+  name: Grant Jump
+  slot: SUFFIX
+  tags:
+    - status
+    - attribute
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 100
+      effecttype: JUMP
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3600
+        steps: 121
+    2:
+      weight: 80
+      effecttype: JUMP
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3000
+        steps: 121
+    3:
+      weight: 40
+      effecttype: JUMP
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 2400
+        steps: 121
+status_temporary_potion_night_vision:
+  type: StatusConfig
+  name: Grant Night Vision
+  slot: PREFIX
+  tags:
+    - status
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 100
+      effecttype: NIGHT_VISION
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3600
+        steps: 81
+    2:
+      weight: 80
+      effecttype: NIGHT_VISION
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 4400
+        steps: 81
+    3:
+      weight: 40
+      effecttype: NIGHT_VISION
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 5200
+        steps: 81
+status_temporary_potion_regeneration:
+  type: StatusConfig
+  name: Grant Regeneration
+  slot: PREFIX
+  tags:
+    - status
+    - attribute
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 60
+      effecttype: REGENERATION
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 440
+        steps: 17
+    2:
+      weight: 40
+      effecttype: REGENERATION
+      level:
+        flat: 2
+      ticks:
+        precision: 10
+        flat: 500
+        steps: 17
+    3:
+      weight: 15
+      effecttype: REGENERATION
+      level:
+        flat: 3
+      ticks:
+        precision: 10
+        flat: 560
+        steps: 17
+status_temporary_potion_slow_falling:
+  type: StatusConfig
+  name: Grant Slow Falling
+  slot: PREFIX
+  tags:
+    - status
+    - defense
+    - speed
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 70
+      effecttype: SLOW_FALLING
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 1200
+        steps: 61
+    2:
+      weight: 40
+      effecttype: SLOW_FALLING
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 1800
+        steps: 61
+    3:
+      weight: 20
+      effecttype: SLOW_FALLING
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 2400
+        steps: 61
+status_temporary_potion_speed:
+  type: StatusConfig
+  name: Grant Speed
+  slot: PREFIX
+  tags:
+    - status
+    - speed
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 40
+      effecttype: SPEED
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3000
+        steps: 61
+    2:
+      weight: 30
+      effecttype: SPEED
+      level:
+        flat: 2
+      ticks:
+        precision: 10
+        flat: 2400
+        steps: 61
+    3:
+      weight: 10
+      effecttype: SPEED
+      level:
+        flat: 3
+      ticks:
+        precision: 10
+        flat: 1600
+        steps: 41
+status_temporary_potion_strength:
+  type: StatusConfig
+  name: Grant Strength
+  slot: SUFFIX
+  tags:
+    - status
+    - attack
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 50
+      effecttype: STRENGTH
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 3000
+        steps: 61
+    2:
+      weight: 35
+      effecttype: STRENGTH
+      level:
+        flat: 2
+      ticks:
+        precision: 10
+        flat: 2400
+        steps: 61
+    3:
+      weight: 10
+      effecttype: STRENGTH
+      level:
+        flat: 3
+      ticks:
+        precision: 10
+        flat: 1600
+        steps: 41
+status_temporary_potion_water_breathing:
+  type: StatusConfig
+  name: Grant Water Breathing
+  slot: SUFFIX
+  tags:
+    - status
+    - attribute
+  statustype: TEMPORARY
+  ranks:
+    1:
+      weight: 60
+      effecttype: WATER_BREATHING
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 4800
+        steps: 121
+    2:
+      weight: 40
+      effecttype: WATER_BREATHING
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 6000
+        steps: 121
+    3:
+      weight: 15
+      effecttype: WATER_BREATHING
+      level:
+        flat: 1
+      ticks:
+        precision: 10
+        flat: 7200
+        steps: 121
+cooldown_potion_recovery:
+  type: CooldownConfig
+  name: X% Cooldown Recovery (Potion)
+  slot: SUFFIX
+  tags:
+    - speed
+  operator: SCALER
+  ranks:
+    1:
+      weight: 75
+      precision: 1
+      flat: 30
+      steps: 9
+    2:
+      weight: 60
+      precision: 1
+      flat: 39
+      steps: 7
+    3:
+      weight: 30
+      precision: 1
+      flat: 46
+      steps: 5
+duration_scaler:
+  type: DurationConfig
+  name: X% Increased Duration
+  slot: SUFFIX
+  tags:
+    - effect
+    - speed
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 20
+      steps: 6
+    2:
+      weight: 80
+      precision: 1
+      flat: 25
+      steps: 6
+    3:
+      weight: 40
+      precision: 1
+      flat: 35
+      steps: 6
+flat_potion_level:
+  type: LevelConfig
+  name: +X Level (Potion)
+  slot: PREFIX
+  tags:
+    - effect
+  operator: FLAT
+  ranks:
+    1:
+      weight: 20
+      flat: 1
+    2:
+      weight: 10
+      precision: 1
+      flat: 1
+      steps: 2
+    3:
+      weight: 5
+      precision: 1
+      flat: 2
+      steps: 2
+area_potion_scaler:
+  type: AreaConfig
+  name: X% Increased Area (Potion)
+  slot: SUFFIX
+  tags:
+    - effect
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 25
+      steps: 16
+    2:
+      weight: 80
+      precision: 1
+      flat: 41
+      steps: 10
+    3:
+      weight: 40
+      precision: 1
+      flat: 51
+      steps: 5
+healing_flat:
+  type: HealingConfig
+  name: Heals X Health
+  slot: PREFIX
+  tags:
+    - effect
+    - attribute
+  operator: FLAT
+  ranks:
+    1:
+      weight: 150
+      precision: 1
+      flat: 3
+      steps: 4
+    2:
+      weight: 100
+      precision: 1
+      flat: 7
+      steps: 5
+    3:
+      weight: 80
+      precision: 1
+      flat: 12
+      steps: 6
+    4:
+      weight: 40
+      precision: 1
+      flat: 17
+      steps: 4
+damage_havoc:
+  type: DamageConfig
+  name: X Havoc Damage
+  slot: PREFIX
+  tags:
+    - effect
+    - attack
+    - havoc
+  damagetype: HAVOC
+  operator: FLAT
+  ranks:
+    1:
+      weight: 150
+      precision: 1
+      flat: 1
+      steps: 7
+    2:
+      weight: 100
+      precision: 1
+      flat: 8
+      steps: 7
+    3:
+      weight: 80
+      precision: 1
+      flat: 15
+      steps: 6
+    4:
+      weight: 40
+      precision: 1
+      flat: 21
+      steps: 5
+area_spell_increase:
+  type: AreaConfig
+  name: X% Increased Area
+  slot: SUFFIX
+  tags:
+    - effect
+  operator: SCALER
+  ranks:
+    1:
+      weight: 200
+      precision: 1
+      flat: 50
+      steps: 26
+    2:
+      weight: 160
+      precision: 1
+      flat: 75
+      steps: 51
+    3:
+      weight: 80
+      precision: 1
+      flat: 125
+      steps: 76
+flat_spell_level:
+  type: LevelConfig
+  name: +X Level (Wand)
+  slot: PREFIX
+  tags:
+    - effect
+  operator: FLAT
+  ranks:
+    1:
+      weight: 20
+      flat: 1
+    2:
+      weight: 10
+      precision: 1
+      flat: 2
+      steps: 2
+    3:
+      weight: 5
+      precision: 1
+      flat: 4
+      steps: 2
+flat_spell_level_robes:
+  type: LevelConfig
+  name: +X Level (Robes)
+  slot: PREFIX
+  tags:
+    - effect
+  operator: FLAT
+  ranks:
+    1:
+      weight: 20
+      flat: 1
+damage_extra_burn_spell:
+  type: DamageConversionConfig
+  name: X% Damage as extra Burn
+  slot: PREFIX
+  tags:
+    - burn
+  conversion: EXTRA_DAMAGE
+  fromtype: ALL
+  totype: BURN
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 5
+      steps: 6
+    2:
+      weight: 60
+      precision: 1
+      flat: 11
+      steps: 5
+    3:
+      weight: 20
+      precision: 1
+      flat: 16
+      steps: 5
+damage_extra_frost_spell:
+  type: DamageConversionConfig
+  name: X% Damage as extra Frost
+  slot: PREFIX
+  tags:
+    - frost
+  conversion: EXTRA_DAMAGE
+  fromtype: ALL
+  totype: FROST
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 5
+      steps: 6
+    2:
+      weight: 60
+      precision: 1
+      flat: 11
+      steps: 5
+    3:
+      weight: 20
+      precision: 1
+      flat: 16
+      steps: 5
+damage_extra_shock_spell:
+  type: DamageConversionConfig
+  name: X% Damage as extra Shock
+  slot: PREFIX
+  tags:
+    - shock
+  conversion: EXTRA_DAMAGE
+  fromtype: ALL
+  totype: SHOCK
+  ranks:
+    1:
+      weight: 100
+      precision: 1
+      flat: 5
+      steps: 6
+    2:
+      weight: 60
+      precision: 1
+      flat: 11
+      steps: 5
+    3:
+      weight: 20
+      precision: 1
+      flat: 16
+      steps: 5
+damage_scaler_spell:
+  type: DamageConfig
+  name: X% Increased Damage
+  slot: PREFIX
+  tags:
+    - physical
+    - burn
+    - frost
+    - shock
+    - havoc
+  damagetype: ALL
+  operator: SCALER
+  ranks:
+    1:
+      weight: 200
+      precision: 1
+      flat: 40
+      steps: 31
+    2:
+      weight: 120
+      precision: 1
+      flat: 71
+      steps: 20
+    3:
+      weight: 50
+      precision: 1
+      flat: 91
+      steps: 10
+cooldown_spell_recovery:
+  type: CooldownConfig
+  name: X% Cooldown Recovery (Spell)
+  slot: SUFFIX
+  tags:
+    - speed
+  operator: SCALER
+  ranks:
+    1:
+      weight: 50
+      precision: 1
+      flat: 15
+      steps: 11
+    2:
+      weight: 35
+      precision: 1
+      flat: 26
+      steps: 5
+    3:
+      weight: 15
+      precision: 1
+      flat: 31
+      steps: 3
+spell_trigger_kill_call_lightning:
+  type: SpellConfig
+  name: Call Lightning on Kill
+  slot: SUFFIX
+  tags:
+    - effect
+    - shock
+  activation: ON_KILL
+  spelltype: CALL_LIGHTNING
+  ranks:
+    1:
+      weight: 100
+      flat: 1
+    2:
+      weight: 40
+      precision: 1
+      flat: 1
+      steps: 2
+    3:
+      weight: 20
+      precision: 1
+      flat: 2
+      steps: 2
+spell_trigger_kill_havoc_burst:
+  type: SpellConfig
+  name: Havoc Burst on Kill
+  slot: SUFFIX
+  tags:
+    - effect
+    - havoc
+  activation: ON_KILL
+  spelltype: HAVOC_BURST
+  ranks:
+    1:
+      weight: 100
+      flat: 1
+    2:
+      weight: 40
+      precision: 1
+      flat: 1
+      steps: 2
+    3:
+      weight: 20
+      precision: 1
+      flat: 2
+      steps: 2
+spell_trigger_kill_call_ground_slam:
+  type: SpellConfig
+  name: Ground Slam on Kill
+  slot: SUFFIX
+  tags:
+    - effect
+    - physical
+  activation: ON_KILL
+  spelltype: GROUND_SLAM
+  ranks:
+    1:
+      weight: 100
+      flat: 1
+    2:
+      weight: 40
+      precision: 1
+      flat: 1
+      steps: 2
+    3:
+      weight: 20
+      precision: 1
+      flat: 2
+      steps: 2
+spell_trigger_hit_call_lightning:
+  type: SpellConfig
+  name: Call Lightning on Hit
+  slot: SUFFIX
+  tags:
+    - effect
+    - shock
+  activation: ON_MELEE_HIT
+  spelltype: CALL_LIGHTNING
+  ranks:
+    1:
+      weight: 50
+      flat: 1
+    2:
+      weight: 20
+      precision: 1
+      flat: 1
+      steps: 2
+    3:
+      weight: 10
+      precision: 1
+      flat: 2
+      steps: 2
+spell_trigger_hit_havoc_burst:
+  type: SpellConfig
+  name: Havoc Burst on Hit
+  slot: SUFFIX
+  tags:
+    - effect
+    - havoc
+  activation: ON_MELEE_HIT
+  spelltype: HAVOC_BURST
+  ranks:
+    1:
+      weight: 50
+      flat: 1
+    2:
+      weight: 20
+      precision: 1
+      flat: 1
+      steps: 2
+    3:
+      weight: 10
+      precision: 1
+      flat: 2
+      steps: 2
+spell_trigger_hit_call_ground_slam:
+  type: SpellConfig
+  name: Ground Slam on Hit
+  slot: SUFFIX
+  tags:
+    - effect
+    - physical
+  activation: ON_MELEE_HIT
+  spelltype: GROUND_SLAM
+  ranks:
+    1:
+      weight: 50
+      flat: 1
+    2:
+      weight: 20
+      precision: 1
+      flat: 1
+      steps: 2
+    3:
+      weight: 10
+      precision: 1
+      flat: 2
+      steps: 2
+story_monster_life:
+  type: AttributeConfig
+  name: Story Increased Monster Life
+  slot: SUFFIX
+  tags:
+    - attribute
+  monster: true
+  attribute: MAX_HEALTH
+  operator: SCALER
+  ranks:
+    1:
+      weight: 200
+      precision: 1
+      flat: 10
+      steps: 16
+story_monster_damage:
+  type: DamageConfig
+  name: Story Increased Monster Damage
+  tags:
+    - attack
+  monster: true
+  damagetype: ALL
+  operator: SCALER
+  ranks:
+    1:
+      weight: 200
+      precision: 0.01
+      flat: 0.10
+      steps: 11
+story_monster_physical_extra_burn:
+  type: DamageConversionConfig
+  name: Story Monster Physical as Extra Fire Damage
+  tags:
+    - attack
+    - burn
+  monster: true
+  conversion: EXTRA_DAMAGE
+  fromtype: PHYSICAL
+  totype: BURN
+  ranks:
+    1:
+      weight: 100
+      precision: 0.01
+      flat: 0.05
+      steps: 11
+story_monster_physical_extra_frost:
+  type: DamageConversionConfig
+  name: Story Monster Physical as Extra Frost Damage
+  tags:
+    - attack
+    - frost
+  monster: true
+  conversion: EXTRA_DAMAGE
+  fromtype: PHYSICAL
+  totype: FROST
+  ranks:
+    1:
+      weight: 100
+      precision: 0.01
+      flat: 0.05
+      steps: 11
+story_monster_physical_extra_shock:
+  type: DamageConversionConfig
+  name: Story Monster Physical as Extra Shock Damage
+  tags:
+    - attack
+    - shock
+  monster: true
+  conversion: EXTRA_DAMAGE
+  fromtype: PHYSICAL
+  totype: SHOCK
+  ranks:
+    1:
+      weight: 100
+      precision: 0.01
+      flat: 0.05
+      steps: 11
+story_monster_physical_extra_havoc:
+  type: DamageConversionConfig
+  name: Story Monster Physical as Extra Havoc Damage
+  tags:
+    - attack
+    - havoc
+  monster: true
+  conversion: EXTRA_DAMAGE
+  fromtype: PHYSICAL
+  totype: HAVOC
+  ranks:
+    1:
+      weight: 25
+      precision: 0.01
+      flat: 0.05
+      steps: 11
+story_monster_defense_flat_physical:
+  type: DefenseConfig
+  name: Story Monster Physical Defense
+  tags:
+    - defense
+  monster: true
+  damagetype: PHYSICAL
+  operator: FLAT
+  ranks:
+    1:
+      weight: 150
+      precision: 1
+      flat: 25
+      steps: 26
+story_monster_defense_scaler_physical:
+  type: DefenseConfig
+  name: Story Monster Increased Physical Defense
+  tags:
+    - defense
+  monster: true
+  damagetype: PHYSICAL
+  operator: SCALER
+  ranks:
+    1:
+      weight: 100
+      precision: 0.01
+      flat: 0.25
+      steps: 16
+story_monster_defense_flat_elemental:
+  type: DefenseConfig
+  name: Story Monster Elemental Defense
+  tags:
+    - defense
+    - burn
+    - frost
+    - shock
+  monster: true
+  damagetype: ELEMENTAL
+  operator: FLAT
+  ranks:
+    1:
+      weight: 200
+      precision: 5
+      flat: 50
+      steps: 7
+story_monster_defense_flat_havoc:
+  type: DefenseConfig
+  name: Story Monster Havoc Defense
+  tags:
+    - defense
+    - havoc
+  monster: true
+  damagetype: HAVOC
+  operator: FLAT
+  ranks:
+    1:
+      weight: 50
+      precision: 5
+      flat: 50
+      steps: 7
+story_monster_defense_max_elemental:
+  type: DamageReductionMaxConfig
+  name: Story Monster Maximum Elemental DR
+  tags:
+    - defense
+    - burn
+    - frost
+    - shock
+  monster: true
+  damagetype: ELEMENTAL
+  ranks:
+    1:
+      weight: 100
+      precision: 0.01
+      flat: 0.01
+      steps: 5
+story_monster_defense_max_havoc:
+  type: DamageReductionMaxConfig
+  name: Story Monster Maximum Havoc DR
+  tags:
+    - defense
+    - havoc
+  monster: true
+  damagetype: HAVOC
+  ranks:
+    1:
+      weight: 25
+      precision: 0.01
+      flat: 0.01
+      steps: 5
+story_monster_lucky_attack:
+  type: LuckConfig
+  name: Story Monster Lucky Attack
+  slot: PREFIX
+  tags:
+    - attack
+    - attribute
+  monster: true
+  lucktype: LUCKY_DAMAGE
+  ranks:
+    1:
+      weight: 15
+story_monster_double_damage_chance:
+  type: LuckConfig
+  name: Story Monster Double Damage Chance
+  slot: SUFFIX
+  tags:
+    - attack
+  monster: true
+  lucktype: DOUBLE_DAMAGE
+  ranks:
+    1:
+      weight: 10
+      precision: 1
+      flat: 10
+      steps: 16
+story_monster_critical_chance:
+  type: CriticalConfig
+  name: Story Monster Critical Chance
+  tags:
+    - attack
+  monster: true
+  criticaltype: CRITICAL_CHANCE
+  operator: SCALER
+  ranks:
+    1:
+      weight: 150
+      precision: 25
+      flat: 200
+      steps: 5
+story_monster_critical_damage:
+  type: CriticalConfig
+  name: Story Monster Critical Damage
+  tags:
+    - attack
+  monster: true
+  critical: CRITICAL_DAMAGE
+  criticaltype: FLAT
+  ranks:
+    1:
+      weight: 150
+      precision: 5
+      flat: 75
+      steps: 16

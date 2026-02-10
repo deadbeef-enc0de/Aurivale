@@ -1,0 +1,114 @@
+fuels:
+  CHARCOAL: 4
+  COAL: 8
+  BLAZE_POWDER: 20
+
+recipes:
+  # Potion, Splash Potion, Lingering Potion upgrades
+  potion_upgrade:
+    type: UPGRADE
+    fuelcost: 4
+    brewtime: 600
+    ingredient: REDSTONE
+    from: potion
+    to: positive_splash_potion
+  positive_splash_potion_upgrade:
+    type: UPGRADE
+    fuelcost: 8
+    brewtime: 1200
+    ingredient: GUNPOWDER
+    from: positive_splash_potion
+    to: positive_linger_potion
+  negative_splash_potion_upgrade:
+    type: UPGRADE
+    fuelcost: 8
+    brewtime: 1200
+    ingredient: GUNPOWDER
+    from: negative_splash_potion
+    to: negative_linger_potion
+
+  # Negative, Positive Potion changes
+  splash_potion_position_to_negative:
+    type: CHANGE
+    fuelcost: 2
+    brewtime: 300
+    ingredient: SPIDER_EYE
+    from: positive_splash_potion
+    to: negative_splash_potion
+  splash_potion_negative_to_positive:
+    type: CHANGE
+    fuelcost: 2
+    brewtime: 300
+    ingredient: SUGAR
+    from: negative_splash_potion
+    to: positive_splash_potion
+  lingering_potion_positive_to_negative:
+    type: CHANGE
+    fuelcost: 4
+    brewtime: 800
+    ingredient: SPIDER_EYE
+    from: positive_linger_potion
+    to: negative_linger_potion
+  lingering_potion_negative_to_positive:
+    type: CHANGE
+    fuelcost: 4
+    brewtime: 800
+    ingredient: SUGAR
+    from: negative_linger_potion
+    to: positive_linger_potion
+
+  # Potion low enchanting
+  potion_enchanting_whispering_ember:
+    type: ENCHANTER
+    fuelcost: 1
+    brewtime: 150
+    enchanter: WHISPERING_EMBER
+  potion_enchanting_charm_of_enrichment:
+    type: ENCHANTER
+    fuelcost: 1
+    brewtime: 150
+    enchanter: CHARM_OF_ENRICHMENT
+  potion_enchanting_fatebinders_prism:
+    type: ENCHANTER
+    fuelcost: 1
+    brewtime: 275
+    enchanter: FATEBINDERS_PRISM
+
+  # Potion high enchanting
+  potion_enchanting_ascendant_seal:
+    type: ENCHANTER
+    fuelcost: 2
+    brewtime: 300
+    enchanter: ASCENDANT_SEAL
+  potion_enchanting_celestial_catalyst:
+    type: ENCHANTER
+    fuelcost: 2
+    brewtime: 300
+    enchanter: CELESTIAL_CATALYST
+  potion_enchanting_echo_of_ascension:
+    type: ENCHANTER
+    fuelcost: 2
+    brewtime: 300
+    enchanter: ECHO_OF_ASCENSION
+  potion_enchanting_voidtear_sigil:
+    type: ENCHANTER
+    fuelcost: 2
+    brewtime: 300
+    enchanter: VOIDTEAR_SIGIL
+  potion_enchanting_orb_of_flux:
+    type: ENCHANTER
+    fuelcost: 2
+    brewtime: 450
+    enchanter: ORB_OF_FLUX
+
+  # Potion special enchanting
+  potion_enchanting_mark_of_eternity:
+    type: ENCHANTER
+    fuelcost: 10
+    brewtime: 2000
+    enchanter: MARK_OF_ETERNITY
+  potion_enchanting_sundering_rune:
+    type: ENCHANTER
+    fuelcost: 4
+    brewtime: 800
+    enchanter: SUNDERING_RUNE

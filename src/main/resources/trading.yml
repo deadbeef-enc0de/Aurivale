@@ -1,0 +1,377 @@
+# trade data
+trade_uses: 4
+trade_exp_log_base: 2
+
+# some base variables
+sell_chance: 0.3
+sell_mulitplier: 0.8
+modifier_exponent: 0.66
+material_stack_size: 32
+
+# variables for enchanter modifier
+enchanter_mod_chance: 0.025
+enchanter_mod_mulitplier: 2
+
+# variables for craftable enchanting
+normal_weight: 70
+magic_weight: 25
+rare_weight: 5
+magic_done_weight: 40
+magic_add_weight: 35
+magic_upgrade_weight: 25
+rare_done_weight: 85
+rare_add_weight: 15
+
+# material values for buying/selling enchanters/items
+materials:
+  # enchanters/items currency first
+  IRON_INGOT: 100
+  GOLD_INGOT: 225
+  DIAMOND: 375
+  EMERALD: 875
+  NETHERITE_INGOT: 2250
+  # other items for sale
+  LEATHER: 10
+
+# enchanter values
+enchanters:
+  # craftables currency first
+  WHISPERING_EMBER: 100
+  CHARM_OF_ENRICHMENT: 400
+  CELESTIAL_CATALYST: 900
+  ECHO_OF_ASCENSION: 1500
+  ORB_OF_FLUX: 3500
+  PHANTOM_REFLECTION: 9000
+  # rest of enchanters
+  FATEBINDERS_PRISM: 550
+  ASCENDANT_SEAL: 750
+  VOIDTEAR_SIGIL: 2500
+  MARK_OF_ETERNITY: 12000
+  SUNDERING_RUNE: 20000
+  ESSENCE_SHARD: 10000
+
+# materials used as currency
+materials_currency:
+  - IRON_INGOT
+  - GOLD_INGOT
+  - DIAMOND
+  - EMERALD
+  - NETHERITE_INGOT
+
+# enchanters used as currency
+enchanters_currency:
+  - WHISPERING_EMBER
+  - CHARM_OF_ENRICHMENT
+  - CELESTIAL_CATALYST
+  - ECHO_OF_ASCENSION
+  - ORB_OF_FLUX
+  - PHANTOM_REFLECTION
+
+# craftable values for things that cannot be calculated
+craftables:
+  arrow: 100
+  bow: 200
+  crossbow: 750
+  trident: 5000
+  potion: 200
+  positive_splash_potion: 750
+  negative_splash_potion: 750
+  positive_linger_potion: 2000
+  negative_linger_potion: 2000
+
+professions:
+  armorer:
+    groups:
+      iron_armor:
+        weight: 500
+        craftables:
+          - iron_helmet
+          - iron_chestplate
+          - iron_leggings
+          - iron_boots
+      diamond_armor:
+        weight: 200
+        craftables:
+          - diamond_helmet
+          - diamond_chestplate
+          - diamond_leggings
+          - diamond_boots
+      netherite_armor:
+        weight: 20
+        craftables:
+          - netherite_helmet
+          - netherite_chestplate
+          - netherite_leggings
+          - netherite_boots
+      iron:
+        weight: 250
+        items:
+          - IRON_INGOT
+      diamond:
+        weight: 100
+        items:
+          - DIAMOND
+      netherite:
+        weight: 10
+        items:
+          - NETHERITE_INGOT
+  # butcher
+  # cartographer
+  cleric:
+    groups:
+      potions:
+        weight: 500
+        craftables:
+          - potion
+      splash_potions:
+        weight: 200
+        craftables:
+          - positive_splash_potion
+          - negative_splash_potion
+      linger_potions:
+        weight: 100
+        craftables:
+          - positive_linger_potion
+          - negative_linger_potion
+  farmer:
+    groups:
+      iron_tools:
+        weight: 500
+        craftables:
+          - iron_hoe
+          - iron_shovel
+      diamond_tools:
+        weight: 200
+        craftables:
+          - diamond_hoe
+          - diamond_shovel
+      netherite_tools:
+        weight: 20
+        craftables:
+          - netherite_hoe
+          - netherite_shovel
+  # fisherman
+  fletcher:
+    groups:
+      bow:
+        weight: 500
+        craftables:
+          - bow
+          - arrow
+      crossbow:
+        weight: 200
+        craftables:
+          - crossbow
+          - arrow
+      trident:
+        weight: 20
+        craftables:
+          - trident
+  leatherworker:
+    groups:
+      leather_armor:
+        weight: 200
+        craftables:
+          - leather_helmet
+          - leather_chestplate
+          - leather_leggings
+          - leather_boots
+      leather:
+        weight: 20
+        items:
+          - LEATHER
+  librarian:
+    groups:
+      magic_enchanters:
+        weight: 500
+        enchanters:
+          - WHISPERING_EMBER
+          - CHARM_OF_ENRICHMENT
+          - FATEBINDERS_PRISM
+      rare_enchanters:
+        weight: 200
+        enchanters:
+          - ASCENDANT_SEAL
+          - CELESTIAL_CATALYST
+          - ECHO_OF_ASCENSION
+          - VOIDTEAR_SIGIL
+          - ORB_OF_FLUX
+      special_enchanters:
+        weight: 20
+        enchanters:
+          - PHANTOM_REFLECTION
+          - MARK_OF_ETERNITY
+          - SUNDERING_RUNE
+          - ESSENCE_SHARD
+  mason:
+    groups:
+      iron_tools:
+        weight: 500
+        craftables:
+          - iron_pickaxe
+          - iron_shovel
+      diamond_tools:
+        weight: 200
+        craftables:
+          - diamond_pickaxe
+          - diamond_shovel
+      netherite_tools:
+        weight: 20
+        craftables:
+          - netherite_pickaxe
+          - netherite_shovel
+  # shepherd
+  toolsmith:
+    groups:
+      iron_tools:
+        weight: 500
+        craftables:
+          - iron_pickaxe
+          - iron_axe
+      diamond_tools:
+        weight: 200
+        craftables:
+          - diamond_pickaxe
+          - diamond_axe
+      netherite_tools:
+        weight: 20
+        craftables:
+          - netherite_pickaxe
+          - netherite_axe
+      iron:
+        weight: 250
+        items:
+          - IRON_INGOT
+      diamond:
+        weight: 100
+        items:
+          - DIAMOND
+      netherite:
+        weight: 10
+        items:
+          - NETHERITE_INGOT
+  weaponsmith:
+    groups:
+      iron_weapons:
+        weight: 500
+        craftables:
+          - iron_sword
+          - iron_battleaxe
+      diamond_weapons:
+        weight: 200
+        craftables:
+          - diamond_sword
+          - diamond_battleaxe
+      netherite_weapons:
+        weight: 20
+        craftables:
+          - netherite_sword
+          - netherite_battleaxe
+      iron:
+        weight: 250
+        items:
+          - IRON_INGOT
+      diamond:
+        weight: 100
+        items:
+          - DIAMOND
+      netherite:
+        weight: 10
+        items:
+          - NETHERITE_INGOT
+  wandering_trader:
+    groups:
+      iron_gear:
+        weight: 500
+        craftables:
+          - iron_helmet
+          - iron_chestplate
+          - iron_leggings
+          - iron_boots
+          - iron_sword
+          - iron_battleaxe
+          - iron_axe
+          - iron_hoe
+          - iron_pickaxe
+          - iron_shovel
+          - bow
+          - arrow
+      diamond_gear:
+        weight: 200
+        craftables:
+          - diamond_helmet
+          - diamond_chestplate
+          - diamond_leggings
+          - diamond_boots
+          - diamond_sword
+          - diamond_battleaxe
+          - diamond_axe
+          - diamond_hoe
+          - diamond_pickaxe
+          - diamond_shovel
+          - crossbow
+      netherite_gear:
+        weight: 20
+        craftables:
+          - netherite_helmet
+          - netherite_chestplate
+          - netherite_leggings
+          - netherite_boots
+          - netherite_sword
+          - netherite_battleaxe
+          - netherite_axe
+          - netherite_hoe
+          - netherite_pickaxe
+          - netherite_shovel
+          - trident
+      potions:
+        weight: 500
+        craftables:
+          - potion
+      splash_potions:
+        weight: 200
+        craftables:
+          - positive_splash_potion
+          - negative_splash_potion
+      linger_potions:
+        weight: 100
+        craftables:
+          - positive_linger_potion
+          - negative_linger_potion
+      iron:
+        weight: 250
+        items:
+          - IRON_INGOT
+      diamond:
+        weight: 100
+        items:
+          - DIAMOND
+      netherite:
+        weight: 10
+        items:
+          - NETHERITE_INGOT
+      leather:
+        weight: 20
+        items:
+          - LEATHER
+      magic_enchanters:
+        weight: 500
+        enchanters:
+          - WHISPERING_EMBER
+          - CHARM_OF_ENRICHMENT
+          - FATEBINDERS_PRISM
+      rare_enchanters:
+        weight: 200
+        enchanters:
+          - ASCENDANT_SEAL
+          - CELESTIAL_CATALYST
+          - ECHO_OF_ASCENSION
+          - VOIDTEAR_SIGIL
+          - ORB_OF_FLUX
+      special_enchanters:
+        weight: 20
+        enchanters:
+          - PHANTOM_REFLECTION
+          - MARK_OF_ETERNITY
+          - SUNDERING_RUNE
+          - ESSENCE_SHARD

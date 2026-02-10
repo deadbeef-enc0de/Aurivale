@@ -1,0 +1,147 @@
+void_walk_dimension: void
+worlds:
+  void:
+    environment: NETHER
+    biomes: VoidBiomeGenerator
+    terrain: VoidTerrainGenerator
+    populators:
+      - VoidPortalPopulator
+    handler: VoidHandler
+    permissions:
+      filterentities: true
+      allowedentities:
+        - ITEM_FRAME
+        - DROPPED_ITEM
+        - ARMOR_STAND
+      filteractions: true
+      allowedactions: []
+      blockbreak: false
+      blockplace: false
+    portals:
+      x:
+        min: -5120
+        max: 5120
+      z:
+        min: -5120
+        max: 5120
+
+stories:
+  plains:
+    environment: NORMAL
+    generator: StoryPlainsDimensionGenerator
+    biomes: StoryPlainsBiomeGenerator
+    populators:
+      - StoryWorldMonsterPopulator
+      - StoryLecternPopulator
+      - StoryGrassPopulator
+      - StoryLightOakTreePopulator
+      - StoryOrePopulator
+    handler: StoryHandler
+    permissions:
+      filterentities: false
+      filteractions: false
+      blockbreak: true
+      blockplace: true
+  desert:
+    environment: NORMAL
+    generator: StoryDesertDimensionGenerator
+    biomes: StoryDesertBiomeGenerator
+    populators:
+      - StoryWorldMonsterPopulator
+      - StoryLecternPopulator
+      - StoryDeadBushPopulator
+      - StoryWellPopulator
+      - StoryOrePopulator
+    handler: StoryHandler
+    permissions:
+      filterentities: false
+      filteractions: false
+      blockbreak: true
+      blockplace: true
+  jungle:
+    environment: NORMAL
+    generator: StoryJungleDimensionGenerator
+    biomes: StoryJungleBiomeGenerator
+    populators:
+      - StoryWorldMonsterPopulator
+      - StoryLecternPopulator
+      - StoryJungleTreePopulator
+      - StoryJungleBushPopulator
+      - StoryOrePopulator
+    handler: StoryHandler
+    permissions:
+      filterentities: false
+      filteractions: false
+      blockbreak: true
+      blockplace: true
+  river:
+    environment: NORMAL
+    generator: StoryRiverDimensionGenerator
+    biomes: StoryRiverBiomeGenerator
+    populators:
+      - StoryWorldMonsterPopulator
+      - StoryLecternPopulator
+      - StoryGrassPopulator
+      - StoryBirchTreePopulator
+      - StoryOrePopulator
+    handler: StoryHandler
+    permissions:
+      filterentities: false
+      filteractions: false
+      blockbreak: true
+      blockplace: true
+
+populators:
+  world_monster:
+    chance: 0.005
+    distribution:
+      zombie: 10
+      drowned: 3
+      husk: 1
+      skeleton: 10
+      stray: 3
+      wither_skeleton: 1
+      creeper: 5
+      evoker: 1
+      pillager: 3
+      vindicator: 2
+      spider: 10
+      cave_spider: 3
+      enderman: 6
+      witch: 4
+  ores:
+    chance: 0.025
+    distribution:
+      COAL_ORE: 8
+      COPPER_ORE: 8
+      LAPIS_ORE: 6
+      IRON_ORE: 6
+      NETHER_QUARTZ_ORE: 5
+      GOLD_ORE: 4
+      REDSTONE_ORE: 4
+      DIAMOND_ORE: 2
+      EMERALD_ORE: 2
+      ANCIENT_DEBRIS: 1
+  grass:
+    chance: 0.10
+  light_oak_tree:
+    chance: 0.002
+    distribution:
+      TREE: 10
+      BIG_TREE: 1
+  dead_bush:
+    chance: 0.025
+  well:
+    chance: 0.01
+  jungle_tree:
+    chance: 0.03
+    distribution:
+      JUNGLE: 5
+      SMALL_JUNGLE: 1
+  jungle_bush:
+    chance: 0.20
+  birch_tree:
+    chance: 0.025
+    distribution:
+      BIRCH: 5
+      TALL_BIRCH: 1

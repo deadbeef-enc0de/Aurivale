@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "fallback": { "type": "model", "model": "minecraft:item/iron_sword"},
+    "entries": [
+      { "threshold" : 10001, "model": { "type": "model", "model": "rpg:item/burn_sword" } },
+      { "threshold" : 10002, "model": { "type": "model", "model": "rpg:item/frost_sword" } },
+      { "threshold" : 10003, "model": { "type": "model", "model": "rpg:item/shock_sword" } }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "rpg:item/mage_vestments",
+    "layer1": "rpg:item/mage_vestments_overlay"
+  }
+}

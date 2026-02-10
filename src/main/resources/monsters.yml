@@ -1,0 +1,1377 @@
+# should be the baseline for all entities
+default:
+  modifiers:
+    resistance_max_physical:
+      template: DamageReductionMaxTemplate
+      damagetype: PHYSICAL
+      flat: 90
+    resistance_max_elemental:
+      template: DamageReductionMaxTemplate
+      damagetype: ELEMENTAL
+      flat: 90
+    resistance_max_havoc:
+      template: DamageReductionMaxTemplate
+      damagetype: HAVOC
+      flat: 90
+    critical_damage_bonus:
+      template: CriticalTemplate
+      criticaltype: CRITICAL_DAMAGE
+      operator: FLAT
+      flat: 50
+
+# baseline for all passive entities
+passive:
+  parent: default
+  passive: true
+  modifiers:
+    less_drop_luck_kill:
+      template: LuckTemplate
+      monster: true
+      lucktype: DROP_LUCK
+      flat: -100
+
+# baseline for all neutral entities
+neutral:
+  parent: default
+  modifiers:
+    less_drop_luck_kill:
+      template: LuckTemplate
+      monster: true
+      lucktype: DROP_LUCK
+      flat: -35
+
+# players
+player:
+  parent: default
+  modifiers:
+    maximum_mana:
+      template: ManaTemplate
+      manatype: MAX_MANA
+      operator: FLAT
+      flat: 20
+
+# attacking non-player entities
+attacker:
+  parent: default
+  actionmodifiers:
+    # sets attacks/s to 20
+    attack_speed:
+      template: AttributeTemplate
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.05
+
+# passive mobs
+allay:
+  parent: passive
+armadillo:
+  parent: passive
+bat:
+  parent: passive
+camel:
+  parent: passive
+chicken:
+  parent: passive
+cod:
+  parent: passive
+cow:
+  parent: passive
+donkey:
+  parent: passive
+glow_squid:
+  parent: passive
+horse:
+  parent: passive
+mooshroom:
+  parent: passive
+mule:
+  parent: passive
+parrot:
+  parent: passive
+pig:
+  parent: passive
+salmon:
+  parent: passive
+sheep:
+  parent: passive
+skeleton_horse:
+  parent: passive
+sniffer:
+  parent: passive
+squid:
+  parent: passive
+strider:
+  parent: passive
+tadpole:
+  parent: passive
+tropical_fish:
+  parent: passive
+turtle:
+  parent: passive
+wandering_trader:
+  parent: passive
+
+# passive mobs that can attack
+axolotl:
+  parent:
+    - passive
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2
+          maximum:
+            flat: 2
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1
+          maximum:
+            flat: 1
+
+cat:
+  parent:
+    - passive
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 3
+          maximum:
+            flat: 3
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1.5
+          maximum:
+            flat: 1.5
+ocelot:
+  parent: cat
+
+frog:
+  parent:
+    - passive
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 10000
+          maximum:
+            flat: 10000
+
+pufferfish:
+  parent:
+    - passive
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: HAVOC
+          minimum:
+            flat: 2
+          maximum:
+            flat: 4.5
+        poison_inflict:
+          template: StatusTemplate
+          effecttype: POISON
+          statustype: TEMPORARY
+          level:
+            flat: 1
+          ticks:
+            flat: 120
+
+rabbit:
+  parent:
+    - passive
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 5
+          maximum:
+            flat: 12
+
+snow_golem:
+  parent:
+    - passive
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: FROST
+          minimum:
+            flat: 3
+          maximum:
+            flat: 3
+
+villager:
+  parent:
+    - passive
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 5
+          maximum:
+            flat: 12
+
+# neutral mobs
+bee:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2
+          maximum:
+            flat: 3
+        poison_inflict:
+          template: StatusTemplate
+          effecttype: POISON
+          statustype: TEMPORARY
+          level:
+            flat: 1
+          ticks:
+            flat: 280
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1
+          maximum:
+            flat: 1.5
+
+dolphin:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2.5
+          maximum:
+            flat: 4.5
+
+fox:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2
+          maximum:
+            flat: 3
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1
+          maximum:
+            flat: 1.5
+
+goat:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2
+          maximum:
+            flat: 3
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1
+          maximum:
+            flat: 1.5
+
+iron_golem:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 4.5
+          maximum:
+            flat: 11.5
+
+llama:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1
+          maximum:
+            flat: 1.5
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 0.5
+          maximum:
+            flat: 0.75
+trader_llama:
+  parent: llama
+
+panda:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 3
+          maximum:
+            flat: 8
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1.5
+          maximum:
+            flat: 4
+
+polar_bear:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 4
+          maximum:
+            flat: 9
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2
+          maximum:
+            flat: 4.5
+
+wolf:
+  parent:
+    - neutral
+    - attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 3
+          maximum:
+            flat: 6
+
+# zombie variants
+zombie:
+  parent: attacker
+  modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: 10
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 3
+          maximum:
+            flat: 7
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 5
+    baby:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1.5
+          maximum:
+            flat: 3.5
+zombie_villager:
+  parent: zombie
+husk:
+  parent: zombie
+  modifiers:
+    frost_vulnerability:
+      template: DefenseTemplate
+      damagetype: FROST
+      operator: FLAT
+      flat: -25
+  actionmodifiers:
+    burn_damage:
+      template: DamageRangeTemplate
+      damagetype: BURN
+      minimum:
+        flat: 1
+      maximum:
+        flat: 2
+    hunger_inflict:
+      template: StatusTemplate
+      effecttype: HUNGER
+      statustype: TEMPORARY
+      level:
+        flat: 1
+      ticks:
+        flat: 600
+drowned:
+  parent: zombie
+  modifiers:
+    shock_vulnerability:
+      template: DefenseTemplate
+      damagetype: SHOCK
+      operator: FLAT
+      flat: -25
+  actionmodifiers:
+    frost_damage:
+      template: DamageRangeTemplate
+      damagetype: FROST
+      minimum:
+        flat: 2
+      maximum:
+        flat: 3
+  actions:
+    trident_throw:
+      type: ATTACK
+
+# skeleton variants
+skeleton:
+  parent: default
+  modifiers:
+    shock_defense:
+      template: DefenseTemplate
+      damagetype: SHOCK
+      operator: FLAT
+      flat: 20
+stray:
+  parent: skeleton
+  modifiers:
+    burn_vulnerability:
+      template: DefenseTemplate
+      damagetype: BURN
+      operator: FLAT
+      flat: -25
+  actionmodifiers:
+    frost_damage:
+      template: DamageRangeTemplate
+      damagetype: FROST
+      minimum:
+        flat: 1
+      maximum:
+        flat: 2
+    slow_inflict:
+      template: StatusTemplate
+      effecttype: SLOW
+      statustype: TEMPORARY
+      level:
+        flat: 1
+      ticks:
+        flat: 300
+bogged:
+  parent: skeleton
+  modifiers:
+    havoc_defense:
+      template: DefenseTemplate
+      damagetype: HAVOC
+      operator: FLAT
+      flat: 15
+    physical_vulnerability:
+      template: DefenseTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: -25
+  actionmodifiers:
+    havoc_damage:
+      template: DamageRangeTemplate
+      damagetype: HAVOC
+      minimum:
+        flat: 1
+      maximum:
+        flat: 2
+    poison_inflict:
+      template: StatusTemplate
+      effecttype: POISON
+      statustype: TEMPORARY
+      level:
+        flat: 1
+      ticks:
+        flat: 200
+wither_skeleton:
+  parent: skeleton
+  modifiers:
+    burn_defense:
+      template: DefenseTemplate
+      damagetype: BURN
+      operator: FLAT
+      flat: 25
+    havoc_defense:
+      template: DefenseTemplate
+      damagetype: HAVOC
+      operator: FLAT
+      flat: 40
+    frost_vulnerability:
+      template: DefenseTemplate
+      damagetype: FROST
+      operator: FLAT
+      flat: -35
+  actionmodifiers:
+    havoc_damage:
+      template: DamageRangeTemplate
+      damagetype: HAVOC
+      minimum:
+        flat: 5
+      maximum:
+        flat: 7
+    inflict_wither:
+      template: StatusTemplate
+      effecttype: WITHER
+      statustype: TEMPORARY
+      level:
+        flat: 1
+      ticks:
+        flat: 200
+
+# spider variants
+spider:
+  parent: attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2
+          maximum:
+            flat: 4
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 5
+cave_spider:
+  parent: spider
+  actionmodifiers:
+    havoc_conversion:
+      template: DamageConversionTemplate
+      conversion: DAMAGE
+      fromtype: PHYSICAL
+      totype: HAVOC
+      flat: 50
+    poison_inflict:
+      template: StatusTemplate
+      effecttype: POISON
+      statustype: TEMPORARY
+      level:
+        flat: 1
+      ticks:
+        flat: 220
+
+# creeper
+creeper:
+  parent: attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 12
+          maximum:
+            flat: 17
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 5
+        critical_damage:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_DAMAGE
+          operator: FLAT
+          flat: 50
+    charged_explosion:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: SHOCK
+          minimum:
+            flat: 23
+          maximum:
+            flat: 34
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 25
+        critical_damage:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_DAMAGE
+          operator: FLAT
+          flat: 100
+
+# slime variants
+slime:
+  parent: attacker
+  actions:
+    slime_small:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1
+          maximum:
+            flat: 1
+    slime_medium:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2
+          maximum:
+            flat: 3
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 5
+    slime_large:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 3
+          maximum:
+            flat: 6
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 10
+magma_cube:
+  parent: slime
+  modifiers:
+    burn_defense:
+      template: DefenseTemplate
+      damagetype: BURN
+      operator: FLAT
+      flat: 100
+  actionmodifiers:
+    extra_burn_damage:
+      template: DamageConversionTemplate
+      conversion: EXTRA_DAMAGE
+      fromtype: PHYSICAL
+      totype: BURN
+      flat: 100
+
+# enderman
+enderman:
+  parent: attacker
+  modifiers:
+    havoc_defense:
+      template: DefenseTemplate
+      damagetype: HAVOC
+      operator: FLAT
+      flat: 50
+    physical_vulnerability:
+      template: DefenseTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: -25
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        havoc_damage_range:
+          template: DamageRangeTemplate
+          damagetype: HAVOC
+          minimum:
+            flat: 4.5
+          maximum:
+            flat: 10.5
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 10
+
+# endermite
+endermite:
+  parent: attacker
+  modifiers:
+    havoc_defense:
+      template: DefenseTemplate
+      damagetype: HAVOC
+      operator: FLAT
+      flat: 25
+    physical_vulnerability:
+      template: DefenseTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: -50
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        havoc_damage_range:
+          template: DamageRangeTemplate
+          damagetype: HAVOC
+          minimum:
+            flat: 2
+          maximum:
+            flat: 3
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 7.5
+
+# guardian
+guardian:
+  parent: attacker
+  modifiers:
+    shock_vulnerability:
+      template: DefenseTemplate
+      damagetype: SHOCK
+      operator: FLAT
+      flat: -25
+    physical_reflect:
+      template: ReflectDamageTemplate
+      damagetype: PHYSICAL
+      flat: 25
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 4
+          maximum:
+            flat: 9
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 5
+
+# elder guardian
+elder_guardian:
+  parent: attacker
+  modifiers:
+    shock_vulnerability:
+      template: DefenseTemplate
+      damagetype: SHOCK
+      operator: FLAT
+      flat: -25
+    physical_reflect:
+      template: ReflectDamageTemplate
+      damagetype: PHYSICAL
+      flat: 35
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 5
+          maximum:
+            flat: 12
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 7.5
+        mining_fatigue_inflict:
+          template: StatusTemplate
+          effecttype: POISON
+          statustype: TEMPORARY
+          level:
+            flat: 3
+          ticks:
+            flat: 6000
+
+# witch
+witch:
+  parent: default
+  actions:
+    potion_fire_resistance:
+      type: POTION
+      craftable: potion
+      modifiers:
+        witch_potion_fire_resistance:
+          template: StatusTemplate
+          effecttype: FIRE_IMMUNITY
+          statustype: TEMPORARY
+          level:
+            flat: 1
+          ticks:
+            flat: 1200
+    potion_harming:
+      type: POTION
+      craftable: negative_splash_potion
+      modifiers:
+        witch_potion_damage:
+          template: DamageTemplate
+          damagetype: HAVOC
+          operator: FLAT
+          flat: 6
+    potion_healing:
+      type: POTION
+      craftable: potion
+      modifiers:
+        witch_potion_healing:
+          template: HealingTemplate
+          operator: FLAT
+          flat: 4
+    potion_poison:
+      type: POTION
+      craftable: negative_splash_potion
+      modifiers:
+        witch_potion_poison:
+          template: StatusTemplate
+          effecttype: POISON
+          statustype: TEMPORARY
+          level:
+            flat: 1
+          ticks:
+            flat: 400
+    potion_slowness:
+      type: POTION
+      craftable: negative_splash_potion
+      modifiers:
+        witch_potion_slowness:
+          template: StatusTemplate
+          effecttype: SLOW
+          statustype: TEMPORARY
+          level:
+            flat: 1
+          ticks:
+            flat: 200
+    potion_swiftness:
+      type: POTION
+      craftable: potion
+      modifiers:
+        witch_potion_speed:
+          template: StatusTemplate
+          effecttype: SPEED
+          statustype: TEMPORARY
+          level:
+            flat: 1
+          ticks:
+            flat: 200
+    potion_water_breathing:
+      type: POTION
+      craftable: potion
+      modifiers:
+        witch_potion_speed:
+          template: StatusTemplate
+          effecttype: WATER_BREATHING
+          statustype: TEMPORARY
+          level:
+            flat: 1
+          ticks:
+            flat: 2400
+    potion_weakness:
+      type: POTION
+      craftable: negative_splash_potion
+      modifiers:
+        witch_potion_weakness:
+          template: StatusTemplate
+          effecttype: WEAKNESS
+          statustype: TEMPORARY
+          level:
+            flat: 1
+          ticks:
+            flat: 200
+
+# silverfish
+silverfish:
+  parent: attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 1
+          maximum:
+            flat: 1.5
+
+# phantom
+phantom:
+  parent: attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2
+          maximum:
+            flat: 3
+
+# breeze
+breeze:
+  parent: attacker
+
+# creaking
+creaking:
+  parent: attacker
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 2.5
+          maximum:
+            flat: 4.5
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 5
+
+# pillager mobs
+pillager:
+  parent: default
+  actionmodifiers:
+    physical_damage_scaler:
+      template: DamageTemplate
+      damagetype: PHYSICAL
+      operator: SCALER
+      flat: -50
+
+ravager:
+  parent: attacker
+  modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: 25
+    elemental_vulnerability:
+      template: DefenseTemplate
+      damagetype: ELEMENTAL
+      operator: FLAT
+      flat: -25
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 7
+          maximum:
+            flat: 18
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 10
+
+evoker:
+  parent: attacker
+  modifiers:
+    elemental_defense:
+      template: DefenseTemplate
+      damagetype: ELEMENTAL
+      operator: FLAT
+      flat: 25
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 4
+          maximum:
+            flat: 9
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 10
+
+vex:
+  parent: default
+  actionmodifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      damagetype: PHYSICAL
+      minimum:
+        flat: 0.5
+      maximum:
+        flat: 4.5
+
+vindicator:
+  parent: default
+  actionmodifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      damagetype: PHYSICAL
+      minimum:
+        flat: 0.5
+      maximum:
+        flat: 8.5
+  equipment:
+    - craftable: iron_battleaxe
+
+# nether mobs
+blaze:
+  parent: attacker
+  modifiers:
+    burn_defense:
+      template: DefenseTemplate
+      damagetype: BURN
+      operator: FLAT
+      flat: 100
+    frost_vulnerability:
+      template: DefenseTemplate
+      damagetype: FROST
+      operator: FLAT
+      flat: -25
+  actions:
+    default:
+      type: ATTACK
+      burn_damage_range:
+        template: DamageRangeTemplate
+        damagetype: BURN
+        minimum:
+          flat: 7
+        maximum:
+          flat: 10
+      critical_chance:
+        template: CriticalTemplate
+        criticaltype: CRITICAL_CHANCE
+        operator: FLAT
+        flat: 8.5
+
+ghast:
+  parent: attacker
+  modifiers:
+    elemental_defense:
+      template: DefenseTemplate
+      damagetype: ELEMENTAL
+      operator: FLAT
+      flat: 35
+    physical_vulnerability:
+      template: DefenseTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: -10
+  actions:
+    default:
+      type: ATTACK
+      physical_damage_range:
+        template: DamageRangeTemplate
+        damagetype: PHYSICAL
+        minimum:
+          flat: 10
+        maximum:
+          flat: 12
+      burn_damage_range:
+        template: DamageRangeTemplate
+        damagetype: BURN
+        minimum:
+          flat: 4
+        maximum:
+          flat: 8
+
+piglin:
+  parent: attacker
+
+piglin_brute:
+  parent: attacker
+  equipment:
+    - craftable: golden_battleaxe
+
+zombified_piglin:
+  parent: attacker
+  equipment:
+    - craftable: iron_battleaxe
+
+hoglin:
+  parent: attacker
+  actions:
+    default:
+      type: ATTACK
+      physical_damage_range:
+        template: DamageRangeTemplate
+        damagetype: PHYSICAL
+        minimum:
+          flat: 3
+        maximum:
+          flat: 6
+zoglin:
+  parent: hoglin
+
+# bosses
+warden:
+  parent: attacker
+  modifiers:
+    elemental_defense:
+      template: DefenseTemplate
+      damagetype: ELEMENTAL
+      operator: FLAT
+      flat: 100
+    havoc_defense:
+      template: DefenseTemplate
+      damagetype: HAVOC
+      operator: FLAT
+      flat: 35
+    monster_luck:
+      template: LuckTemplate
+      monster: true
+      lucktype: DROP_LUCK
+      flat: 200
+  actions:
+    default:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 25
+          maximum:
+            flat: 35
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 10
+    sonic_boom:
+      type: ATTACK
+      modifiers:
+        shock_damage_range:
+          template: DamageRangeTemplate
+          damagetype: SHOCK
+          minimum:
+            flat: 5
+          maximum:
+            flat: 15
+        critical_chance:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_CHANCE
+          operator: FLAT
+          flat: 5
+        critical_damage:
+          template: CriticalTemplate
+          criticaltype: CRITICAL_DAMAGE
+          operator: FLAT
+          flat: 100
+
+wither:
+  parent: attacker
+  modifiers:
+    elemental_defense:
+      template: DefenseTemplate
+      damagetype: ELEMENTAL
+      operator: FLAT
+      flat: 40
+    havoc_defense:
+      template: DefenseTemplate
+      damagetype: HAVOC
+      operator: FLAT
+      flat: 100
+    monster_luck:
+      template: LuckTemplate
+      monster: true
+      lucktype: DROP_LUCK
+      flat: 200
+  actions:
+    wither_birth:
+      type: ATTACK
+      modifiers:
+        physical_damage_range:
+          template: DamageRangeTemplate
+          damagetype: PHYSICAL
+          minimum:
+            flat: 20
+          maximum:
+            flat: 30
+        inflict_wither:
+          template: StatusTemplate
+          effecttype: WITHER
+          statustype: TEMPORARY
+          level:
+            flat: 4
+          ticks:
+            precision: 10
+            flat: 40
+            steps: 3
+    wither_skull:
+      type: ATTACK
+      modifiers:
+        havoc_damage_range:
+          template: DamageRangeTemplate
+          damagetype: HAVOC
+          minimum:
+            precision: 1
+            flat: 13
+            steps: 4
+          maximum:
+            precision: 1
+            flat: 19
+            steps: 4
+        inflict_wither:
+          template: StatusTemplate
+          effecttype: WITHER
+          statustype: TEMPORARY
+          level:
+            flat: 2
+          ticks:
+            precision: 10
+            flat: 300
+            steps: 11
+    wither_armor:
+      type: TRIGGER
+      modifiers:
+        physical_defense_health_trigger:
+          triggertype: HALF_HEALTH
+          effect: false
+          modifier:
+            template: DefenseTemplate
+            damagetype: PHYSICAL
+            operator: FLAT
+            flat: 35

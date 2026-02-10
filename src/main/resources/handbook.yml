@@ -1,0 +1,321 @@
+title: Aurivale Handbook
+author: Server
+generation: COPY_OF_COPY
+sections:
+  general:
+    name: General Info
+    pages:
+      - lines:
+          - 'You might be wondering where you are. A server with the RPG plugin generates random spawn locations.'
+          - ''
+          - '<italic>Good luck and god speed</italic>'
+      - lines:
+          - 'The RPG plugin changes many aspects of the vanilla minecraft server.'
+          - ''
+          - 'The changed aspects are in this manual.'
+          - ''
+          - 'Some features are not captured and are disabled.'
+  environment:
+    name: Environment
+    pages:
+      - lines:
+          - '<italic><underlined>Damage</underlined></italic>'
+          - 'Environmental damage is updated and deals slightly more than vanilla but your defenses are applied to this damage.'
+  craftables:
+    name: Craftables
+    pages:
+      - lines:
+          - 'This is an overhaul on vanilla crafting on the following types:'
+          - '  <bold>Weapons</bold>'
+          - '  <bold>Armor</bold>'
+          - '  <bold>Tools</bold>'
+          - '  <bold>Potions</bold>'
+          - '  <bold>Wands</bold>'
+          - '  <bold>Stories</bold>'
+      - lines:
+          - '<italic><underlined>Chainmail</underlined></italic> uses iron nuggets for crafting.'
+          - 'Defense is in between gold and iron.'
+          - ''
+          - '<italic><underlined>Gold Items</underlined></italic> have better enchanting rolls than other types.'
+      - lines:
+          - '<italic><underlined>Copper Items</underlined></italic> have stats equal to iron.'
+          - 'Imparts an enchanting roll penalty.'
+          - ''
+          - '<italic><underlined>Spectral Arrows</underlined></italic> do not inflict glowing but instead grant a bonus to enchanting rolls.'
+      - lines:
+          - '<italic><underlined>Battleaxes</underlined></italic> are the weapon version of the axe tool.'
+          - ''
+          - '<bold>Crafting Recipe</bold>'
+          - '       I I I'
+          - '       I S'
+          - '         S'
+          - 'I: Crafting Material'
+          - 'S: Stick'
+      - lines:
+          - '<italic><underlined>Apprentice Robes</underlined></italic> grant max mana and mana regen.'
+          - ''
+          - '<bold>Crafting Recipe</bold>'
+          - '       I   I'
+          - '       I I I'
+          - '       I I I'
+          - 'I: <italic>Any Wool</italic>'
+      - lines:
+          - 'When crafting your crafting skill is added to a random roll from 0-20 and stored on the item. This value is used as a bonus to enchanting rolls.'
+          - ''
+          - 'Crafting rolls are permanent on a crafted item and cannot be changed.'
+  uniques:
+    name: Uniques
+    pages:
+      - lines:
+          - '<gold>Partially Implemented!</gold>'
+          - ''
+          - 'Uniques can drop from mob loot.'
+          - ''
+          - 'Fatebinders Prism can roll an item into a unique'
+          - ''
+          - 'Unique crafting will be done later.'
+  enchanting:
+    name: Enchanting
+    pages:
+      - lines:
+          - 'Enchanters are dropped by mobs or found in loot chests around the world.'
+          - ''
+          - 'To use an enchanter you right click on it then left left click on the target item. Holding shift will let you keep using the same enchanter type.'
+      - lines:
+          - 'Modifiers added by most enchanters will either be a <blue>prefix</blue> or <dark_green>suffix</dark_green>.'
+          - ''
+          - 'Items can have a maximum of 4 <blue>prefixes</blue> and 4 <dark_green>suffixes</dark_green>.'
+          - ''
+          - 'Refer to the help text on the enchanter to read how it will work.'
+      - lines:
+          - 'When enchanting your enchanting skill and the items crafting roll is added to a random roll from 0-20.'
+          - ''
+          - 'This value increases the chances for better modifiers and is rolled each time an enchanter is used.'
+      - lines:
+          - '<italic><underlined><dark_red>Immutable Items</dark_red></underlined></italic>'
+          - 'Are items that can no longer be modified by enchanters further.'
+          - ''
+          - 'This is signified by the dark red <dark_red>Immutable</dark_red> lore line.'
+  brewing:
+    name: Brewing
+    pages:
+      - lines:
+          - 'Brewing mechanically acts the same as vanilla Minecraft with changes to better fit the RPG plugin.'
+          - ''
+          - 'Enchanters and a few select items are used for brewing.'
+      - lines:
+          - 'The crafting recipe for Brewing Stands has been changed.'
+          - ''
+          - 'The blaze rod is replaced with a stick.'
+          - ''
+          - 'Brewing Stands fuels:'
+          - ' - Charcoal: 4 uses'
+          - ' - Coal: 8 uses'
+          - ' - Blaze Rod: 20 uses'
+      - lines:
+          - '<italic><underlined>Potions</underlined></italic>'
+          - ''
+          - 'There are 5 types.'
+          - ''
+          - 'Potion'
+          - 'Positive Splash Potion'
+          - 'Negative Splash Potion'
+          - 'Positive Linger Potion'
+          - 'Negative Linger Potion'
+      - lines:
+          - '<italic><underlined>Potion Crafting</underlined></italic>'
+          - ''
+          - 'Crafting a potion requires 3 glass panes in the shape of a bucket.'
+          - ''
+          - 'A used potion turns into a glass bottle that crafts into a Potion again.'
+      - lines:
+          - '<italic><underlined>Enchanters</underlined></italic>'
+          - ''
+          - 'Used as ingredients and their effect works as described.'
+          - ''
+          - 'Cannot be used directly on potions.'
+      - lines:
+          - '<italic><underlined>Special Ingredients</underlined></italic>'
+          - ''
+          - 'Redstone Splash'
+          - 'Gunpowder Linger'
+          - 'Sugar Positive'
+          - 'Spider Negative'
+          - ''
+          - 'Moving between <italic>Positive</italic> and <italic>Negative</italic> removes all modifiers.'
+      - lines:
+  combat:
+    name: Combat
+    pages:
+      - lines:
+          - 'Combat functions mostly like vanilla minecraft with the addition of damage types.'
+          - ''
+          - '<bold>Damage Types</bold>:'
+          - '<dark_gray>Physical</dark_gray>, <dark_red>Burn</darK_red>, <blue>Frost</blue>, <gold>Shock</gold>, and <light_purple>Havoc</light_purple>'
+    sections:
+      combat_defense:
+        name: Combat Defense
+        pages:
+          - lines:
+              - 'Each damage type has various modifiers to increase your damage reduction.'
+              - ''
+              - 'Shields only block a percent of damage with a modifier to increase this amount.'
+          - lines:
+              - 'Defense values give an implicit damage taken reduction of 1/20 of their value.'
+              - ''
+              - 'Damage taken modifiers happen before damage reduction calculation and application.'
+          - lines:
+              - 'The <bold>DR calc</bold> is dependent on the defense and damage value.'
+              - ''
+              - '<bold>r=d/(d+3*(a-t))+e</bold>'
+              - 'r = damage reduction'
+              - 'd = defense'
+              - 'a - damage'
+              - 't = reduced taken'
+              - 'e = extra reduction'
+          - lines:
+              - 'Negative defense values use a different equation.'
+              - ''
+              - '<bold>t=a*(1-d/50)</bold>'
+              - 't=damage taken'
+              - 'a=attack damage'
+              - 'd=defense'
+              - ''
+              - 'This results in increased damage taken.'
+      combat_offense:
+        name: Combat Offense
+        pages:
+          - lines:
+              - 'Attacking works almost the same as vanilla with some changes.'
+              - ''
+              - 'Weapon damage values now have damage ranges for attacks.'
+              - ''
+              - 'Attack speed modifiers can roll on melee weapons.'
+          - lines:
+              - '<italic><underlined>Bows</underlined></italic> have damage comparable to Iron Swords.'
+              - ''
+              - '<italic><underlined>Crossbows</underlined></italic> have damage 50% higher than Bows.'
+              - ''
+              - 'These items can roll modifiers that increase the speed of fired arrows.'
+      combat_drops:
+        name: Combat Drops
+        pages:
+          - lines:
+              - 'Non-players that are damaged by players before death will drop RPG loot in addition to their normal loot.'
+              - ''
+              - 'The amount and quality is influence by the player and mobs Drop Luck.'
+          - lines:
+              - 'RPG mob drops including the following'
+              - '  <bold>Enchanters</bold>'
+              - '  <bold>Craftables</bold>'
+              - '  <bold>Uniques</bold>'
+          - lines:
+              - 'Craftables have their crafting value set to half the drop luck.'
+              - ''
+              - 'Enchanters have a small chance to drop with a modifier applied to them.'
+  trading:
+    name: Trading
+    pages:
+      - lines:
+          - '<italic><underlined>Villager Trading</underlined></italic>: The interface and mechanics work like the vanilla trading system.'
+          - ''
+          - 'Enchanters are bought with crafting materials and Armor/Weapons/Tools are bought with enchanters.'
+  spells:
+    name: Spells
+    pages:
+      - lines:
+          - 'Spells are usually cast from using a wand. Using a wand is a left click action.'
+          - ''
+          - '<bold>Spells triggers:</bold>'
+          - '  On Melee Hit'
+          - '  When Hit'
+          - '  On Kill'
+    sections:
+      spells_mana:
+        name: Mana
+        pages:
+          - lines:
+              - 'Players default to 20 max mana.'
+              - ''
+              - 'Base regeneration is 2.5%/sec.'
+              - ''
+              - 'Modifiers on items can change mana and mana regen.'
+          - lines:
+              - 'Only spells <italic>Cast</italic> cost mana, triggered spells cost nothing.'
+              - ''
+              - 'The mana cost of spells scales with level.'
+  parties:
+    name: Parties
+    pages:
+      - lines:
+          - '<gold>Partially Implemented'
+          - 'Players can create parties via a crafting recipe that creates tokens.'
+          - ''
+          - '<bold>Crafting Recipe</bold>'
+          - '         I'
+          - '       I S I'
+          - '         I'
+          - 'I: Paper'
+          - 'S: Iron Ingot'
+  monsters:
+    name: Monsters
+    pages:
+      - lines:
+          - 'Monsters are overhauled to fit in the with RPG plugin.'
+          - ''
+          - 'Players will spawn in with some peaceful mode which protects them from monster attacks.'
+          - ''
+          - 'Player attacks remove this protection.'
+    sections:
+      monster_packs:
+        name: Monster Packs
+        pages:
+          - lines:
+              - 'Some monster types will spawn in a pack.'
+              - ''
+              - 'Packs range in size from 3 to 5 monsters.'
+              - ''
+              - 'When a monster gets too far from its leader it will move back to it.'
+      monster_modifiers:
+        name: Pack Modifiers
+        pages:
+          - lines:
+              - 'Monster packs come in multiple rarities:'
+              - ' <italic><dark_grey>Normal</italic>'
+              - ' <italic><blue>Magic</italic>'
+              - ' <italic><gold>Rare</italic>'
+              - ''
+              - 'Monsters from higher rarity packs will drop more and better loot.'
+          - lines:
+              - '<italic><underlined><blue>Magic Packs</blue></underlined></italic>'
+              - ''
+              - 'Will show <blue>Blue Dust</blue> around all members of the pack.'
+              - ''
+              - 'Have 2 modifiers from 1 modifier group.'
+          - lines:
+              - '<italic><underlined><gold>Rare Packs</gold></underlined></italic>'
+              - ''
+              - 'Will show <gold>Yellow Dust</gold> around all members of the pack.'
+              - ''
+              - 'Have 4 modifiers from 2 modifier groups.'
+  nether:
+    name: Nether
+    pages:
+      - lines:
+        - '<gold>Partially Implemented'
+        - ''
+        - 'Nether is 1:1 in size with the overworld.'
+        - ''
+        - 'Void Walk spell goes directly to the Nether.'
+        - ''
+        - 'Some mobs might not be configured.'
+  disabled:
+    name: Disabled
+    pages:
+      - lines:
+          - '<italic><underlined>Grindstone</underlined></italic>: Cannot be crafted or used.'
+          - '<italic><underlined>Enchanting Table</underlined></italic>: Cannot be used.'
+          - '<italic><underlined>Fishing Rod</underlined></italic>: Cannot be crafted or used.'
+          - '<italic><underlined>Smithing Table</underlined></italic>: Cannot be crafted or used.'
+          - '<italic><underlined>End</underlined></italic>: Is not enabled yet.'
+          - '<italic><underlined>Piglin Trades</underlined></italic>: Is not enabled yet.'

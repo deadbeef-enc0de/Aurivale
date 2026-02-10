@@ -1,0 +1,144 @@
+# minimum number of items to drop from mobs
+base_item_drop_count: 1
+# base drop chance for a mob drop, this keeps rolling until
+# there is a failure, this allows large loot drops occasionally
+drop_chance: 0.6
+# chance for enchanter to drop with a modifier group attached
+enchanter_mod_chance: 0.01
+# chance for entities to drop craftables being held
+monster_craftable_drop_change: 0.1
+
+# each world has its own drop table, but there is a base table they inherit
+worlds:
+  world:
+    enchanters:
+      tags:
+        - enchanter
+      types:
+        WHISPERING_EMBER: 1500
+        CHARM_OF_ENRICHMENT: 2500
+        FATEBINDERS_PRISM: 1000
+        ASCENDANT_SEAL: 1500
+        CELESTIAL_CATALYST: 500
+        ECHO_OF_ASCENSION: 1250
+        VOIDTEAR_SIGIL: 750
+        ORB_OF_FLUX: 200
+        PHANTOM_REFLECTION: 100
+        MARK_OF_ETERNITY: 10
+        SUNDERING_RUNE: 5
+        ESSENCE_SHARD: 25
+    craftables:
+      tags:
+        - craftable
+      rarity:
+        normal: 700
+        magic: 250
+        rare: 50
+      types:
+        - weight: 200
+          types:
+            - diamond_helmet
+            - diamond_chestplate
+            - diamond_leggings
+            - diamond_boots
+            - diamond_sword
+            - diamond_battleaxe
+        - weight: 20
+          types:
+            - netherite_helmet
+            - netherite_chestplate
+            - netherite_leggings
+            - netherite_boots
+            - netherite_sword
+            - netherite_battleaxe
+    uniques:
+      tags:
+        - unique
+      weight: 100
+    wands:
+      tags:
+        - wand
+      levels:
+        1: 500
+        2: 200
+        3: 125
+        4: 60
+        5: 10
+  nether:
+    enchanters:
+      tags:
+        - enchanter
+      types:
+        WHISPERING_EMBER: 500
+        CHARM_OF_ENRICHMENT: 1250
+        FATEBINDERS_PRISM: 1000
+        ASCENDANT_SEAL: 1250
+        CELESTIAL_CATALYST: 1500
+        ECHO_OF_ASCENSION: 3000
+        VOIDTEAR_SIGIL: 1200
+        ORB_OF_FLUX: 500
+        PHANTOM_REFLECTION: 150
+        MARK_OF_ETERNITY: 20
+        SUNDERING_RUNE: 10
+        ESSENCE_SHARD: 35
+    craftables:
+      tags:
+        - craftable
+      rarity:
+        normal: 700
+        magic: 250
+        rare: 50
+      types:
+        - weight: 200
+          types:
+            - burn_helmet
+            - frost_helmet
+            - shock_helmet
+            - burn_chestplate
+            - frost_chestplate
+            - shock_chestplate
+            - burn_leggings
+            - frost_leggings
+            - shock_leggings
+            - burn_boots
+            - frost_boots
+            - shock_boots
+            - burn_sword
+            - frost_sword
+            - shock_sword
+            - havoc_sword
+            - burn_battleaxe
+            - frost_battleaxe
+            - shock_battleaxe
+            - havoc_battleaxe
+        - weight: 50
+          types:
+            - havoc_helmet
+            - havoc_chestplate
+            - havoc_leggings
+            - havoc_boots
+            - master_robes
+            - magic_sword
+            - magic_battleaxe
+            - spell_touched_sword
+        - weight: 20
+          types:
+            - netherite_helmet
+            - netherite_chestplate
+            - netherite_leggings
+            - netherite_boots
+            - netherite_sword
+            - netherite_battleaxe
+    uniques:
+      tags:
+        - unique
+      weight: 150
+    wands:
+      tags:
+        - wand
+      levels:
+        1: 160
+        2: 460
+        3: 160
+        4: 85
+        5: 30

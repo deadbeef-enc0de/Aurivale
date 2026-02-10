@@ -1,0 +1,3296 @@
+armor_piece:
+  magic_modifiers:
+    - flat_skill_crafting
+    - flat_skill_enchanting
+    - flat_skill_brewing
+    - defense_flat_physical
+    - defense_flat_burn
+    - defense_flat_frost
+    - defense_flat_shock
+    - defense_flat_elemental
+    - defense_flat_havoc
+    - defense_scaler_physical
+    - enchantment_unbreaking
+    - damage_reduction_physical
+    - flat_drop_luck_prefix
+    - status_permanent_invisibility
+    - attribute_flat_health
+shield:
+  material: SHIELD
+  displayname: Shield
+  parent: armor_piece
+  itemslot: OFF_HAND
+  group: SHIELD
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'pip'
+        - 'ppp'
+        - ' p '
+      materials:
+        p:
+          - ACACIA_PLANKS
+          - BAMBOO_PLANKS
+          - BIRCH_PLANKS
+          - CHERRY_PLANKS
+          - CRIMSON_PLANKS
+          - DARK_OAK_PLANKS
+          - JUNGLE_PLANKS
+          - MANGROVE_PLANKS
+          - OAK_PLANKS
+          - PALE_OAK_PLANKS
+          - SPRUCE_PLANKS
+          - WARPED_PLANKS
+        i:
+          - IRON_INGOT
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 6
+      steps: 3
+    block_damage:
+      template: BlockDamageTemplate
+      base: true
+      operator: FLAT
+      precision: 1
+      flat: 45
+      steps: 6
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -5
+  magic_modifiers:
+    - block_damage_scalar
+    - damage_reduction_burn
+    - damage_reduction_frost
+    - damage_reduction_shock
+    - damage_reduction_elemental
+    - damage_reduction_havoc
+    - damage_range_physical_offhand
+    - damage_range_burn_offhand
+    - damage_range_frost_offhand
+    - damage_range_shock_offhand
+    - damage_range_havoc_offhand
+    - flat_drop_luck_suffix
+
+helmet:
+  parent: armor_piece
+  itemslot: HEAD
+  group: HELMET
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'mmm'
+        - 'm m'
+  magic_modifiers:
+    - mana_max_flat
+    - enchantment_aqua_affinity
+    - enchantment_respiration
+    - status_permanent_night_vision
+    - status_permanent_water_breathing
+    - status_immunity_blindness
+leather_helmet:
+  material: LEATHER_HELMET
+  displayname: Leather Cap
+  parent: helmet
+  recipes:
+    crafting:
+      materials:
+        m:
+          - LEATHER
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 1
+      steps: 3
+golden_helmet:
+  material: GOLDEN_HELMET
+  displayname: Golden Helmet
+  parent: helmet
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 2
+      steps: 3
+chainmail_helmet:
+  material: CHAINMAIL_HELMET
+  displayname: Chainmail Helmet
+  parent: helmet
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_NUGGET
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 2
+      steps: 3
+turtle_shell:
+  material: TURTLE_HELMET
+  displayname: Turtle Shell
+  parent: chainmail_helmet
+  recipes:
+    crafting:
+      materials:
+        m:
+          - TURTLE_SCUTE
+  base_modifiers:
+    water_breathing:
+      template: StatusTemplate
+      base: true
+      effecttype: WATER_BREATHING
+      statustype: PERMANENT
+      level:
+        flat: 1
+copper_helmet:
+  material: COPPER_HELMET
+  displayname: Copper Helmet
+  parent: helmet
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 3
+      steps: 3
+iron_helmet:
+  material: IRON_HELMET
+  displayname: Iron Helmet
+  parent: helmet
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 3
+      steps: 3
+diamond_helmet:
+  material: DIAMOND_HELMET
+  displayname: Diamond Helmet
+  parent: helmet
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 4
+      steps: 3
+netherite_helmet:
+  material: NETHERITE_HELMET
+  displayname: Netherite Helmet
+  parent: helmet
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 5
+      steps: 3
+burn_helmet:
+  material: IRON_HELMET
+  displayname: Burn Helmet
+  parent: iron_helmet
+  modeldata: 10001
+  base_modifiers:
+    burn_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: BURN
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+frost_helmet:
+  material: IRON_HELMET
+  displayname: Frost Helmet
+  parent: iron_helmet
+  modeldata: 10002
+  base_modifiers:
+    frost_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: FROST
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+shock_helmet:
+  material: IRON_HELMET
+  displayname: Shock Helmet
+  parent: iron_helmet
+  modeldata: 10003
+  base_modifiers:
+    shock_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: SHOCK
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+havoc_helmet:
+  material: DIAMOND_HELMET
+  displayname: Havoc Helmet
+  parent: diamond_helmet
+  modeldata: 10001
+  base_modifiers:
+    havoc_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: HAVOC
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+
+chestplate:
+  parent: armor_piece
+  itemslot: CHEST
+  group: CHESTPLATE
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'm m'
+        - 'mmm'
+        - 'mmm'
+  magic_modifiers:
+    - reflected_damage_physical
+    - reflected_damage_elemental
+    - status_permanent_fire_immunity
+    - status_permanent_regeneration
+    - status_immunity_glowing
+    - status_immunity_poison
+    - status_immunity_wither
+    - critical_chance_scaler
+leather_chestplate:
+  material: LEATHER_CHESTPLATE
+  displayname: Leather Tunic
+  parent: chestplate
+  recipes:
+    crafting:
+      materials:
+        m:
+          - LEATHER
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 6
+      steps: 3
+golden_chestplate:
+  material: GOLDEN_CHESTPLATE
+  displayname: Golden Chestplate
+  parent: chestplate
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 6
+      steps: 3
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -3
+chainmail_chestplate:
+  material: CHAINMAIL_CHESTPLATE
+  displayname: Chainmail Chestplate
+  parent: chestplate
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_NUGGET
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 7
+      steps: 3
+copper_chestplate:
+  material: COPPER_CHESTPLATE
+  displayname: Copper Chestplate
+  parent: chestplate
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 9
+      steps: 3
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -2
+iron_chestplate:
+  material: IRON_CHESTPLATE
+  displayname: Iron Chestplate
+  parent: chestplate
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 9
+      steps: 3
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -2
+diamond_chestplate:
+  material: DIAMOND_CHESTPLATE
+  displayname: Diamond Chestplate
+  parent: chestplate
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 11
+      steps: 3
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -4
+    reduced_physical_taken:
+      template: DamageTakenTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: -1
+netherite_chestplate:
+  material: NETHERITE_CHESTPLATE
+  displayname: Netherite Chestplate
+  parent: chestplate
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+  base_modifiers:
+    physical_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 15
+      steps: 3
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -6
+    reduced_physical_taken:
+      template: DamageTakenTemplate
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: -2
+burn_chestplate:
+  material: IRON_CHESTPLATE
+  displayname: Burn Chestplate
+  parent: iron_chestplate
+  modeldata: 10001
+  base_modifiers:
+    burn_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: BURN
+      operator: FLAT
+      precision: 1
+      flat: 15
+      steps: 6
+frost_chestplate:
+  material: IRON_CHESTPLATE
+  displayname: Frost Chestplate
+  parent: iron_chestplate
+  modeldata: 10002
+  base_modifiers:
+    frost_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: FROST
+      operator: FLAT
+      precision: 1
+      flat: 15
+      steps: 6
+shock_chestplate:
+  material: IRON_CHESTPLATE
+  displayname: Shock Chestplate
+  parent: iron_chestplate
+  modeldata: 10003
+  base_modifiers:
+    shock_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: SHOCK
+      operator: FLAT
+      precision: 1
+      flat: 15
+      steps: 6
+havoc_chestplate:
+  material: DIAMOND_CHESTPLATE
+  displayname: Havoc Chestplate
+  parent: diamond_chestplate
+  modeldata: 10001
+  base_modifiers:
+    havoc_defense:
+      template: DefenseTemplate
+      base: true
+      damagetype: HAVOC
+      operator: FLAT
+      precision: 1
+      flat: 15
+      steps: 6
+
+leggings:
+  parent: armor_piece
+  itemslot: LEGS
+  group: LEGGINGS
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'mmm'
+        - 'm m'
+        - 'm m'
+  magic_modifiers:
+    - attribute_flat_step_height
+    - attribute_less_fall_damage_multiplier
+    - status_permanent_haste
+    - status_permanent_slow_falling
+leather_leggings:
+  material: LEATHER_LEGGINGS
+  displayname: Leather Pants
+  parent: leggings
+  recipes:
+    crafting:
+      materials:
+        m:
+          - LEATHER
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 3
+      steps: 3
+golden_leggings:
+  material: GOLDEN_LEGGINGS
+  displayname: Golden Leggings
+  parent: leggings
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 4
+      steps: 3
+chainmail_leggings:
+  material: CHAINMAIL_LEGGINGS
+  displayname: Chainmail Leggings
+  parent: leggings
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_NUGGET
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 5
+      steps: 3
+copper_leggings:
+  material: COPPER_LEGGINGS
+  displayname: Copper Leggings
+  parent: leggings
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 7
+      steps: 3
+iron_leggings:
+  material: IRON_LEGGINGS
+  displayname: Iron Leggings
+  parent: leggings
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 7
+      steps: 3
+diamond_leggings:
+  material: DIAMOND_LEGGINGS
+  displayname: Diamond Leggings
+  parent: leggings
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 8
+      steps: 3
+netherite_leggings:
+  material: NETHERITE_LEGGINGS
+  displayname: Netherite Leggings
+  parent: leggings
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 11
+      steps: 3
+burn_leggings:
+  material: IRON_LEGGINGS
+  displayname: Burn Leggings
+  parent: iron_leggings
+  modeldata: 10001
+  base_modifiers:
+    burn_resistance:
+      template: DefenseTemplate
+      base: true
+      damagetype: BURN
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+frost_leggings:
+  material: IRON_LEGGINGS
+  displayname: Frost Leggings
+  parent: iron_leggings
+  modeldata: 10002
+  base_modifiers:
+    frost_resistance:
+      template: DefenseTemplate
+      base: true
+      damagetype: FROST
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+shock_leggings:
+  material: IRON_LEGGINGS
+  displayname: Shock Leggings
+  parent: iron_leggings
+  modeldata: 10003
+  base_modifiers:
+    shock_resistance:
+      template: DefenseTemplate
+      base: true
+      damagetype: SHOCK
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+havoc_leggings:
+  material: DIAMOND_LEGGINGS
+  displayname: Havoc Leggings
+  parent: diamond_leggings
+  modeldata: 10001
+  base_modifiers:
+    havoc_resistance:
+      template: DefenseTemplate
+      base: true
+      damagetype: HAVOC
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+
+boots:
+  parent: armor_piece
+  itemslot: FEET
+  group: BOOTS
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'm m'
+        - 'm m'
+  magic_modifiers:
+    - attribute_increased_movement_speed
+    - attribute_flat_safe_fall_distance
+    - enchantment_depth_strider
+    - enchantment_feather_falling
+    - enchantment_frost_walker
+    - enchantment_soul_speed
+    - status_permanent_jump
+    - status_permanent_speed
+    - status_immunity_slowness
+leather_boots:
+  material: LEATHER_BOOTS
+  displayname: Leather Boots
+  parent: boots
+  recipes:
+    crafting:
+      materials:
+        m:
+          - LEATHER
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: 2
+golden_boots:
+  material: GOLDEN_BOOTS
+  displayname: Golden Boots
+  parent: boots
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: 2
+chainmail_boots:
+  material: CHAINMAIL_BOOTS
+  displayname: Chainmail Boots
+  parent: boots
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_NUGGET
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      flat: 3
+copper_boots:
+  material: COPPER_BOOTS
+  displayname: Copper Boots
+  parent: boots
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 3
+      steps: 2
+iron_boots:
+  material: IRON_BOOTS
+  displayname: Iron Boots
+  parent: boots
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 3
+      steps: 2
+diamond_boots:
+  material: DIAMOND_BOOTS
+  displayname: Diamond Boots
+  parent: boots
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 4
+      steps: 2
+netherite_boots:
+  material: NETHERITE_BOOTS
+  displayname: Netherite Boots
+  parent: boots
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 5
+      steps: 3
+burn_boots:
+  material: IRON_BOOTS
+  displayname: Burn Boots
+  parent: iron_boots
+  modeldata: 10001
+  base_modifiers:
+    burn_resistance:
+      template: DefenseTemplate
+      base: true
+      damagetype: BURN
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+frost_boots:
+  material: IRON_BOOTS
+  displayname: Frost Boots
+  parent: iron_boots
+  modeldata: 10002
+  base_modifiers:
+    frost_resistance:
+      template: DefenseTemplate
+      base: true
+      damagetype: FROST
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+shock_boots:
+  material: IRON_BOOTS
+  displayname: Shock Boots
+  parent: iron_boots
+  modeldata: 10003
+  base_modifiers:
+    shock_resistance:
+      template: DefenseTemplate
+      base: true
+      damagetype: SHOCK
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+havoc_boots:
+  material: DIAMOND_BOOTS
+  displayname: Havoc Boots
+  parent: diamond_boots
+  modeldata: 10001
+  base_modifiers:
+    havoc_resistance:
+      template: DefenseTemplate
+      base: true
+      damagetype: HAVOC
+      operator: FLAT
+      precision: 1
+      flat: 10
+      steps: 6
+
+animal_armor:
+  itemslot: BODY
+  magic_modifiers:
+    - attribute_flat_health
+    - attribute_increased_movement_speed
+    - damage_reduction_physical
+    - defense_flat_physical
+    - defense_flat_burn
+    - defense_flat_frost
+    - defense_flat_shock
+    - defense_flat_elemental
+    - defense_flat_havoc
+    - enchantment_unbreaking
+    - status_permanent_fire_immunity
+    - status_permanent_regeneration
+    - reflected_damage_physical
+    - reflected_damage_elemental
+wolf_armor:
+  material: WOLF_ARMOR
+  displayname: Wolf Armor
+  parent: animal_armor
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'm  '
+        - 'mmm'
+        - 'm m'
+      materials:
+        m:
+          - ARMADILLO_SCUTE
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 9
+      steps: 3
+  magic_modifiers:
+    - damage_range_physical
+    - damage_range_burn
+    - damage_range_frost
+    - damage_range_shock
+    - damage_range_havoc
+horse_armor:
+  parent: animal_armor
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'm m'
+        - 'mmm'
+        - 'm m'
+leather_horse_armor:
+  material: LEATHER_HORSE_ARMOR
+  displayname: Leather Horse Armor
+  parent: horse_armor
+  recipes:
+    crafting:
+      materials:
+        m:
+          - LEATHER
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 13
+      steps: 5
+golden_horse_armor:
+  material: GOLDEN_HORSE_ARMOR
+  displayname: Golden Horse Armor
+  parent: horse_armor
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 15
+      steps: 5
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -4
+copper_horse_armor:
+  material: COPPER_HORSE_ARMOR
+  displayname: Copper Horse Armor
+  parent: horse_armor
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 23
+      steps: 5
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -3
+iron_horse_armor:
+  material: IRON_HORSE_ARMOR
+  displayname: Iron Horse Armor
+  parent: horse_armor
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 23
+      steps: 5
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -3
+diamond_horse_armor:
+  material: DIAMOND_HORSE_ARMOR
+  displayname: Diamond Horse Armor
+  parent: horse_armor
+  recipes:
+    crafting:
+      materials:
+        m:
+         - DIAMOND
+  base_modifiers:
+    armor:
+      template: DefenseTemplate
+      base: true
+      damagetype: PHYSICAL
+      operator: FLAT
+      precision: 1
+      flat: 28
+      steps: 5
+    reduced_movement_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: MOVEMENT_SPEED
+      operator: SCALER
+      flat: -5
+
+robes:
+  itemslot: CHEST
+  group: CHESTPLATE
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'm m'
+        - 'mmm'
+        - 'mmm'
+  magic_modifiers:
+    - flat_skill_crafting
+    - flat_skill_enchanting
+    - flat_skill_brewing
+    - defense_flat_burn
+    - defense_flat_frost
+    - defense_flat_shock
+    - defense_flat_elemental
+    - defense_flat_havoc
+    - enchantment_unbreaking
+    - flat_drop_luck_prefix
+    - attribute_flat_health
+    - mana_max_flat
+    - mana_max_scaler
+    - mana_regen_scaler
+    - flat_spell_level_robes
+apprentice_robes:
+  material: LEATHER_CHESTPLATE
+  displayname: Apprentice Robes
+  parent: robes
+  modeldata: 10001
+  recipes:
+    crafting:
+      materials:
+        m:
+          - BLACK_WOOL
+          - BLUE_WOOL
+          - BROWN_WOOL
+          - CYAN_WOOL
+          - GRAY_WOOL
+          - GREEN_WOOL
+          - LIGHT_BLUE_WOOL
+          - LIGHT_GRAY_WOOL
+          - LIME_WOOL
+          - MAGENTA_WOOL
+          - ORANGE_WOOL
+          - PINK_WOOL
+          - PURPLE_WOOL
+          - RED_WOOL
+          - WHITE_WOOL
+          - YELLOW_WOOL
+  base_modifiers:
+    max_mana:
+      template: ManaTemplate
+      base: true
+      manatype: MAX_MANA
+      operator: FLAT
+      precision: 1
+      flat: 7
+      steps: 4
+    mana_regen:
+      template: ManaTemplate
+      base: true
+      manatype: MANA_REGEN
+      operator: FLAT
+      precision: 0.1
+      flat: 1.0
+      steps: 6
+master_robes:
+  material: LEATHER_CHESTPLATE
+  displayname: Master Robes
+  parent: robes
+  modeldata: 10002
+  base_modifiers:
+    max_mana:
+      template: ManaTemplate
+      base: true
+      manatype: MAX_MANA
+      operator: FLAT
+      precision: 1
+      flat: 12
+      steps: 4
+    mana_regen:
+      template: ManaTemplate
+      base: true
+      manatype: MANA_REGEN
+      operator: FLAT
+      precision: 0.1
+      flat: 1.5
+      steps: 6
+    spell_level:
+      template: LevelTemplate
+      operator: FLAT
+      flat: 1
+
+sword:
+  itemslot: MAIN_HAND
+  group: SWORD
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'm'
+        - 'm'
+        - 's'
+      materials:
+        s:
+          - STICK
+  magic_modifiers:
+    - damage_range_physical
+    - damage_scaler_physical
+    - damage_range_burn
+    - damage_range_frost
+    - damage_range_shock
+    - damage_range_havoc
+    - attribute_increased_attack_speed
+    - attribute_increased_entity_interaction
+    - enchantment_knockback
+    - enchantment_unbreaking
+    - enchantment_splash_damage
+    - attack_luck_lucky_damage
+    - critical_chance_scaler
+    - critical_damage_scaler
+    - leech_life_physical
+    - flat_drop_luck_suffix
+    - status_temporary_weapon_fatigue
+    - status_temporary_weapon_glowing
+    - status_temporary_weapon_poison
+    - status_temporary_weapon_slowness
+    - status_temporary_weapon_vision
+    - status_temporary_weapon_weakness
+    - status_temporary_weapon_wither
+wooden_sword:
+  material: WOODEN_SWORD
+  displayname: Wooden Sword
+  parent: sword
+  recipes:
+    crafting:
+      materials:
+        m:
+          - ACACIA_PLANKS
+          - BAMBOO_PLANKS
+          - BIRCH_PLANKS
+          - CHERRY_PLANKS
+          - CRIMSON_PLANKS
+          - DARK_OAK_PLANKS
+          - JUNGLE_PLANKS
+          - MANGROVE_PLANKS
+          - OAK_PLANKS
+          - PALE_OAK_PLANKS
+          - SPRUCE_PLANKS
+          - WARPED_PLANKS
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 2
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 4
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+golden_sword:
+  material: GOLDEN_SWORD
+  displayname: Golden Sword
+  parent: sword
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 2
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 5
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+stone_sword:
+  material: STONE_SWORD
+  displayname: Stone Sword
+  parent: sword
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COBBLESTONE
+          - BLACKSTONE
+          - COBBLED_DEEPSLATE
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 4
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 6
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+copper_sword:
+  material: COPPER_SWORD
+  displayname: Copper Sword
+  parent: sword
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 5
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+iron_sword:
+  material: IRON_SWORD
+  displayname: Iron Sword
+  parent: sword
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 5
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+diamond_sword:
+  material: DIAMOND_SWORD
+  displayname: Diamond Sword
+  parent: sword
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 7
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+netherite_sword:
+  material: NETHERITE_SWORD
+  displayname: Netherite Sword
+  parent: sword
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+burn_sword:
+  material: IRON_SWORD
+  displayname: Burn Sword
+  parent: sword
+  modeldata: 10001
+  base_modifiers:
+    burn_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: BURN
+      minimum:
+        precision: 1
+        flat: 7
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+frost_sword:
+  material: IRON_SWORD
+  displayname: Frost Sword
+  parent: sword
+  modeldata: 10002
+  base_modifiers:
+    frost_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: FROST
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+shock_sword:
+  material: IRON_SWORD
+  displayname: Shock Sword
+  parent: sword
+  modeldata: 10003
+  base_modifiers:
+    shock_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: SHOCK
+      minimum:
+        flat: 5
+      maximum:
+        precision: 1
+        flat: 14
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+havoc_sword:
+  material: DIAMOND_SWORD
+  displayname: Havoc Sword
+  parent: sword
+  modeldata: 10001
+  base_modifiers:
+    havoc_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: HAVOC
+      minimum:
+        precision: 1
+        flat: 6
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 10
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+spell_touched_sword:
+  material: DIAMOND_SWORD
+  displayname: Spell-Touched Sword
+  parent: sword
+  modeldata: 10002
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 7
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+  magic_modifiers:
+    - spell_trigger_kill_call_lightning
+    - spell_trigger_kill_havoc_burst
+    - spell_trigger_kill_call_ground_slam
+    - spell_trigger_hit_call_lightning
+    - spell_trigger_hit_havoc_burst
+    - spell_trigger_hit_call_ground_slam
+magic_sword:
+  material: NETHERITE_SWORD
+  displayname: Magic Sword
+  parent: sword
+  modeldata: 10001
+  base_modifiers:
+    magic_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: MAGIC
+      minimum:
+        precision: 1
+        flat: 5
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+spell_infused_sword:
+  material: NETHERITE_SWORD
+  displayname: Spell-Infused Sword
+  parent: sword
+  modeldata: 10002
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.625
+
+battleaxe:
+  itemslot: MAIN_HAND
+  group: BATTLEAXE
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'mmm'
+        - 'ms '
+        - ' s '
+      materials:
+        s:
+          - STICK
+  magic_modifiers:
+    - damage_range_physical
+    - damage_scaler_physical
+    - damage_range_burn
+    - damage_range_frost
+    - damage_range_shock
+    - damage_range_havoc
+    - attribute_increased_attack_speed
+    - attribute_increased_entity_interaction
+    - enchantment_knockback
+    - enchantment_unbreaking
+    - enchantment_splash_damage
+    - attack_luck_lucky_damage
+    - critical_chance_scaler
+    - critical_damage_scaler
+    - leech_life_physical
+    - flat_drop_luck_suffix
+    - status_temporary_weapon_fatigue
+    - status_temporary_weapon_glowing
+    - status_temporary_weapon_poison
+    - status_temporary_weapon_slowness
+    - status_temporary_weapon_vision
+    - status_temporary_weapon_weakness
+    - status_temporary_weapon_wither
+wooden_battleaxe:
+  material: WOODEN_AXE
+  displayname: Wooden Battleaxe
+  parent: battleaxe
+  modeldata: 10001
+  recipes:
+    crafting:
+      materials:
+        m:
+          - ACACIA_PLANKS
+          - BAMBOO_PLANKS
+          - BIRCH_PLANKS
+          - CHERRY_PLANKS
+          - CRIMSON_PLANKS
+          - DARK_OAK_PLANKS
+          - JUNGLE_PLANKS
+          - MANGROVE_PLANKS
+          - OAK_PLANKS
+          - PALE_OAK_PLANKS
+          - SPRUCE_PLANKS
+          - WARPED_PLANKS
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 3
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 5
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+golden_battleaxe:
+  material: GOLDEN_AXE
+  displayname: Golden Battleaxe
+  parent: battleaxe
+  modeldata: 10001
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 3
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 6
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+stone_battleaxe:
+  material: STONE_AXE
+  displayname: Stone Battleaxe
+  parent: battleaxe
+  modeldata: 10001
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COBBLESTONE
+          - BLACKSTONE
+          - COBBLED_DEEPSLATE
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 5
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 8
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+copper_battleaxe:
+  material: COPPER_AXE
+  displayname: Copper Battleaxe
+  parent: battleaxe
+  modeldata: 10001
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 6
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+iron_battleaxe:
+  material: IRON_AXE
+  displayname: Iron Battleaxe
+  parent: battleaxe
+  modeldata: 10001
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 6
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 10
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+diamond_battleaxe:
+  material: DIAMOND_AXE
+  displayname: Diamond Battleaxe
+  parent: battleaxe
+  modeldata: 10001
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 9
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+netherite_battleaxe:
+  material: NETHERITE_AXE
+  displayname: Netherite Battleaxe
+  parent: battleaxe
+  modeldata: 10001
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 10
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 13
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+burn_battleaxe:
+  material: IRON_AXE
+  displayname: Burn Battleaxe
+  parent: battleaxe
+  modeldata: 10002
+  base_modifiers:
+    burn_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: BURN
+      minimum:
+        precision: 1
+        flat: 9
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 13
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+frost_battleaxe:
+  material: IRON_AXE
+  displayname: Frost Battleaxe
+  parent: battleaxe
+  modeldata: 10003
+  base_modifiers:
+    frost_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: FROST
+      minimum:
+        precision: 1
+        flat: 10
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 12
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+shock_battleaxe:
+  material: IRON_AXE
+  displayname: Shock Battleaxe
+  parent: battleaxe
+  modeldata: 10004
+  base_modifiers:
+    shock_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: SHOCK
+      minimum:
+        flat: 7
+      maximum:
+        precision: 1
+        flat: 15
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+havoc_battleaxe:
+  material: DIAMOND_AXE
+  displayname: Havoc Battleaxe
+  parent: battleaxe
+  modeldata: 10002
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: HAVOC
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 12
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+magic_battleaxe:
+  material: NETHERITE_AXE
+  displayname: Magic Battleaxe
+  parent: battleaxe
+  modeldata: 10002
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: MAGIC
+      minimum:
+        precision: 1
+        flat: 7
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 7.5
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 1
+
+abstract_bow:
+  itemslot: MAIN_HAND
+  magic_modifiers:
+    - damage_range_physical
+    - damage_scaler_physical
+    - damage_range_burn
+    - damage_range_frost
+    - damage_range_shock
+    - damage_range_havoc
+    - arrow_speed_scaler
+    - attack_luck_lucky_damage
+    - critical_chance_scaler
+    - critical_damage_scaler
+    - leech_life_physical
+    - flat_drop_luck_suffix
+    - enchantment_projectile_rider
+    - status_temporary_weapon_fatigue
+    - status_temporary_weapon_glowing
+    - status_temporary_weapon_poison
+    - status_temporary_weapon_slowness
+    - status_temporary_weapon_vision
+    - status_temporary_weapon_weakness
+    - status_temporary_weapon_wither
+bow_craft:
+  parent: abstract_bow
+  group: BOW
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - ' ms'
+        - 'm s'
+        - ' ms'
+      materials:
+        s:
+          - STRING
+bow:
+  material: BOW
+  displayname: Bow
+  parent: bow_craft
+  recipes:
+    crafting:
+      materials:
+        m:
+          - STICK
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 6
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 10
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 10
+    arrow_speed:
+      template: ProjectileSpeedTemplate
+      base: true
+      operator: FLAT
+      projectile: ARROW
+      flat: 1
+  magic_modifiers:
+    - enchantment_infinity
+    - enchantment_punch
+havoc_bow:
+  material: BOW
+  displayname: Havoc Bow
+  parent: abstract_bow
+  modeldata: 10001
+  base_modifiers:
+    havoc_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: HAVOC
+      minimum:
+        precision: 1
+        flat: 6
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 10
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 10
+    arrow_speed:
+      template: ProjectileSpeedTemplate
+      base: true
+      operator: FLAT
+      projectile: ARROW
+      flat: 1
+  magic_modifiers:
+    - enchantment_infinity
+    - enchantment_punch
+magic_bow:
+  material: BOW
+  displayname: Magic Bow
+  parent: abstract_bow
+  modeldata: 10002
+  base_modifiers:
+    magic_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: MAGIC
+      minimum:
+        precision: 1
+        flat: 5
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 9
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 10
+    arrow_speed:
+      template: ProjectileSpeedTemplate
+      base: true
+      operator: FLAT
+      projectile: ARROW
+      flat: 1
+  magic_modifiers:
+    - enchantment_infinity
+    - enchantment_punch
+crossbow_craft:
+  parent: abstract_bow
+  group: CROSSBOW
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'mim'
+        - 'sts'
+        - ' m '
+      materials:
+        s:
+          - STRING
+        t:
+          - TRIPWIRE_HOOK
+crossbow:
+  material: CROSSBOW
+  displayname: Crossbow
+  parent: crossbow_craft
+  recipes:
+    crafting:
+      materials:
+        m:
+          - STICK
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 13
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 10
+    arrow_speed:
+      template: ProjectileSpeedTemplate
+      base: true
+      operator: FLAT
+      projectile: ARROW
+      flat: 1
+  magic_modifiers:
+    - enchantment_multishot
+    - enchantment_piercing
+    - enchantment_quick_charge
+havoc_crossbow:
+  material: CROSSBOW
+  displayname: Havoc Crossbow
+  parent: abstract_bow
+  modeldata: 10001
+  base_modifiers:
+    havoc_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: HAVOC
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 13
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 10
+    arrow_speed:
+      template: ProjectileSpeedTemplate
+      base: true
+      operator: FLAT
+      projectile: ARROW
+      flat: 1
+  magic_modifiers:
+    - enchantment_multishot
+    - enchantment_piercing
+    - enchantment_quick_charge
+magic_crossbow:
+  material: CROSSBOW
+  displayname: Magic Crossbow
+  parent: abstract_bow
+  modeldata: 10002
+  base_modifiers:
+    magic_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: MAGIC
+      minimum:
+        precision: 1
+        flat: 7
+        steps: 3
+      maximum:
+        precision: 1
+        flat: 12
+        steps: 3
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 10
+    arrow_speed:
+      template: ProjectileSpeedTemplate
+      base: true
+      operator: FLAT
+      projectile: ARROW
+      flat: 1
+  magic_modifiers:
+    - enchantment_multishot
+    - enchantment_piercing
+    - enchantment_quick_charge
+
+abstract_arrow:
+  itemslot: PROJECTILE
+  group: ARROW
+  magic_modifiers:
+    - damage_range_physical_offhand
+    - damage_range_burn_offhand
+    - damage_range_frost_offhand
+    - damage_range_shock_offhand
+    - damage_range_havoc_offhand
+    - status_temporary_weapon_fatigue
+    - status_temporary_weapon_glowing
+    - status_temporary_weapon_poison
+    - status_temporary_weapon_slowness
+    - status_temporary_weapon_vision
+    - status_temporary_weapon_weakness
+    - status_temporary_weapon_wither
+    - arrow_speed_scaler
+arrow:
+  material: ARROW
+  amount: 8
+  displayname: Arrow
+  parent: abstract_arrow
+  ephemeral: true
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 't'
+        - 's'
+        - 'f'
+      materials:
+        t:
+          - FLINT
+        s:
+          - STICK
+        f:
+          - FEATHER
+spectral_arrow:
+  material: SPECTRAL_ARROW
+  amount: 1
+  displayname: Spectral Arrow
+  parent: abstract_arrow
+  ephemeral: true
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - ' g '
+        - 'gag'
+        - ' g '
+      materials:
+        g:
+          - GLOWSTONE_DUST
+        a:
+          - ARROW
+  enchantingbonus: 50
+
+trident:
+  material: TRIDENT
+  displayname: Trident
+  itemslot: MAIN_HAND
+  group: TRIDENT
+  base_modifiers:
+    physical_damage:
+      template: DamageRangeTemplate
+      base: true
+      damagetype: PHYSICAL
+      minimum:
+        precision: 1
+        flat: 8
+        steps: 2
+      maximum:
+        precision: 1
+        flat: 11
+        steps: 2
+    critical_chance:
+      template: CriticalTemplate
+      base: true
+      criticaltype: CRITICAL_CHANCE
+      operator: FLAT
+      flat: 10
+    attack_speed:
+      template: AttributeTemplate
+      base: true
+      attribute: ATTACK_SPEED
+      operator: FLAT
+      flat: 0.909
+  magic_modifiers:
+    - damage_range_physical
+    - damage_range_burn
+    - damage_range_frost
+    - damage_range_shock
+    - damage_range_havoc
+    - attribute_increased_attack_speed
+    - attribute_increased_entity_interaction
+    - enchantment_unbreaking
+    - enchantment_loyalty
+    - enchantment_riptide
+    - attack_luck_lucky_damage
+    - critical_chance_scaler
+    - critical_damage_scaler
+    - leech_life_physical
+    - flat_drop_luck_suffix
+    - status_temporary_weapon_fatigue
+    - status_temporary_weapon_glowing
+    - status_temporary_weapon_poison
+    - status_temporary_weapon_slowness
+    - status_temporary_weapon_vision
+    - status_temporary_weapon_weakness
+    - status_temporary_weapon_wither
+
+tool:
+  magic_modifiers:
+    - attribute_increased_block_interaction
+    - attribute_increased_break_speed
+    - enchantment_unbreaking
+    - enchantment_efficiency
+    - enchantment_fortune
+    - enchantment_silk_touch
+    - enchantment_item_bag
+    - status_permanent_haste
+    - status_permanent_regeneration
+    - status_permanent_speed
+
+axe:
+  parent: tool
+  itemslot: MAIN_HAND
+  group: AXE
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'mm'
+        - 'ms'
+        - ' s'
+      materials:
+        s:
+          - STICK
+  magic_modifiers:
+    - enchantment_tree_feller
+    - enchantment_smelting
+wooden_axe:
+  material: WOODEN_AXE
+  displayname: Wooden Axe
+  parent: axe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - ACACIA_PLANKS
+          - BAMBOO_PLANKS
+          - BIRCH_PLANKS
+          - CHERRY_PLANKS
+          - CRIMSON_PLANKS
+          - DARK_OAK_PLANKS
+          - JUNGLE_PLANKS
+          - MANGROVE_PLANKS
+          - OAK_PLANKS
+          - PALE_OAK_PLANKS
+          - SPRUCE_PLANKS
+          - WARPED_PLANKS
+golden_axe:
+  material: GOLDEN_AXE
+  displayname: Golden Axe
+  parent: axe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+stone_axe:
+  material: STONE_AXE
+  displayname: Stone Axe
+  parent: axe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COBBLESTONE
+          - BLACKSTONE
+          - COBBLED_DEEPSLATE
+copper_axe:
+  material: COPPER_AXE
+  displayname: Copper Axe
+  parent: axe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+iron_axe:
+  material: IRON_AXE
+  displayname: Iron Axe
+  parent: axe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+diamond_axe:
+  material: DIAMOND_AXE
+  displayname: Diamond Axe
+  parent: axe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+netherite_axe:
+  material: NETHERITE_AXE
+  displayname: Netherite Axe
+  parent: axe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+
+hoe:
+  parent: tool
+  itemslot: MAIN_HAND
+  group: HOE
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'mm'
+        - ' s'
+        - ' s'
+      materials:
+        s:
+          - STICK
+  magic_modifiers:
+    - enchantment_effect_area
+wooden_hoe:
+  material: WOODEN_HOE
+  displayname: Wooden Hoe
+  parent: hoe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - ACACIA_PLANKS
+          - BAMBOO_PLANKS
+          - BIRCH_PLANKS
+          - CHERRY_PLANKS
+          - CRIMSON_PLANKS
+          - DARK_OAK_PLANKS
+          - JUNGLE_PLANKS
+          - MANGROVE_PLANKS
+          - OAK_PLANKS
+          - PALE_OAK_PLANKS
+          - SPRUCE_PLANKS
+          - WARPED_PLANKS
+golden_hoe:
+  material: GOLDEN_HOE
+  displayname: Golden Hoe
+  parent: hoe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+stone_hoe:
+  material: STONE_HOE
+  displayname: Stone Hoe
+  parent: hoe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COBBLESTONE
+          - BLACKSTONE
+          - COBBLED_DEEPSLATE
+copper_hoe:
+  material: COPPER_HOE
+  displayname: Copper Hoe
+  parent: hoe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+iron_hoe:
+  material: IRON_HOE
+  displayname: Iron Hoe
+  parent: hoe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+diamond_hoe:
+  material: DIAMOND_HOE
+  displayname: Diamond Hoe
+  parent: hoe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+netherite_hoe:
+  material: NETHERITE_HOE
+  displayname: Netherite Hoe
+  parent: hoe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+
+pickaxe:
+  parent: tool
+  itemslot: MAIN_HAND
+  group: PICKAXE
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'mmm'
+        - ' s '
+        - ' s '
+      materials:
+        s:
+          - STICK
+  magic_modifiers:
+    - enchantment_effect_area
+    - enchantment_smelting
+wooden_pickaxe:
+  material: WOODEN_PICKAXE
+  displayname: Wooden Pickaxe
+  parent: pickaxe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - ACACIA_PLANKS
+          - BAMBOO_PLANKS
+          - BIRCH_PLANKS
+          - CHERRY_PLANKS
+          - CRIMSON_PLANKS
+          - DARK_OAK_PLANKS
+          - JUNGLE_PLANKS
+          - MANGROVE_PLANKS
+          - OAK_PLANKS
+          - PALE_OAK_PLANKS
+          - SPRUCE_PLANKS
+          - WARPED_PLANKS
+golden_pickaxe:
+  material: GOLDEN_PICKAXE
+  displayname: Golden Pickaxe
+  parent: pickaxe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+stone_pickaxe:
+  material: STONE_PICKAXE
+  displayname: Stone Pickaxe
+  parent: pickaxe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COBBLESTONE
+          - BLACKSTONE
+          - COBBLED_DEEPSLATE
+copper_pickaxe:
+  material: COPPER_PICKAXE
+  displayname: Copper Pickaxe
+  parent: pickaxe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+iron_pickaxe:
+  material: IRON_PICKAXE
+  displayname: Iron Pickaxe
+  parent: pickaxe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+diamond_pickaxe:
+  material: DIAMOND_PICKAXE
+  displayname: Diamond Pickaxe
+  parent: pickaxe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+netherite_pickaxe:
+  material: NETHERITE_PICKAXE
+  displayname: Netherite Pickaxe
+  parent: pickaxe
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+
+shovel:
+  parent: tool
+  itemslot: MAIN_HAND
+  group: SHOVEL
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'm'
+        - 's'
+        - 's'
+      materials:
+        s:
+          - STICK
+  magic_modifiers:
+    - enchantment_effect_area
+    - enchantment_smelting
+wooden_shovel:
+  material: WOODEN_SHOVEL
+  displayname: Wooden Shovel
+  parent: shovel
+  recipes:
+    crafting:
+      materials:
+        m:
+          - ACACIA_PLANKS
+          - BAMBOO_PLANKS
+          - BIRCH_PLANKS
+          - CHERRY_PLANKS
+          - CRIMSON_PLANKS
+          - DARK_OAK_PLANKS
+          - JUNGLE_PLANKS
+          - MANGROVE_PLANKS
+          - OAK_PLANKS
+          - PALE_OAK_PLANKS
+          - SPRUCE_PLANKS
+          - WARPED_PLANKS
+golden_shovel:
+  material: GOLDEN_SHOVEL
+  displayname: Golden Shovel
+  parent: shovel
+  recipes:
+    crafting:
+      materials:
+        m:
+          - GOLD_INGOT
+  enchantingbonus: 25
+stone_shovel:
+  material: STONE_SHOVEL
+  displayname: Stone Shovel
+  parent: shovel
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COBBLESTONE
+          - BLACKSTONE
+          - COBBLED_DEEPSLATE
+copper_shovel:
+  material: COPPER_SHOVEL
+  displayname: Copper Shovel
+  parent: shovel
+  recipes:
+    crafting:
+      materials:
+        m:
+          - COPPER_INGOT
+  enchantingbonus: -25
+iron_shovel:
+  material: IRON_SHOVEL
+  displayname: Iron Shovel
+  parent: shovel
+  recipes:
+    crafting:
+      materials:
+        m:
+          - IRON_INGOT
+diamond_shovel:
+  material: DIAMOND_SHOVEL
+  displayname: Diamond Shovel
+  parent: shovel
+  recipes:
+    crafting:
+      materials:
+        m:
+          - DIAMOND
+netherite_shovel:
+  material: NETHERITE_SHOVEL
+  displayname: Netherite Shovel
+  parent: shovel
+  recipes:
+    crafting:
+      materials:
+        m:
+          - NETHERITE_INGOT
+
+abstract_potion:
+  magic_modifiers:
+    - cooldown_potion_recovery
+    - duration_scaler
+    - flat_potion_level
+abstract_positive_potion:
+  parent: abstract_potion
+  magic_modifiers:
+    - status_temporary_potion_fire_immunity
+    - status_temporary_potion_haste
+    - status_temporary_potion_invisibility
+    - status_temporary_potion_jump_boost
+    - status_temporary_potion_night_vision
+    - status_temporary_potion_regeneration
+    - status_temporary_potion_slow_falling
+    - status_temporary_potion_speed
+    - status_temporary_potion_strength
+    - status_temporary_potion_water_breathing
+    - healing_flat
+abstract_negative_potion:
+  parent: abstract_potion
+  magic_modifiers:
+    - area_potion_scaler
+    - status_temporary_potion_fatigue
+    - status_temporary_potion_glowing
+    - status_temporary_potion_poison
+    - status_temporary_potion_slowness
+    - status_temporary_potion_vision
+    - status_temporary_potion_weakness
+    - status_temporary_potion_wither
+    - damage_havoc
+abstract_positive_splash_potion:
+  parent: abstract_positive_potion
+  magic_modifiers:
+    - area_potion_scaler
+abstract_negative_splash_potion:
+  parent: abstract_negative_potion
+  magic_modifiers:
+    - area_potion_scaler
+potion:
+  material: POTION
+  displayname: Potion
+  group: POTION
+  parent: abstract_positive_potion
+  enchantable: false
+  meta:
+    type: potion
+    color: FUCHSIA
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'g g'
+        - ' g '
+      materials:
+        g:
+          - GLASS_PANE
+    recycling:
+      type: Shaped
+      shape:
+        - 'b'
+      materials:
+        b:
+          - GLASS_BOTTLE
+  base_modifiers:
+    cooldown:
+      template: CooldownTemplate
+      base: true
+      operator: FLAT
+      precision: 10
+      flat: 180
+      steps: 5
+positive_splash_potion:
+  material: SPLASH_POTION
+  displayname: Positive Splash Potion
+  group: SPLASH_POTION
+  parent: abstract_positive_splash_potion
+  enchantable: false
+  meta:
+    type: potion
+    color: FUCHSIA
+  base_modifiers:
+    flat_area:
+      template: AreaTemplate
+      base: true
+      operator: FLAT
+      precision: 0.1
+      flat: 4.3
+      steps: 5
+    cooldown:
+      template: CooldownTemplate
+      base: true
+      operator: FLAT
+      precision: 10
+      flat: 280
+      steps: 5
+negative_splash_potion:
+  material: SPLASH_POTION
+  displayname: Negative Splash Potion
+  group: SPLASH_POTION
+  parent: abstract_negative_splash_potion
+  enchantable: false
+  meta:
+    type: potion
+    color: PURPLE
+  base_modifiers:
+    flat_area:
+      template: AreaTemplate
+      base: true
+      operator: FLAT
+      precision: 0.1
+      flat: 4.3
+      steps: 5
+    cooldown:
+      template: CooldownTemplate
+      base: true
+      operator: FLAT
+      precision: 10
+      flat: 280
+      steps: 5
+positive_linger_potion:
+  material: LINGERING_POTION
+  displayname: Positive Linger Potion
+  group: LINGERING_POTION
+  parent: abstract_positive_splash_potion
+  enchantable: false
+  meta:
+    type: potion
+    color: FUCHSIA
+  base_modifiers:
+    flat_area:
+      template: AreaTemplate
+      base: true
+      operator: FLAT
+      precision: 0.1
+      flat: 3.8
+      steps: 5
+    flat_duration:
+      template: DurationTemplate
+      base: true
+      operator: FLAT
+      precision: 10
+      flat: 200
+      steps: 5
+    cooldown:
+      template: CooldownTemplate
+      base: true
+      operator: FLAT
+      precision: 10
+      flat: 380
+      steps: 5
+negative_linger_potion:
+  material: LINGERING_POTION
+  displayname: Negative Linger Potion
+  group: LINGERING_POTION
+  parent: abstract_negative_splash_potion
+  enchantable: false
+  meta:
+    type: potion
+    color: PURPLE
+  base_modifiers:
+    flat_area:
+      template: AreaTemplate
+      base: true
+      operator: FLAT
+      precision: 0.1
+      flat: 3.8
+      steps: 5
+    flat_duration:
+      template: DurationTemplate
+      base: true
+      operator: FLAT
+      precision: 10
+      flat: 200
+      steps: 5
+    cooldown:
+      template: CooldownTemplate
+      base: true
+      operator: FLAT
+      precision: 10
+      flat: 380
+      steps: 5
+
+wand:
+  material: STICK
+  displayname: Wand
+  itemslot: MAIN_HAND
+  group: WAND
+  modeldata: 10001
+  enchantable: true
+  removerecipes: false
+  magic_modifiers:
+    - mana_max_flat
+    - mana_max_scaler
+    - mana_regen_scaler
+    - duration_scaler
+    - flat_spell_level
+    - enchantment_multishot
+    - area_spell_increase
+    - projectile_speed_scaler
+    - cooldown_spell_recovery
+    - flat_drop_luck_suffix
+    - damage_extra_burn_spell
+    - damage_extra_frost_spell
+    - damage_extra_shock_spell
+    - damage_scaler_spell
+void_walk_wand:
+  material: STICK
+  displayname: Wand
+  parent: wand
+  recipes:
+    crafting:
+      type: Shaped
+      shape:
+        - 'ooo'
+        - 'oso'
+        - 'ooo'
+      materials:
+        o:
+          - OBSIDIAN
+        s:
+          - STICK
+  base_modifiers:
+    void_walk_spell:
+      template: SpellTemplate
+      base: true
+      spelltype: VOID_WALK
+      activation: CAST
+      flat: 1
+
+story:
+  magic_modifiers:
+    - story_monster_life
+    - story_monster_damage
+    - story_monster_physical_extra_burn
+    - story_monster_physical_extra_frost
+    - story_monster_physical_extra_shock
+    - story_monster_physical_extra_havoc
+    - story_monster_defense_flat_physical
+    - story_monster_defense_scaler_physical
+    - story_monster_defense_flat_elemental
+    - story_monster_defense_flat_havoc
+    - story_monster_defense_max_elemental
+    - story_monster_defense_max_havoc
+    - story_monster_lucky_attack
+    - story_monster_double_damage_chance
+    - story_monster_critical_chance
+    - story_monster_critical_damage
+story_tier_1:
+  base_modifiers:
+    monster_life:
+      template: AttributeTemplate
+      base: true
+      monster: true
+      attribute: MAX_HEALTH
+      operator: SCALER
+      flat: 0.05
+    monster_damage:
+      template: DamageTemplate
+      base: true
+      monster: true
+      damagetype: ALL
+      operator: SCALER
+      flat: 0.05
+    monster_item_luck:
+      template: LuckTemplate
+      base: true
+      monster: true
+      luck: ALL
+      operator: FLAT
+      flat: 10
+story_tier_2:
+  base_modifiers:
+    monster_life:
+      template: AttributeTemplate
+      base: true
+      monster: true
+      attribute: MAX_HEALTH
+      operator: SCALER
+      flat: 0.20
+    monster_damage:
+      template: DamageTemplate
+      base: true
+      monster: true
+      damagetype: ALL
+      operator: SCALER
+      flat: 0.20
+    monster_item_luck:
+      template: LuckTemplate
+      base: true
+      monster: true
+      luck: ALL
+      operator: FLAT
+      flat: 20
+story_tier_3:
+  base_modifiers:
+    monster_life:
+      template: AttributeTemplate
+      base: true
+      monster: true
+      attribute: MAX_HEALTH
+      operator: SCALER
+      flat: 0.45
+    monster_damage:
+      template: DamageTemplate
+      base: true
+      monster: true
+      damagetype: ALL
+      operator: SCALER
+      flat: 0.45
+    monster_item_luck:
+      template: LuckTemplate
+      base: true
+      monster: true
+      luck: ALL
+      operator: FLAT
+      flat: 30
+story_tier_4:
+  base_modifiers:
+    monster_life:
+      template: AttributeTemplate
+      base: true
+      monster: true
+      attribute: MAX_HEALTH
+      operator: SCALER
+      flat: 0.80
+    monster_damage:
+      template: DamageTemplate
+      base: true
+      monster: true
+      damagetype: ALL
+      operator: SCALER
+      flat: 0.80
+    monster_item_luck:
+      template: LuckTemplate
+      base: true
+      monster: true
+      luck: ALL
+      operator: FLAT
+      flat: 40
+story_tier_5:
+  base_modifiers:
+    monster_life:
+      template: AttributeTemplate
+      base: true
+      monster: true
+      attribute: MAX_HEALTH
+      operator: SCALER
+      flat: 1.25
+    monster_damage:
+      template: DamageTemplate
+      base: true
+      monster: true
+      damagetype: ALL
+      operator: SCALER
+      flat: 1.25
+    monster_item_luck:
+      template: LuckTemplate
+      base: true
+      monster: true
+      luck: ALL
+      operator: FLAT
+      flat: 50

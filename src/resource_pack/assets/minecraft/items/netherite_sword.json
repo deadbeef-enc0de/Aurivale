@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "fallback": { "type": "model", "model": "minecraft:item/netherite_sword"},
+    "entries": [
+      { "threshold" : 20001, "model": { "type": "model", "model": "rpg:unique/sword_of_the_wither_king" } }
+    ]
+  }
+}

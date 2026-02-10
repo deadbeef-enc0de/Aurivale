@@ -1,0 +1,22 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "fallback": { "type": "model", "model": "minecraft:item/paper"},
+    "entries": [
+      { "threshold" : 10101, "model": { "type": "model", "model": "rpg:enchanter/whispering_ember" } },
+      { "threshold" : 10102, "model": { "type": "model", "model": "rpg:enchanter/charm_of_enrichment" } },
+      { "threshold" : 10103, "model": { "type": "model", "model": "rpg:enchanter/fatebinders_prism" } },
+      { "threshold" : 10201, "model": { "type": "model", "model": "rpg:enchanter/ascendant_seal" } },
+      { "threshold" : 10202, "model": { "type": "model", "model": "rpg:enchanter/celestial_catalyst" } },
+      { "threshold" : 10203, "model": { "type": "model", "model": "rpg:enchanter/echo_of_ascension" } },
+      { "threshold" : 10204, "model": { "type": "model", "model": "rpg:enchanter/voidtear_sigil" } },
+      { "threshold" : 10205, "model": { "type": "model", "model": "rpg:enchanter/orb_of_flux" } },
+      { "threshold" : 10301, "model": { "type": "model", "model": "rpg:enchanter/phantom_reflection" } },
+      { "threshold" : 10302, "model": { "type": "model", "model": "rpg:enchanter/mark_of_eternity" } },
+      { "threshold" : 10303, "model": { "type": "model", "model": "rpg:enchanter/sundering_rune" } },
+      { "threshold" : 10304, "model": { "type": "model", "model": "rpg:enchanter/essence_shard" } },
+      { "threshold" : 20001, "model": { "type": "model", "model": "rpg:item/party_invite" } }
+    ]
+  }
+}

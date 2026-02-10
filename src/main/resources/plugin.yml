@@ -1,0 +1,14 @@
+name: ${project.name}
+main: net.mctitan.rpg.Aurivale
+version: ${project.version}
+api-version: "1.21"
+folia-supported: true
+load: STARTUP
+depend: [YamlSaver, EasyCommands]
+commands:
+    rpg:
+        description: Base Aurivale command
+        aliases: [r]
+        usage: Help - /rpg help
+    help:
+        description: Overrides default help command

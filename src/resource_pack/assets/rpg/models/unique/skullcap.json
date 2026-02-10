@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "rpg:item/skullcap",
+    "layer1": "rpg:item/skullcap_overlay"
+  }
+}
