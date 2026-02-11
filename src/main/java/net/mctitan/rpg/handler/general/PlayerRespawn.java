@@ -28,7 +28,14 @@ public class PlayerRespawn implements Listener, Logger {
         // get aggro protection for respawn
         respawnaggroprotect = Aurivale.instance().getConfig("players").getInt("respawn_aggro_protection");
 
-        // TODO remove this when respawn event is working
+        /* TODO remove this when respawn event is working */
+        try {
+            Class.forName("io.papermc.paper.threadedregions.RegionizedServer");
+            log(Level.INFO, "Folia Detected: enabling custom player respawn event throwing");
+        } catch(ClassNotFoundException e) {
+            return;
+        }
+
         Bukkit.getGlobalRegionScheduler().runAtFixedRate(Aurivale.instance(), task -> {
             // go through each online player
             for(org.bukkit.entity.Player player : Bukkit.getOnlinePlayers()) {
@@ -50,6 +57,7 @@ public class PlayerRespawn implements Listener, Logger {
                 health.put(playerid, player.getHealth());
             }
         }, 1, 1);
+        /* TODO remove this when respawn event is working */
     }
 
     public static PlayerRespawn instance() { return instance; }
