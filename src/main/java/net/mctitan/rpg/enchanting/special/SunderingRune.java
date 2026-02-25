@@ -67,7 +67,12 @@ MiniMessage.miniMessage().deserialize("<!italic><red>NOT IMPLEMENTED!")
         player.enchantingstate(EnchantingState.NOT_ENCHANTING);
 
         // remove old item from inventory
-        player.bukkitplayer().getInventory().remove(stack.bukkitstack());
+        int amount = stack.bukkitstack().getAmount();
+        if(amount > 1) {
+            stack.bukkitstack().setAmount(amount - 1);
+        } else {
+            player.bukkitplayer().getInventory().remove(stack.bukkitstack());
+        }
 
         return true;
     }

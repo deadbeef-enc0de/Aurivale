@@ -1,5 +1,7 @@
 package net.mctitan.rpg.handler.general;
 
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.mctitan.rpg.Aurivale;
 import net.mctitan.rpg.crafting.Craftable;
 import net.mctitan.rpg.data.DataManager;
 import net.mctitan.rpg.data.ItemStack;
@@ -7,19 +9,32 @@ import net.mctitan.rpg.data.Player;
 import net.mctitan.rpg.util.Logger;
 import net.mctitan.rpg.util.comparators.ItemStackComparator;
 import org.bukkit.Material;
+import org.bukkit.configuration.Configuration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.CraftItemEvent;
+import org.bukkit.event.inventory.PrepareAnvilEvent;
+import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.view.AnvilView;
+
+import net.kyori.adventure.text.Component;
 
 import java.util.*;
 import java.util.logging.Level;
 
 public class Crafting implements Listener, Logger {
     private static final Crafting instance = new Crafting();
+    private Material repairitem;
+    private int amountperitem;
 
-    private Crafting() {}
+    private Crafting() {
+        Configuration repairconfig = Aurivale.instance().getConfig("repairing");
+        repairitem = Material.getMaterial(repairconfig.getString("repairitem"));
+        amountperitem = repairconfig.getInt("amountperitem");
+    }
 
     public static Crafting instance() { return instance; }
 
@@ -123,4 +138,66 @@ public class Crafting implements Listener, Logger {
             event.setCurrentItem(craftable.create(crafting).bukkitstack());
         }
     }
+
+    @EventHandler
+    public void onPrepareAnvil(PrepareAnvilEvent event) {
+        AnvilInventory inventory = event.getInventory();
+        AnvilView view = event.getView();
+
+        if(inventory.getFirstItem() == null) {
+            event.setResult(null);
+            return;
+        }
+        ItemStack torepair = new ItemStack(inventory.getFirstItem());
+        ItemStack result = torepair.clone();
+
+        // handle the repair part if there is a second item
+        view.setRepairItemCountCost(0); // set the amount of items to use to 0 initially
+        if(inventory.getSecondItem() != null) {
+            // make sure item is damageable, has damage, and the second slot is a copper ingot
+            if(!(result.bukkitstack().getItemMeta() instanceof Damageable meta) ||
+                    !meta.hasDamage() ||
+                    inventory.getSecondItem().getType() != repairitem) {
+                event.setResult(null);
+                return;
+            }
+
+            // figure out how much the item is being repaired and how many copper ingots are needed
+            int repaired = 0;
+            int repairitems = 0;
+            while(repairitems < inventory.getSecondItem().getAmount() &&
+                    repaired < meta.getDamage()) {
+                ++repairitems;
+                repaired += amountperitem;
+            }
+
+            // set or remove the damage on the item based on how much was repaired
+            if(meta.getDamage() < repaired) {
+                meta.setDamage(0);
+            } else {
+                meta.setDamage(meta.getDamage() - repaired);
+            }
+            result.bukkitstack().setItemMeta(meta);
+            view.setRepairItemCountCost(repairitems);
+        }
+
+        // handle the item naming part
+        String rename = view.getRenameText();
+        NamedTextColor color = NamedTextColor.AQUA;
+
+        // Handle the rename text and color
+        if(rename == null || (rename.isEmpty() && torepair.craftable() == null)) {
+            event.setResult(null);
+            return;
+        } else if(rename.isEmpty() || (torepair.craftable() != null && rename.equals(torepair.craftable().displayname()))) {
+            rename = torepair.craftable().displayname();
+            color = torepair.type().color();
+        }
+
+        // set the results
+        result.displayname(Component.text(rename).color(color));
+        event.setResult(result.bukkitstack());
+        view.setRepairCost(0);
+    }
+
 }

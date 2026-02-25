@@ -4,9 +4,11 @@ import net.mctitan.rpg.Aurivale;
 import net.mctitan.rpg.util.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.GameRule;
+import org.bukkit.GameRules;
 import org.bukkit.World;
 import org.bukkit.configuration.Configuration;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -23,11 +25,18 @@ public class Gamerules implements Logger {
     private void load() {
         // load gamerules from config
         Configuration gamerulecsonfig = Aurivale.instance().getConfig("gamerules");
-        for(GameRule<?> gamerule : GameRule.values()) {
-            if(gamerulecsonfig.contains(gamerule.getName())) {
-                Object obj = gamerulecsonfig.getObject(gamerule.getName(), gamerule.getType());
-                log(Level.INFO, String.format("Gamerule %s=%s", gamerule.getName(), obj.toString()));
+
+        // go through all game rules that exist
+        for(Field gamerulefield : GameRules.class.getFields()) {
+            try {
+                GameRule<?> gamerule = (GameRule<?>) gamerulefield.get(null);
+                Object obj = gamerulecsonfig.getObject(gamerule.getKey().getKey(), gamerule.getType());
+                if(obj == null) { continue; }
+
+                log(Level.INFO, String.format("Gamerule %s=%s", gamerule.getKey().getKey(), obj.toString()));
                 gamerules.put(gamerule, obj);
+            } catch (Exception e) {
+                // do nothing, error means it isn't a gamerule
             }
         }
 

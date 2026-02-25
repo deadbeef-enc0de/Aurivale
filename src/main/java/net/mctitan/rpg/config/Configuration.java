@@ -16,7 +16,7 @@ public class Configuration {
         add(new ConfigPart("brewing"));
         add(new ConfigPart("craftables"));
         add(new ConfigPart("debug"));
-        add(new ConfigPart("dimensions"));
+//        add(new ConfigPart("dimensions"));
         add(new ConfigPart("environmental"));
         add(new ConfigPart("gamerules"));
         add(new ConfigPart("handbook"));
@@ -26,6 +26,7 @@ public class Configuration {
         add(new ConfigPart("packs"));
         add(new ConfigPart("players"));
         add(new ConfigPart("plugin", false));
+        add(new ConfigPart("repairing"));
         add(new ConfigPart("spawn"));
         add(new ConfigPart("spells"));
         add(new ConfigPart("status"));

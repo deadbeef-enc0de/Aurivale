@@ -8,6 +8,7 @@ import net.mctitan.rpg.util.directional.Location;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.block.Chest;
 import org.bukkit.block.Container;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.inventory.Inventory;
@@ -32,9 +33,8 @@ public class SpellChangedBlock extends BaseData {
         this.datastr = this.location.block().getBlockData().getAsString();
 
         // backup container objects
-        if(this.location.block().getState() instanceof Container) {
-            Container container = (Container)this.location.block().getState();
-            Inventory inventory = container.getInventory();
+        Inventory inventory = inventory();
+        if(inventory != null) {
             this.inventory = new HashMap<>();
             for(int index = 0; index < inventory.getSize(); ++index) {
                 ItemStack stack = inventory.getItem(index);
@@ -48,6 +48,21 @@ public class SpellChangedBlock extends BaseData {
     public Block block() { return location.block(); }
     public Material original() { return original; }
     public BlockChange recent() { return (changes.isEmpty() ? null : changes.getLast()); }
+
+    public Inventory inventory() {
+        if(!(block().getState() instanceof Container)) {
+            return null;
+        }
+
+        Container container = (Container)block().getState();
+        Inventory inventory = container.getInventory();
+        if(container instanceof Chest) {
+            Chest chest = (Chest) container;
+            inventory = chest.getBlockInventory();
+        }
+
+        return inventory;
+    }
 
     public <T extends BlockData> T blockdata(SpellInstance instance) {
         // go through changes and see if the spell instance has a change
@@ -139,8 +154,7 @@ public class SpellChangedBlock extends BaseData {
 
             // reset inventory if it exists
             if(inventory != null) {
-                Container container = (Container)location.block().getState();
-                Inventory inv = container.getInventory();
+                Inventory inv = inventory();
                 for(int index : inventory.keySet()) {
                     inv.setItem(index, inventory.get(index));
                 }

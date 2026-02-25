@@ -15,7 +15,7 @@ public class Mana extends Modable {
 
     // variables used to calculate max mana and mana regen
     private transient double manabase = 0;
-    private transient double manascaler = 1;
+    private transient double manascaler = 100;
     private transient Map<Modifier, Double> manamultis = new HashMap<>();
     private transient double regenbase = 0;
     private transient double regenscaler = 1;
@@ -72,7 +72,7 @@ public class Mana extends Modable {
     }
 
     private void calculatemana() {
-        double maxmana = manabase * manascaler;
+        double maxmana = manabase * manascaler / 100d;
         for(Double multi : manamultis.values()) {
             maxmana *= (1 + multi);
         }
@@ -97,7 +97,7 @@ public class Mana extends Modable {
                 case MAX_MANA -> {
                     switch (manamod.operator()) {
                         case FLAT -> manabase += manamod.value();
-                        case SCALER -> manascaler += manamod.value() / 100d;
+                        case SCALER -> manascaler += manamod.value();
                         case MULTIPLIER -> manamultis.put(modifier, manamod.value() / 100d);
                     }
                     calculatemana();
@@ -122,7 +122,7 @@ public class Mana extends Modable {
                 case MAX_MANA -> {
                     switch (manamod.operator()) {
                         case FLAT -> manabase -= manamod.value();
-                        case SCALER -> manascaler -= manamod.value() / 100d;
+                        case SCALER -> manascaler -= manamod.value();
                         case MULTIPLIER -> manamultis.remove(modifier);
                     }
                     calculatemana();
